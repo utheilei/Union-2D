@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>settings.qml</file>
+        <file>FramelessWindow/CustomMouseArea.qml</file>
+        <file>FramelessWindow/FramelessWindow.qml</file>
+        <file>FramelessWindow/HLTitleBar.qml</file>
+        <file>QmlButton.qml</file>
+        <file>icon/close.svg</file>
+        <file>icon/controlcenter_24px.svg</file>
+        <file>icon/max.svg</file>
+        <file>icon/menu.svg</file>
+        <file>icon/min.svg</file>
+        <file>HLButton.qml</file>
+        <file>icon/hide.svg</file>
+        <file>HLEdgeButton.qml</file>
+        <file>QmlWaterProgress.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,102 @@
+import QtQuick 2.4
+import QtQuick.Controls 2.4
+import QtQuick.Layouts 1.0
+import QtGraphicalEffects 1.12
+import "../"
+
+ToolBar {
+    leftPadding: 10
+    property bool isMax: false
+    property QtObject parentObj;
+
+    background: Rectangle {
+        anchors.fill: parent
+        color: "#ffffff"
+        layer.enabled: true
+        layer.effect: DropShadow {
+            color: "#000000"
+        }
+    }
+
+    MouseArea {
+        property real xmouse;   //鼠标的x轴坐标
+        property real ymouse;   //y轴坐标
+        anchors.fill: parent
+        onPressed: {
+            xmouse=mouse.x;
+            ymouse=mouse.y;
+        }
+
+        onPositionChanged: {
+            parentObj.x=parentObj.x+(mouse.x-xmouse);
+            parentObj.y=parentObj.y+(mouse.y-ymouse);
+        }
+    }
+
+    RowLayout {
+        anchors.fill: parent
+        Image {
+            id: titleImage
+            source: "qrc:/icon/controlcenter_24px.svg"
+            sourceSize: Qt.size(40, 40)
+        }
+        Rectangle {
+            id: contentRectangle
+            Layout.fillWidth: true
+        }
+        HLButton {
+            id: menuButton
+            width: titleBar.height
+            height: titleBar.height
+            icon.source: "qrc:/icon/menu.svg"
+            icon.width: 20
+            icon.height: 20
+//            onClicked: barMenu.open(menuButton)
+        }
+        HLButton {
+            width: titleBar.height
+            height: titleBar.height
+            icon.source: "qrc:/icon/hide.svg"
+            icon.width: 20
+            icon.height: 20
+            onClicked: parentObj.showMinimized()
+        }
+        HLButton {
+            id: maxButton
+            width: titleBar.height
+            height: titleBar.height
+            icon.source: "qrc:/icon/max.svg"
+            icon.width: 20
+            icon.height: 20
+            onClicked: showWindow()
+        }
+        HLButton {
+            width: titleBar.height
+            height: titleBar.height
+            hoverColor: "#f7502c"
+            icon.source: "qrc:/icon/close.svg"
+            icon.width: 20
+            icon.height: 20
+            onClicked: Qt.quit()
+        }
+    }
+
+    Label {
+        id: name
+        font.pixelSize: 15
+        font.family: "Microsoft Yahei"
+        text: parentObj.title
+        anchors.centerIn: parent
+    }
+
+    function showWindow() {
+        if (!isMax) {
+            parentObj.showFullScreen()
+            maxButton.icon.source = "qrc:/icon/min.svg"
+        } else {
+            parentObj.showNormal()
+            maxButton.icon.source = "qrc:/icon/max.svg"
+        }
+        isMax = !isMax
+    }
+}
