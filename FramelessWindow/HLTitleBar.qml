@@ -37,7 +37,7 @@ ToolBar {
         anchors.fill: parent
         Image {
             id: titleImage
-            source: "qrc:/icon/controlcenter_24px.svg"
+            source: "qrc:/Union-2D.ico"
             sourceSize: Qt.size(40, 40)
         }
         Rectangle {
@@ -73,7 +73,7 @@ ToolBar {
         HLButton {
             width: titleBar.height
             height: titleBar.height
-            hoverColor: "#f7502c"
+            hoverColor: "#FB4C3E"
             icon.source: "qrc:/icon/close.svg"
             icon.width: 20
             icon.height: 20

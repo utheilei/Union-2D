@@ -5,7 +5,7 @@ import QtQuick.Controls.Styles 1.4
 Button {
     id: closeButton
     property string btnColor: "transparent"
-    property string hoverColor: "#F8F8F8"
+    property string hoverColor: "#DCD6D6"
     property int buttonPosition: 0
     hoverEnabled: true
 

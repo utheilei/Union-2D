@@ -16,5 +16,6 @@
         <file>icon/hide.svg</file>
         <file>HLEdgeButton.qml</file>
         <file>QmlWaterProgress.qml</file>
+        <file>Union-2D.ico</file>
     </qresource>
 </RCC>
