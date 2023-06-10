@@ -3,7 +3,8 @@ import QtQuick.Controls 2.3
 import QtGraphicalEffects 1.12
 
 Page {
-    property QtObject parentObj;
+    property QtObject parentObj
+    property QtObject titleBar: hlTitleBar
     id: root
     anchors.fill: parent;
     background: Rectangle {
@@ -13,12 +14,13 @@ Page {
 
     //标题栏
     HLTitleBar {
-        id: titleBar
+        id: hlTitleBar
         x: parent.x
         y: parent.y
         width: parent.width
         height: 50
         parentObj: root.parentObj
+        source: appIcon
     }
 
     //窗口拉伸

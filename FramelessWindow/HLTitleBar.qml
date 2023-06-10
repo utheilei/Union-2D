@@ -2,12 +2,13 @@ import QtQuick 2.4
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.0
 import QtGraphicalEffects 1.12
-import "../"
+import "../controls"
 
 ToolBar {
     leftPadding: 10
     property bool isMax: false
     property QtObject parentObj;
+    property alias source: titleImage.source
 
     background: Rectangle {
         anchors.fill: parent
@@ -37,7 +38,6 @@ ToolBar {
         anchors.fill: parent
         Image {
             id: titleImage
-            source: "qrc:/Union-2D.ico"
             sourceSize: Qt.size(40, 40)
         }
         Rectangle {
@@ -51,7 +51,7 @@ ToolBar {
             icon.source: "qrc:/icon/menu.svg"
             icon.width: 20
             icon.height: 20
-            onClicked: barMenu.popup()
+            onClicked: barMenu.popup(menuButton.x + 20, menuButton.height + 10)
         }
         HLButton {
             width: titleBar.height

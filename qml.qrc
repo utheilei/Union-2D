@@ -2,22 +2,39 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>settings.qml</file>
         <file>FramelessWindow/CustomMouseArea.qml</file>
         <file>FramelessWindow/FramelessWindow.qml</file>
         <file>FramelessWindow/HLTitleBar.qml</file>
-        <file>QmlButton.qml</file>
         <file>icon/close.svg</file>
-        <file>icon/controlcenter_24px.svg</file>
         <file>icon/max.svg</file>
         <file>icon/menu.svg</file>
         <file>icon/min.svg</file>
-        <file>HLButton.qml</file>
         <file>icon/hide.svg</file>
-        <file>HLEdgeButton.qml</file>
-        <file>QmlWaterProgress.qml</file>
         <file>Union-2D.ico</file>
-        <file>HLMenu.qml</file>
         <file>controls/HLRoundedRectangle.qml</file>
+        <file>controls/HLGridView.qml</file>
+        <file>controls/HLIconItem.qml</file>
+        <file>controls/HLButton.qml</file>
+        <file>controls/HLEdgeButton.qml</file>
+        <file>controls/HLMenu.qml</file>
+        <file>controls/HLMenuItem.qml</file>
+        <file>controls/HLRoundedButton.qml</file>
+        <file>controls/settings.qml</file>
+        <file>image/button.svg</file>
+        <file>image/dialog.svg</file>
+        <file>image/inputedit.svg</file>
+        <file>image/progress.svg</file>
+        <file>image/tooltip.svg</file>
+        <file>controls/HLCircleButton.qml</file>
+        <file>controls/HLComboBox.qml</file>
+        <file>controls/HLLineEdit.qml</file>
+        <file>controls/HLListView.qml</file>
+        <file>controls/HLMaskImage.qml</file>
+        <file>controls/HLPassWordLineEdit.qml</file>
+        <file>controls/HLTableView.qml</file>
+        <file>controls/HLWaterProgress.qml</file>
+        <file>QmlMainWidget.qml</file>
+        <file>icon/left.svg</file>
+        <file>controls/HLDialog.qml</file>
     </qresource>
 </RCC>
