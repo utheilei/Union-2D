@@ -36,6 +36,10 @@ ApplicationWindow {
         color: tingeColor
     }
 
+    HLMenu {
+        id: barMenu
+    }
+
     FramelessWindow {
         anchors.fill: parent
         anchors.margins: 10

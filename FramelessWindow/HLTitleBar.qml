@@ -51,7 +51,7 @@ ToolBar {
             icon.source: "qrc:/icon/menu.svg"
             icon.width: 20
             icon.height: 20
-//            onClicked: barMenu.open(menuButton)
+            onClicked: barMenu.popup()
         }
         HLButton {
             width: titleBar.height

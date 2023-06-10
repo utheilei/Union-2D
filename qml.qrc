@@ -17,5 +17,7 @@
         <file>HLEdgeButton.qml</file>
         <file>QmlWaterProgress.qml</file>
         <file>Union-2D.ico</file>
+        <file>HLMenu.qml</file>
+        <file>controls/HLRoundedRectangle.qml</file>
     </qresource>
 </RCC>
