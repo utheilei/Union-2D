@@ -8,6 +8,9 @@ Button {
     property string hoverColor: "#DCD6D6"
     property int buttonPosition: 0
     hoverEnabled: true
+    ToolTip.delay: 1000
+    ToolTip.timeout: 5000
+    ToolTip.visible: hovered
 
     background: Rectangle {
         implicitWidth: parent.width

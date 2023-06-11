@@ -14,10 +14,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        qmlhelper.cpp
+        qmlhelper.cpp \
+        themewindow.cpp
 
 HEADERS += \
-    qmlhelper.h
+    qmlhelper.h \
+    themewindow.h
 
 RESOURCES += qml.qrc
 

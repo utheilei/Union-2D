@@ -9,6 +9,7 @@ ListView {
     property bool iconVisible: false
     property bool buttonVisible: false
     property color itemColor: sPalette.base
+    signal hoverChanged(var isHovered)
 
     SystemPalette {
         id: sPalette
@@ -80,6 +81,7 @@ ListView {
                     isEnter = true
                     if (buttonVisible)
                         closeButton.visible = true
+                    hoverChanged(true)
                 }
                 onExited: {
                     isEnter = false

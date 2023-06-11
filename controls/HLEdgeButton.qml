@@ -7,7 +7,7 @@ Item {
     property int triangleHeight: 4
     property int triangleWidth: 8
     property bool expand: true
-    signal expandStatusChanged()
+    signal expandStatusChanged(var isExpand)
     Canvas {
         id: mycanvas
         width: parent.width

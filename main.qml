@@ -7,7 +7,7 @@ import "./FramelessWindow"
 import "./controls"
 
 ApplicationWindow {
-    property color tingeColor: Qt.rgba(255, 255, 255, 1)
+    property color tingeColor: Qt.rgba(255, 255, 255, 0.9)
     property int itemCount: Math.floor((window.width - 10)/190)
     property int magins: 5
     property string appIcon: "qrc:/Union-2D.ico"
@@ -49,10 +49,18 @@ ApplicationWindow {
         HLMenu {
             title: qsTr("theme")
             HLMenuItem {
+                id: lightItem
                 text: "light"
+                checkable: true
+                checked: true
+                onTriggered: {checked = true;darkItem.checked = false}
             }
             HLMenuItem {
+                id: darkItem
                 text: "dark"
+                checkable: true
+                checked: false
+                onTriggered: {checked = true;lightItem.checked = false}
             }
         }
         HLMenuItem {

@@ -15,6 +15,7 @@ Popup {
 
     closePolicy: Popup.NoAutoClose
     modal: true
+    dim: false
     x: parent.width/2-width/2
     y: parent.height/2-height/2
     width: 400
@@ -33,8 +34,8 @@ Popup {
     ListModel {
         /* 数据项 */
         id: myModel
-        ListElement { name: qsTr("Cancle"); color: "#E4E4E4"; }
-        ListElement { name: qsTr("Ok"); color: "#E4E4E4"; }
+        ListElement { name: qsTr("Cancle"); btnColor: "#E4E4E4"; }
+        ListElement { name: qsTr("Ok"); btnColor: "#1E90FF"; }
     }
 
     Rectangle {
@@ -61,6 +62,8 @@ Popup {
                 text: modalDialog.title
                 Layout.alignment: Qt.AlignCenter
                 wrapMode : Text.WordWrap
+                font.pixelSize: 15
+                font.family: "Microsoft Yahei"
             }
 
             Button {
@@ -101,7 +104,7 @@ Popup {
                 onClicked: modalDialog.close()
 
                 onHoveredChanged: {
-                    modalDialog.btnColor = closeButton.hovered ? "#D5DCDD" : "transparent"
+                    modalDialog.btnColor = closeButton.hovered ? "#FB4C3E" : "transparent"
                 }
             }
         }
@@ -146,7 +149,7 @@ Popup {
                         implicitWidth: parent.width
                         implicitHeight: parent.height
                         radius: 10
-                        color: "#E4E4E4"
+                        color: btnColor
                         border.width: 1
                         border.color: "#D9D9D9"
                     }
@@ -157,7 +160,7 @@ Popup {
                     }
 
                     onHoveredChanged: {
-                        background.color = hovered ? "#CECECE" : "#E4E4E4"
+                        background.color = hovered ? Qt.darker(btnColor, 1.1) : btnColor
                     }
                 }
             }

@@ -52,6 +52,7 @@ ToolBar {
             icon.width: 20
             icon.height: 20
             onClicked: barMenu.popup(menuButton.x + 20, menuButton.height + 10)
+            ToolTip.text: qsTr("菜单")
         }
         HLButton {
             width: titleBar.height
@@ -60,6 +61,7 @@ ToolBar {
             icon.width: 20
             icon.height: 20
             onClicked: parentObj.showMinimized()
+            ToolTip.text: qsTr("最小化")
         }
         HLButton {
             id: maxButton
@@ -69,6 +71,7 @@ ToolBar {
             icon.width: 20
             icon.height: 20
             onClicked: showWindow()
+            ToolTip.text: isMax ? qsTr("恢复") : qsTr("最大化")
         }
         HLButton {
             width: titleBar.height
@@ -77,6 +80,7 @@ ToolBar {
             icon.source: "qrc:/icon/close.svg"
             icon.width: 20
             icon.height: 20
+            ToolTip.text: qsTr("关闭")
             onClicked: Qt.quit()
         }
     }
