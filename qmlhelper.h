@@ -15,6 +15,8 @@ public:
     Q_INVOKABLE bool contains(QRectF rect, QPointF point);
 
     Q_INVOKABLE QJsonArray listModel();
+
+    Q_INVOKABLE QString dayOfWeek(int index, int format);
 };
 
 #endif // QMLHELPER_H

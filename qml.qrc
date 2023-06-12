@@ -36,5 +36,8 @@
         <file>QmlMainWidget.qml</file>
         <file>icon/left.svg</file>
         <file>controls/HLDialog.qml</file>
+        <file>icon/leftarrow.svg</file>
+        <file>icon/right.svg</file>
+        <file>icon/rightarrow.svg</file>
     </qresource>
 </RCC>

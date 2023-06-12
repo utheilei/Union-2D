@@ -1,6 +1,9 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.4
+import QtQuick.Controls 1.4 as Old
+import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.0
+import QtGraphicalEffects 1.0
 import "./controls"
 
 Rectangle {
@@ -66,7 +69,7 @@ Rectangle {
             if (isExpand) {
                 animation1.start()
             } else {
-               animation.start()
+                animation.start()
             }
         }
     }
@@ -88,6 +91,106 @@ Rectangle {
             anchors.fill: parent
             color: "green"
             visible: true
+            Old.Calendar {
+                property date currentDate: new Date()
+                id: calendar
+                frameVisible: false
+                anchors.centerIn: parent
+                selectedDate: currentDate
+                dayOfWeekFormat: Locale.ShortFormat
+                style: CalendarStyle {
+                    gridVisible: false
+                    background: HLRoundedRectangle {
+                        color: "black"
+                        radius: 8
+                        implicitWidth: 300
+                        implicitHeight: 300
+                    }
+                    navigationBar: Rectangle{
+                        height: control.height/8;
+                        color: "black";
+                        Text{
+                            id:dateText;
+                            anchors.centerIn: parent;
+                            color: "#333333";
+                            font{family: "Microsoft YaHei"; pixelSize: 14;}
+                            text:{
+                                var str=control.visibleYear+"年"+fillZero(control.visibleMonth+1)+"月";
+                                return str;
+                            }
+                        }
+                        HLRoundedButton {
+                            id:previousMonth;
+                            anchors.right: dateText.left;
+                            anchors.rightMargin: 20;
+                            anchors.verticalCenter: dateText.verticalCenter;
+                            icon.width: 16
+                            icon.height: 16
+                            icon.source: "qrc:/icon/left.svg"
+                            onClicked: {
+                                control.showPreviousMonth();
+                            }
+                        }
+                        HLRoundedButton {
+                            id:nextMonth;
+                            anchors.left: dateText.right;
+                            anchors.leftMargin: 20;
+                            anchors.verticalCenter: dateText.verticalCenter;
+                            icon.width: 16
+                            icon.height: 16
+                            icon.source: "qrc:/icon/right.svg"
+                            onClicked: {
+                                control.showNextMonth();
+                            }
+                        }
+                        //长度不足2 补零
+                        function fillZero(value) {
+                            return value.toString().length < 2 ? ('0' + value) : value
+                        }
+                    }
+                    dayDelegate: Rectangle {
+                        color: "black"
+                        Rectangle {
+                            anchors.centerIn: parent
+                            antialiasing: true
+                            width: Math.min(parent.width, parent.height) - 4
+                            height: Math.min(parent.width, parent.height) - 4
+                            color: styleData.selected ? "#03A9F4" : "transparent"
+                            radius: height
+                            border.color: "#03A9F4"
+                            border.width: (control.equalDate(styleData.date, control.currentDate)) ? 1 : 0
+                        }
+                        Label {
+                            text: styleData.date.getDate()
+                            anchors.centerIn: parent
+                            color: styleData.visibleMonth ? "white" : "grey"
+                        }
+                    }
+
+                    dayOfWeekDelegate : Rectangle {
+                        height: control.height/8
+                        color: "black"
+                        Label {
+                            text: qmlHelper.dayOfWeek(styleData.index, control.dayOfWeekFormat)
+                            anchors.centerIn: parent
+                            color: "white"
+                            font.bold: true
+                        }
+                    }
+                }
+
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Rectangle {
+                        width: calendar.width
+                        height: calendar.height
+                        radius: 8
+                    }
+                }
+                function equalDate(date, otherDate) {
+                    return date.toLocaleDateString() === otherDate.toLocaleDateString()
+                }
+            }
         }
 
         Rectangle {
