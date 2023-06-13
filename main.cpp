@@ -3,6 +3,7 @@
 #include <QQmlContext>
 
 #include "qmlhelper.h"
+#include "themewindow.h"
 
 int main(int argc, char* argv[])
 {
@@ -14,6 +15,7 @@ int main(int argc, char* argv[])
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
+    qmlRegisterType<ThemeWindow>("an.window", 1, 0, "ThemeWindow");
     QmlHelper qmlHelper;
     engine.rootContext()->setContextProperty("qmlHelper", &qmlHelper);
 

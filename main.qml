@@ -3,6 +3,7 @@ import QtQuick.Controls 2.3
 import QtQuick.Window 2.3
 import QtGraphicalEffects 1.12
 import QtQuick.Layouts 1.3
+import an.window 1.0
 import "./FramelessWindow"
 import "./controls"
 
@@ -27,6 +28,10 @@ ApplicationWindow {
         id: windowPalette
     }
 
+    ThemeWindow {
+        id: windowTheme
+    }
+
     RectangularGlow {
         id: effect
         anchors.fill: rect
@@ -41,7 +46,7 @@ ApplicationWindow {
         anchors.fill: parent
         anchors.margins: 10
         radius: 10
-        color: tingeColor
+        color: windowTheme.button
     }
 
     HLMenu {

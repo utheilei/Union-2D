@@ -39,5 +39,6 @@
         <file>icon/leftarrow.svg</file>
         <file>icon/right.svg</file>
         <file>icon/rightarrow.svg</file>
+        <file>controls/HLCalendar.qml</file>
     </qresource>
 </RCC>
