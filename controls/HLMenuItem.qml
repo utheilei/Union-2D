@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.15
 
 MenuItem {
-    property color itemColor: "#1E90FF"
+    property color itemColor: windowTheme.highlight
     id: menuItem
     implicitHeight: 30
     contentItem: Text {
@@ -10,7 +10,7 @@ MenuItem {
         rightPadding: menuItem.arrow.width
         text: menuItem.text
         font: menuItem.font
-        color: "black"
+        color: windowTheme.text
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight

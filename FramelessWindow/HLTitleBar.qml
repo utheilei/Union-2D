@@ -12,7 +12,7 @@ ToolBar {
 
     background: Rectangle {
         anchors.fill: parent
-        color: "#ffffff"
+        color: windowTheme.window
         layer.enabled: true
         layer.effect: DropShadow {
             color: "#000000"
@@ -81,7 +81,7 @@ ToolBar {
             icon.width: 20
             icon.height: 20
             ToolTip.text: qsTr("关闭")
-            onClicked: Qt.quit()
+            onClicked: parentObj.close()
         }
     }
 
@@ -91,6 +91,7 @@ ToolBar {
         font.family: "Microsoft Yahei"
         text: parentObj.title
         anchors.centerIn: parent
+        color: windowTheme.text
     }
 
     function showWindow() {

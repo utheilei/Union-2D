@@ -5,17 +5,11 @@ import QtGraphicalEffects 1.0
 
 Button {
     id: control
-
-    SystemPalette {
-        id: sPalette
-        colorGroup: SystemPalette.Active
-    }
-
-    property color backgroundDefaultColor: sPalette.button
+    property color backgroundDefaultColor: windowTheme.button
     property color backgroundHoverdColor: Qt.darker(backgroundDefaultColor, 1.2)
     property color backgroundPressedColor: Qt.darker(backgroundDefaultColor, 1.4)
     property int buttonRadius: 10
-    property color textColor: sPalette.text
+    property color textColor: windowTheme.text
 
     contentItem: Item {
         Row {
@@ -56,10 +50,10 @@ Button {
     }
 
     function getTextColor() {
-        if (backgroundDefaultColor === sPalette.highlight)
-            return sPalette.highlightedText
-        if (textColor === sPalette.text)
-            return control.down ? sPalette.highlight : sPalette.text
+        if (backgroundDefaultColor === windowTheme.highlight)
+            return windowTheme.highlightedText
+        if (textColor === windowTheme.text)
+            return control.down ? windowTheme.highlight : windowTheme.text
         else
             return textColor
     }

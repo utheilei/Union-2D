@@ -1,12 +1,13 @@
 ﻿import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.0
+import QtGraphicalEffects 1.12
 
 Popup {
     id: modalDialog
 
     property string icon
-    property string btnColor: "transparent"
+    property color btnColor: "transparent"
     property string title
     property string clickBtnText
 
@@ -18,15 +19,34 @@ Popup {
     dim: false
     x: parent.width/2-width/2
     y: parent.height/2-height/2
-    width: 400
-    height: 250
+    width: 420
+    height: 280
     padding: 0
     margins: 0
     clip: true
+
+    RectangularGlow {
+        id: effect
+        anchors.fill: rect
+        glowRadius: 5
+        spread: 0.2
+        color: "black"
+        cornerRadius: rect.radius + glowRadius
+    }
+
+    Rectangle {
+        id: rect
+        anchors.fill: parent
+        anchors.margins: 10
+        radius: 10
+        color: windowTheme.window
+    }
+
     background: Rectangle {
         id: backgroundRectangle
         anchors.fill: parent
-        color: "#EEEEEE"
+        anchors.margins: 10
+        color: windowTheme.window
         radius: 10
         border.width: 0
     }
@@ -34,16 +54,34 @@ Popup {
     ListModel {
         /* 数据项 */
         id: myModel
-        ListElement { name: qsTr("Cancle"); btnColor: "#E4E4E4"; }
-        ListElement { name: qsTr("Ok"); btnColor: "#1E90FF"; }
+        ListElement { name: qsTr("Cancle"); btnColor: "#E5E5E5"; }
+        ListElement { name: qsTr("Ok"); btnColor: "#0081FF"; }
     }
 
     Rectangle {
         id: titleBar
-        width: parent.width
+        width: parent.width - 20
         height: 50
         color: "transparent"
         radius: 10
+        anchors.top: parent.top
+        anchors.topMargin: 10
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        MouseArea {
+            property real xmouse;   //鼠标的x轴坐标
+            property real ymouse;   //y轴坐标
+            anchors.fill: parent
+            onPressed: {
+                xmouse=mouse.x;
+                ymouse=mouse.y;
+            }
+
+            onPositionChanged: {
+                modalDialog.x = modalDialog.x + (mouse.x-xmouse);
+                modalDialog.y = modalDialog.y + (mouse.y-ymouse);
+            }
+        }
 
         RowLayout {
             anchors.fill: parent
@@ -64,6 +102,7 @@ Popup {
                 wrapMode : Text.WordWrap
                 font.pixelSize: 15
                 font.family: "Microsoft Yahei"
+                color: windowTheme.text
             }
 
             Button {
@@ -125,6 +164,7 @@ Popup {
             font.italic: true
             wrapMode : Text.WordWrap
             visible: false
+            color: windowTheme.text
         }
 
         Label {
@@ -132,6 +172,7 @@ Popup {
             Layout.alignment: Qt.AlignCenter
             wrapMode : Text.WordWrap
             visible: false
+            color: windowTheme.text
         }
 
         Row {
@@ -151,7 +192,7 @@ Popup {
                         radius: 10
                         color: btnColor
                         border.width: 1
-                        border.color: "#D9D9D9"
+                        border.color: windowTheme.frameBorder
                     }
 
                     onClicked: {

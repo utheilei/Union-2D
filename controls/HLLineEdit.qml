@@ -17,9 +17,9 @@ TextField {
     opacity:field.enabled ? 1 : 0.5
 
     background: Rectangle {
-        color: control.visible ? Qt.rgba(0.945, 0.224, 0.196, 0.15) : sPalette.button
+        color: control.visible ? Qt.rgba(0.945, 0.224, 0.196, 0.15) : windowTheme.button
         radius: 10
-        border.color: field.activeFocus ? sPalette.highlight : sPalette.button
+        border.color: field.activeFocus ? windowTheme.highlight : windowTheme.button
         border.width: field.activeFocus? 1.5 : 0
     }
 
@@ -37,7 +37,7 @@ TextField {
         icon.width: closeButton.width/2
         icon.height: closeButton.height/2
         buttonRadius: width/2
-        backgroundDefaultColor: sPalette.base
+        backgroundDefaultColor: windowTheme.base
 
         onClicked: {
             field.clear()
@@ -62,7 +62,7 @@ TextField {
         }
 
         background: Rectangle {
-            color: sPalette.base
+            color: windowTheme.base
             radius: 8
             layer.enabled: true
             layer.effect: DropShadow {

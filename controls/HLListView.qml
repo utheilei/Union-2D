@@ -8,13 +8,8 @@ ListView {
     property int itemRadius: 10
     property bool iconVisible: false
     property bool buttonVisible: false
-    property color itemColor: sPalette.base
+    property color itemColor: windowTheme.itemBackgroud
     signal hoverChanged(var isHovered)
-
-    SystemPalette {
-        id: sPalette
-        colorGroup: SystemPalette.Active
-    }
 
     spacing: 5
     delegate: listDelegate
@@ -27,8 +22,8 @@ ListView {
             width: view.width - leftMargin - rightMargin
             height: itemHeight
             radius: itemRadius
-            color: view.currentIndex === index ? sPalette.highlight :
-                                                 (isEnter ? sPalette.button : itemColor)
+            color: view.currentIndex === index ? windowTheme.highlight :
+                                                 (isEnter ? windowTheme.button : itemColor)
             Image {
                 id: iconItem
                 anchors.left: parent.left
@@ -49,7 +44,7 @@ ListView {
                 width: (parent.width - iconItem.width - closeButton.width - 20 -
                         (iconItem.visible ? 10 : 0) - (closeButton.visible ? 10 : 0))
                 text: modelData[0]
-                color: view.currentIndex === index ? sPalette.highlightedText : sPalette.text
+                color: view.currentIndex === index ? windowTheme.highlightedText : windowTheme.text
                 elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
             }
@@ -64,7 +59,7 @@ ListView {
                 visible: false
                 icon.source: "qrc:/icon/close.svg"
                 buttonRadius: 15
-                backgroundDefaultColor: sPalette.base
+                backgroundDefaultColor: windowTheme.base
 
                 onClicked: {
                     console.info(index)

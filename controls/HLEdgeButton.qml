@@ -3,7 +3,7 @@ import QtQuick.Particles 2.0
 
 Item {
     id: edgeButton
-    property color triangleColor: "#2c94f7"
+    property color triangleColor: windowTheme.highlight
     property int triangleHeight: 4
     property int triangleWidth: 8
     property bool expand: true
@@ -47,7 +47,7 @@ Item {
             ctx.lineTo(0, height);
             context.closePath();
             ctx.strokeStyle = color;
-            ctx.fillStyle = "#ffffff";
+            ctx.fillStyle = windowTheme.base;
             ctx.fill();
             ctx.stroke();
         }

@@ -29,6 +29,7 @@ ApplicationWindow {
 
     ThemeWindow {
         id: windowTheme
+        onThemeChanged: {console.info("onThemeChanged");}
     }
 
     RectangularGlow {
@@ -45,7 +46,7 @@ ApplicationWindow {
         anchors.fill: parent
         anchors.margins: 10
         radius: 10
-        color: windowTheme.button
+        color: windowTheme.window
     }
 
     HLMenu {

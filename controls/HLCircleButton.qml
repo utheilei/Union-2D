@@ -3,7 +3,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Styles 1.4
 
 Button {
-    property string btnColor: sPalette.highlight
+    property color btnColor: windowTheme.highlight
     property int buttonPosition: 0
     property int buttonStatus: 0
     hoverEnabled: true

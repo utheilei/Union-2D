@@ -13,18 +13,18 @@ Old.Calendar {
     style: CalendarStyle {
         gridVisible: false
         background: HLRoundedRectangle {
-            color: "white"
+            color: windowTheme.base
             radius: 8
             implicitWidth: 300
             implicitHeight: 300
         }
         navigationBar: Rectangle{
             height: control.height/8;
-            color: "white";
+            color: windowTheme.base
             Text{
                 id:dateText;
                 anchors.centerIn: parent;
-                color: "black";
+                color: windowTheme.text
                 font{family: "Microsoft YaHei"; pixelSize:14}
                 text:{
                     var str=control.visibleYear+"年"+fillZero(control.visibleMonth+1)+"月";
@@ -43,7 +43,7 @@ Old.Calendar {
                     implicitWidth: 20
                     implicitHeight: 20
                     radius: 8
-                    color: previousMonth.down ? Qt.darker("#f0f0f0", 1.1) : (previousMonth.hovered ? "#f0f0f0" : "transparent")
+                    color: previousMonth.down ? Qt.darker(windowTheme.button, 1.1) : (previousMonth.hovered ? windowTheme.button : "transparent")
                 }
                 onClicked: {
                     control.showPreviousMonth();
@@ -61,7 +61,7 @@ Old.Calendar {
                     implicitWidth: 20
                     implicitHeight: 20
                     radius: 8
-                    color: previousYear.down ? Qt.darker("#f0f0f0", 1.1) : (previousYear.hovered ? "#f0f0f0" : "transparent")
+                    color: previousYear.down ? Qt.darker(windowTheme.button, 1.1) : (previousYear.hovered ? windowTheme.button : "transparent")
                 }
                 onClicked: {
                     control.showPreviousYear();
@@ -79,7 +79,7 @@ Old.Calendar {
                     implicitWidth: 20
                     implicitHeight: 20
                     radius: 8
-                    color: nextMonth.down ? Qt.darker("#f0f0f0", 1.1) : (nextMonth.hovered ? "#f0f0f0" : "transparent")
+                    color: nextMonth.down ? Qt.darker(windowTheme.button, 1.1) : (nextMonth.hovered ? windowTheme.button : "transparent")
                 }
                 onClicked: {
                     control.showNextMonth();
@@ -97,7 +97,7 @@ Old.Calendar {
                     implicitWidth: 20
                     implicitHeight: 20
                     radius: 8
-                    color: nextYear.down ? Qt.darker("#f0f0f0", 1.1) : (nextYear.hovered ? "#f0f0f0" : "transparent")
+                    color: nextYear.down ? Qt.darker(windowTheme.button, 1.1) : (nextYear.hovered ? windowTheme.button : "transparent")
                 }
                 onClicked: {
                     control.showNextYear();
@@ -108,7 +108,7 @@ Old.Calendar {
                 anchors.bottom: parent.bottom
                 height: 1
                 width: parent.width
-                color: "black"
+                color: windowTheme.buttonText
             }
             //长度不足2 补零
             function fillZero(value) {
@@ -116,31 +116,31 @@ Old.Calendar {
             }
         }
         dayDelegate: Rectangle {
-            color: "white"
+            color: windowTheme.base
             Rectangle {
                 anchors.centerIn: parent
                 antialiasing: true
                 width: Math.min(parent.width, parent.height) - 4
                 height: Math.min(parent.width, parent.height) - 4
-                color: styleData.selected ? "#03A9F4" : "transparent"
+                color: styleData.selected ? windowTheme.highlight : "transparent"
                 radius: height
-                border.color: "#03A9F4"
+                border.color: windowTheme.highlight
                 border.width: (control.equalDate(styleData.date, control.currentDate)) ? 1 : 0
             }
             Label {
                 text: styleData.date.getDate()
                 anchors.centerIn: parent
-                color: styleData.visibleMonth ? "black" : Qt.rgba(0,0,0,0.3)
+                color: styleData.visibleMonth ? windowTheme.text : Qt.rgba(0,0,0,0.3)
             }
         }
 
         dayOfWeekDelegate : Rectangle {
             height: control.height/8
-            color: "white"
+            color: windowTheme.base
             Label {
                 text: qmlHelper.dayOfWeek(styleData.index, control.dayOfWeekFormat)
                 anchors.centerIn: parent
-                color: "black"
+                color: windowTheme.text
                 font.bold: true
             }
             Rectangle {
@@ -148,7 +148,7 @@ Old.Calendar {
                 anchors.bottom: parent.bottom
                 height: 1
                 width: parent.width
-                color: "black"
+                color: windowTheme.buttonText
             }
         }
     }

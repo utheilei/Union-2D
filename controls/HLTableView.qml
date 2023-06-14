@@ -62,7 +62,7 @@ TableView {
         Text {
             anchors.fill: parent
             text: tableModel.headerData(styleData.column, Qt.Horizontal)
-            color: sPalette.windowText
+            color: windowTheme.windowText
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
@@ -73,7 +73,7 @@ TableView {
             anchors.top: hearRectangle.top
             height: parent.height
             width: 1
-            color: sPalette.dark
+            color: windowTheme.dark
             visible: styleData.column !== 0
         }
 
@@ -82,7 +82,7 @@ TableView {
             anchors.bottom: hearRectangle.bottom
             height: 1
             width: parent.width
-            color: sPalette.dark
+            color: windowTheme.dark
         }
 
         Rectangle{
@@ -90,7 +90,7 @@ TableView {
             anchors.top: hearRectangle.top
             height: 1
             width: parent.width
-            color: sPalette.dark
+            color: windowTheme.dark
         }
     }
 
@@ -98,11 +98,11 @@ TableView {
         width: view.getColumn(styleData.column).width
         height: 36
         radius: 10
-        color: styleData.selected ? sPalette.highlight : sPalette.button
+        color: styleData.selected ? windowTheme.highlight : windowTheme.button
 
         Rectangle {
             anchors.fill: parent
-            color: styleData.selected ? sPalette.highlight : sPalette.button
+            color: styleData.selected ? windowTheme.highlight : windowTheme.button
             visible: styleData.column !== 0 && styleData.column !== view.columnCount - 1
         }
 
@@ -111,7 +111,7 @@ TableView {
             anchors.top: parent.top
             width: parent.width/2
             height: parent.height
-            color: styleData.selected ? sPalette.highlight : sPalette.button
+            color: styleData.selected ? windowTheme.highlight : windowTheme.button
             visible: styleData.column === view.columnCount - 1
         }
 
@@ -120,7 +120,7 @@ TableView {
             anchors.top: parent.top
             width: parent.width/2
             height: parent.height
-            color: styleData.selected ? sPalette.highlight : sPalette.button
+            color: styleData.selected ? windowTheme.highlight : windowTheme.button
             visible: styleData.column === 0
         }
 
@@ -128,7 +128,7 @@ TableView {
             anchors.fill: parent
             text: tableModel.item(styleData.row, styleData.column)
             elide: Text.ElideMiddle
-            color: styleData.selected ? sPalette.highlightedText : sPalette.windowText
+            color: styleData.selected ? windowTheme.highlightedText : windowTheme.windowText
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }

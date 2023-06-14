@@ -24,7 +24,7 @@ Item {
         anchors.left: qmlLineEdit.right
         anchors.leftMargin: 10
         anchors.verticalCenter: parent.verticalCenter
-        backgroundDefaultColor: sPalette.highlight
+        backgroundDefaultColor: windowTheme.highlight
         icon.source: "qrc:/icon/passwordshow.svg"
 
         onClicked: {

@@ -4,7 +4,7 @@ import QtGraphicalEffects 1.12
 
 Menu {
     property bool layerEnabled: true
-    property color backgroundColor: "white"
+    property color backgroundColor: windowTheme.base
     id: menu
     topPadding: 4
     bottomPadding: 4
@@ -22,7 +22,7 @@ Menu {
         antialiasing: true
         radius: 8
         border.width: 1
-        border.color: "#cccccc"
+        border.color: windowTheme.frameBorder
         layer.enabled: layerEnabled
         layer.effect: DropShadow {
             horizontalOffset: 1

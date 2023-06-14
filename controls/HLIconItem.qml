@@ -4,19 +4,14 @@ Rectangle {
     id: item
     property alias icon: image.source
     property alias label: text.text
-    property color backgroudColor: "#d9d9d9"
-    property color hoverColor: "#cccccc"
+    property color backgroudColor: windowTheme.button
+    property color hoverColor: Qt.darker(backgroudColor, 1.1)
     signal itemClicked
 
     implicitWidth: Math.max(text.implicitWidth, image.implicitWidth) + 20
     implicitHeight: image.implicitHeight + text.implicitHeight + 25
     radius: 8
     color: backgroudColor
-
-    SystemPalette {
-        id: sPalette
-        colorGroup: SystemPalette.Active
-    }
 
     Image {
         id: image
@@ -30,7 +25,7 @@ Rectangle {
         anchors.top: image.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
-        color: sPalette.text
+        color: windowTheme.text
     }
 
     MouseArea {

@@ -30,7 +30,7 @@ Rectangle {
 
     Rectangle {
         id: leftRectangle
-        color: "white"
+        color: windowTheme.base
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.topMargin: 10
