@@ -1,6 +1,7 @@
 ﻿import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtGraphicalEffects 1.0
+import "../"
 
 TextField {
     id: field
@@ -33,7 +34,7 @@ TextField {
         anchors.rightMargin: 10
         anchors.verticalCenter: parent.verticalCenter
         visible: !(field.text === "")
-        icon.source: "qrc:/icon/close.svg"
+        icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
         icon.width: closeButton.width/2
         icon.height: closeButton.height/2
         buttonRadius: width/2

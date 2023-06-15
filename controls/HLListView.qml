@@ -1,6 +1,7 @@
 ﻿import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtQuick.Controls.Styles 1.4
+import "../"
 
 ListView {
     id: view
@@ -57,7 +58,7 @@ ListView {
                 anchors.rightMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
                 visible: false
-                icon.source: "qrc:/icon/close.svg"
+                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
                 buttonRadius: 15
                 backgroundDefaultColor: windowTheme.base
 

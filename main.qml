@@ -100,9 +100,11 @@ ApplicationWindow {
             id: leftButton
             x: framelessWindow.titleBar.x + 60
             y: 7.5
-            icon.source: "qrc:/icon/left.svg"
+            icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
             implicitWidth: 35
             implicitHeight: 35
+            icon.width: 16
+            icon.height: 16
             visible: myLoader.sourceComponent === mainPage
             onClicked: myLoader.sourceComponent = loginPage
         }

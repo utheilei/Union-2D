@@ -2,6 +2,7 @@
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.0
 import QtGraphicalEffects 1.12
+import "../"
 
 Popup {
     id: modalDialog
@@ -105,46 +106,16 @@ Popup {
                 color: windowTheme.text
             }
 
-            Button {
+            HLButton {
                 id: closeButton
                 implicitWidth: 49.5
                 implicitHeight: 49.5
-                hoverEnabled: true
                 Layout.alignment: Qt.AlignRight
                 Layout.rightMargin: 0
-                icon: {
-                    icon.source = "qrc:/icon/close.svg"
-                }
-
-                background: Rectangle {
-                    implicitWidth: 49.5
-                    implicitHeight: 49.5
-                    radius: 10
-                    color: modalDialog.btnColor
-                    border.width: 0
-
-                    Rectangle {
-                        implicitWidth: parent.width/2
-                        implicitHeight: parent.height
-                        anchors.left: parent.left
-                        color: modalDialog.btnColor
-                        border.width: 0
-                    }
-
-                    Rectangle {
-                        implicitWidth: parent.width
-                        implicitHeight: parent.height/2
-                        anchors.bottom: parent.bottom
-                        color: modalDialog.btnColor
-                        border.width: 0
-                    }
-                }
-
+                hoverColor: "#FB4C3E"
+                buttonPosition: 3
+                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
                 onClicked: modalDialog.close()
-
-                onHoveredChanged: {
-                    modalDialog.btnColor = closeButton.hovered ? "#FB4C3E" : "transparent"
-                }
             }
         }
     }

@@ -10,12 +10,34 @@ Button {
     hoverEnabled: true
     ToolTip.delay: 1000
     ToolTip.timeout: 5000
-    ToolTip.visible: hovered
+    ToolTip.visible: (ToolTip.text.length == 0) ? false : hovered
+
+    contentItem: Item {
+        Row {
+            id: rowLayout
+            anchors.centerIn: parent
+            spacing: 5
+            Image {
+                source: closeButton.icon.source
+                sourceSize: Qt.size(closeButton.icon.width, closeButton.icon.height)
+                anchors.verticalCenter: parent.verticalCenter
+            }
+            Text {
+                text: closeButton.text
+                font: closeButton.font
+                opacity: closeButton.enabled ? 1.0 : 0.3
+                color: windowTheme.text
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+        }
+    }
 
     background: Rectangle {
         implicitWidth: parent.width
         implicitHeight: parent.height
-        radius: 20
+        radius: 10
         color: closeButton.btnColor
         border.width: 0
 

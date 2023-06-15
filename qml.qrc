@@ -5,11 +5,6 @@
         <file>FramelessWindow/CustomMouseArea.qml</file>
         <file>FramelessWindow/FramelessWindow.qml</file>
         <file>FramelessWindow/HLTitleBar.qml</file>
-        <file>icon/close.svg</file>
-        <file>icon/max.svg</file>
-        <file>icon/menu.svg</file>
-        <file>icon/min.svg</file>
-        <file>icon/hide.svg</file>
         <file>Union-2D.ico</file>
         <file>controls/HLRoundedRectangle.qml</file>
         <file>controls/HLGridView.qml</file>
@@ -34,11 +29,27 @@
         <file>controls/HLTableView.qml</file>
         <file>controls/HLWaterProgress.qml</file>
         <file>QmlMainWidget.qml</file>
-        <file>icon/left.svg</file>
         <file>controls/HLDialog.qml</file>
-        <file>icon/leftarrow.svg</file>
-        <file>icon/right.svg</file>
-        <file>icon/rightarrow.svg</file>
         <file>controls/HLCalendar.qml</file>
+        <file>icon/dark/close.svg</file>
+        <file>icon/dark/hide.svg</file>
+        <file>icon/dark/left.svg</file>
+        <file>icon/dark/leftarrow.svg</file>
+        <file>icon/dark/max.svg</file>
+        <file>icon/dark/menu.svg</file>
+        <file>icon/dark/min.svg</file>
+        <file>icon/dark/right.svg</file>
+        <file>icon/dark/rightarrow.svg</file>
+        <file>icon/light/close.svg</file>
+        <file>icon/light/hide.svg</file>
+        <file>icon/light/left.svg</file>
+        <file>icon/light/leftarrow.svg</file>
+        <file>icon/light/max.svg</file>
+        <file>icon/light/menu.svg</file>
+        <file>icon/light/min.svg</file>
+        <file>icon/light/right.svg</file>
+        <file>icon/light/rightarrow.svg</file>
+        <file>icon/dark/correct.svg</file>
+        <file>icon/light/correct.svg</file>
     </qresource>
 </RCC>

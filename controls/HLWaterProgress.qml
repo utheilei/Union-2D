@@ -1,5 +1,6 @@
 import QtQuick 2.7
 import QtQuick.Particles 2.0
+import "../"
 
 Item {
     id: waterProgress
@@ -94,7 +95,7 @@ Item {
 
         ImageParticle {
             groups: ["stage1"]
-            source: "qrc:/icon/Blister.png"
+            source: (windowTheme.theme == 0) ? "qrc:/icon/light/Blister.svg" : "qrc:/icon/dark/Blister.svg"
             alpha: 0.65
             alphaVariation: 0.25
             colorVariation: 0.6

@@ -3,6 +3,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls 1.4 as Old
 import QtQuick.Controls.Styles 1.4
 import QtGraphicalEffects 1.0
+import "../"
 
 Old.Calendar {
     property date currentDate: new Date()
@@ -31,74 +32,58 @@ Old.Calendar {
                     return str;
                 }
             }
-            Button {
+            HLButton {
                 id:previousMonth;
                 anchors.right: dateText.left;
                 anchors.rightMargin: 20;
                 anchors.verticalCenter: dateText.verticalCenter;
+                width: 20
+                height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: "qrc:/icon/left.svg"
-                background: Rectangle {
-                    implicitWidth: 20
-                    implicitHeight: 20
-                    radius: 8
-                    color: previousMonth.down ? Qt.darker(windowTheme.button, 1.1) : (previousMonth.hovered ? windowTheme.button : "transparent")
-                }
+                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
                 onClicked: {
                     control.showPreviousMonth();
                 }
             }
-            Button {
+            HLButton {
                 id:previousYear;
                 anchors.right: previousMonth.left;
                 anchors.rightMargin: 10;
                 anchors.verticalCenter: dateText.verticalCenter;
+                width: 20
+                height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: "qrc:/icon/leftarrow.svg"
-                background: Rectangle {
-                    implicitWidth: 20
-                    implicitHeight: 20
-                    radius: 8
-                    color: previousYear.down ? Qt.darker(windowTheme.button, 1.1) : (previousYear.hovered ? windowTheme.button : "transparent")
-                }
+                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/leftarrow.svg" : "qrc:/icon/dark/leftarrow.svg"
                 onClicked: {
                     control.showPreviousYear();
                 }
             }
-            Button {
+            HLButton {
                 id:nextMonth;
                 anchors.left: dateText.right;
                 anchors.leftMargin: 20;
                 anchors.verticalCenter: dateText.verticalCenter;
+                width: 20
+                height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: "qrc:/icon/right.svg"
-                background: Rectangle {
-                    implicitWidth: 20
-                    implicitHeight: 20
-                    radius: 8
-                    color: nextMonth.down ? Qt.darker(windowTheme.button, 1.1) : (nextMonth.hovered ? windowTheme.button : "transparent")
-                }
+                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/right.svg" : "qrc:/icon/dark/right.svg"
                 onClicked: {
                     control.showNextMonth();
                 }
             }
-            Button {
+            HLButton {
                 id:nextYear;
                 anchors.left: nextMonth.right;
                 anchors.leftMargin: 10;
                 anchors.verticalCenter: dateText.verticalCenter;
+                width: 20
+                height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: "qrc:/icon/rightarrow.svg"
-                background: Rectangle {
-                    implicitWidth: 20
-                    implicitHeight: 20
-                    radius: 8
-                    color: nextYear.down ? Qt.darker(windowTheme.button, 1.1) : (nextYear.hovered ? windowTheme.button : "transparent")
-                }
+                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/rightarrow.svg" : "qrc:/icon/dark/rightarrow.svg"
                 onClicked: {
                     control.showNextYear();
                 }
@@ -130,7 +115,8 @@ Old.Calendar {
             Label {
                 text: styleData.date.getDate()
                 anchors.centerIn: parent
-                color: styleData.visibleMonth ? windowTheme.text : Qt.rgba(0,0,0,0.3)
+                color: windowTheme.text
+                opacity: styleData.visibleMonth ? 1 : 0.3
             }
         }
 

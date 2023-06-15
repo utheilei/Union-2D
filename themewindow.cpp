@@ -4,7 +4,6 @@
 
 ThemeWindow::ThemeWindow(QObject* parent) : QObject(parent)
 {
-
 }
 
 ThemeWindow::ThemeType ThemeWindow::theme()
@@ -18,61 +17,62 @@ void ThemeWindow::setTheme(const ThemeType &type)
     {
         qDebug() << "setTheme" << type;
         m_type = type;
-        switch (m_type) {
-        case ThemeType::LightTheme:
-            setButton(QColor("#E5E5E5"));
-            setWindow(QColor("#F8F8F8"));
-            setBase(QColor("#FFFFFF"));
-            setAlternatebase(QColor(0, 0, 0, 0.03*255));
-            setToolTipBase(QColor(255, 255, 255, 0.8*255));
-            setToolTipText(QColor("#000000"));
-            setPlaceholderText(QColor(85, 85, 85, 0.4*255));
-            setText(QColor("#414D68"));
-            setLight(QColor("#E6E6E6"));
-            setMidlight(QColor("#E5E5E5"));
-            setButtonText(QColor("#414D68"));
-            setDark(QColor("#E3E3E3"));
-            setMid(QColor("#E4E4E4"));
-            setShadow(QColor(0, 0, 0, 0.05*255));
-            setHighlight(QColor("#0081FF"));
-            setHighlightedText(QColor("#FFFFFF"));
-            setLink(QColor("#0082FA"));
-            setLinkVisited(QColor("#AD4579"));
-            setItemBackgroud(QColor(0, 0, 0, 0.03*255));
-            setTextTitle(QColor("#001A2E"));
-            setTextTips(QColor("#8AA1B4"));
-            setTextWaining(QColor("#FF5736"));
-            setFrameBorder(QColor(0, 0, 0, 0.05*255));
-            setFrameShadowBorder(QColor(0, 0, 0, 0.1*255));
-            break;
-        case ThemeType::DarkTheme:
-            setButton(QColor("#444444"));
-            setWindow(QColor("#252525"));
-            setBase(QColor("#282828"));
-            setAlternatebase(QColor(0, 0, 0, 0.05*255));
-            setToolTipBase(QColor(45, 45, 45, 0.8*255));
-            setToolTipText(QColor("#C0C6D4"));
-            setPlaceholderText(QColor(192, 198, 212, 0.4*255));
-            setText(QColor("#C0C6D4"));
-            setLight(QColor("#484848"));
-            setMidlight(QColor("#474747"));
-            setButtonText(QColor("#C0C6D4"));
-            setDark(QColor("#414141"));
-            setMid(QColor("#434343"));
-            setShadow(QColor(0, 0, 0, 0.05*255));
-            setHighlight(QColor("#0081FF"));
-            setHighlightedText(QColor("#F1F6FF"));
-            setLink(QColor("#0082FA"));
-            setLinkVisited(QColor("#AD4579"));
-            setItemBackgroud(QColor(255, 255, 255, 0.05*255));
-            setTextTitle(QColor("#C0C6D4"));
-            setTextTips(QColor("#6D7C88"));
-            setTextWaining(QColor("#9A2F2F"));
-            setFrameBorder(QColor(255, 255, 255, 0.1*255));
-            setFrameShadowBorder(QColor(0, 0, 0, 0.8*255));
-            break;
-        default:
-            break;
+        switch (m_type)
+        {
+            case ThemeType::LightTheme:
+                setButton(QColor("#E5E5E5"));
+                setWindow(QColor("#F8F8F8"));
+                setBase(QColor("#FFFFFF"));
+                setAlternatebase(QColor(0, 0, 0, 0.03 * 255));
+                setToolTipBase(QColor(255, 255, 255, 0.8 * 255));
+                setToolTipText(QColor("#000000"));
+                setPlaceholderText(QColor(85, 85, 85, 0.4 * 255));
+                setText(QColor("#414D68"));
+                setLight(QColor("#E6E6E6"));
+                setMidlight(QColor("#E5E5E5"));
+                setButtonText(QColor("#414D68"));
+                setDark(QColor("#E3E3E3"));
+                setMid(QColor("#E4E4E4"));
+                setShadow(QColor(0, 0, 0, 0.05 * 255));
+                setHighlight(QColor("#0081FF"));
+                setHighlightedText(QColor("#FFFFFF"));
+                setLink(QColor("#0082FA"));
+                setLinkVisited(QColor("#AD4579"));
+                setItemBackgroud(QColor(0, 0, 0, 0.03 * 255));
+                setTextTitle(QColor("#001A2E"));
+                setTextTips(QColor("#8AA1B4"));
+                setTextWaining(QColor("#FF5736"));
+                setFrameBorder(QColor(0, 0, 0, 0.05 * 255));
+                setFrameShadowBorder(QColor(0, 0, 0, 0.1 * 255));
+                break;
+            case ThemeType::DarkTheme:
+                setButton(QColor("#444444"));
+                setWindow(QColor("#252525"));
+                setBase(QColor("#282828"));
+                setAlternatebase(QColor(0, 0, 0, 0.05 * 255));
+                setToolTipBase(QColor(45, 45, 45, 0.8 * 255));
+                setToolTipText(QColor("#C0C6D4"));
+                setPlaceholderText(QColor(192, 198, 212, 0.4 * 255));
+                setText(QColor("#C0C6D4"));
+                setLight(QColor("#484848"));
+                setMidlight(QColor("#474747"));
+                setButtonText(QColor("#C0C6D4"));
+                setDark(QColor("#414141"));
+                setMid(QColor("#434343"));
+                setShadow(QColor(0, 0, 0, 0.05 * 255));
+                setHighlight(QColor("#0081FF"));
+                setHighlightedText(QColor("#F1F6FF"));
+                setLink(QColor("#0082FA"));
+                setLinkVisited(QColor("#AD4579"));
+                setItemBackgroud(QColor(255, 255, 255, 0.05 * 255));
+                setTextTitle(QColor("#C0C6D4"));
+                setTextTips(QColor("#6D7C88"));
+                setTextWaining(QColor("#9A2F2F"));
+                setFrameBorder(QColor(255, 255, 255, 0.1 * 255));
+                setFrameShadowBorder(QColor(0, 0, 0, 0.8 * 255));
+                break;
+            default:
+                break;
         }
         emit themeChanged();
     }

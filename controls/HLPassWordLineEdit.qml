@@ -1,5 +1,6 @@
 ﻿import QtQuick 2.7
 import QtQuick.Controls 2.4
+import "../"
 
 Item {
     id: name
@@ -25,11 +26,13 @@ Item {
         anchors.leftMargin: 10
         anchors.verticalCenter: parent.verticalCenter
         backgroundDefaultColor: windowTheme.highlight
-        icon.source: "qrc:/icon/passwordshow.svg"
+        icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg"
 
         onClicked: {
             qmlLineEdit.isPassword = !qmlLineEdit.isPassword
-            icon.source = qmlLineEdit.isPassword ? "qrc:/icon/passwordshow.svg" : "qrc:/icon/passwordhide.svg"
+            icon.source = qmlLineEdit.isPassword ?
+                        ((windowTheme.theme == 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg")
+                      : ((windowTheme.theme == 0) ? "qrc:/icon/light/passwordhide.svg" : "qrc:/icon/dark/passwordhide.svg")
         }
     }
 

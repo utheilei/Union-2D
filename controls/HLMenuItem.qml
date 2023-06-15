@@ -16,6 +16,30 @@ MenuItem {
         elide: Text.ElideRight
     }
 
+    indicator: Item {
+        implicitWidth: 30
+        implicitHeight: 30
+        visible: checkable
+        Image {
+            anchors.centerIn: parent
+            source: (windowTheme.theme == 0) ? "qrc:/icon/light/correct.svg" : "qrc:/icon/dark/correct.svg"
+            sourceSize: Qt.size(18, 18)
+            visible: checked
+        }
+    }
+
+    arrow: Item {
+        x: parent.width - width
+        implicitWidth: 30
+        implicitHeight: 30
+        visible: menuItem.subMenu
+        Image {
+            anchors.centerIn: parent
+            source: (windowTheme.theme == 0) ? "qrc:/icon/light/right.svg" : "qrc:/icon/dark/right.svg"
+            sourceSize: Qt.size(16, 16)
+        }
+    }
+
     background: Rectangle {
         anchors.fill: parent
         radius: 4
