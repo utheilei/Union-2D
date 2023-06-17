@@ -29,7 +29,7 @@ ApplicationWindow {
 
     ThemeWindow {
         id: windowTheme
-        onThemeChanged: {console.info("onThemeChanged");}
+        onThemeChanged: {console.info("onThemeChanged")}
     }
 
     RectangularGlow {

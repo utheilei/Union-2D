@@ -88,8 +88,54 @@ Rectangle {
             anchors.fill: parent
             color: "green"
             visible: true
+            radius: 8
             HLCalendar {
                anchors.centerIn: parent
+            }
+
+            HLCircleButton {
+                x: 10
+                y: 10
+            }
+
+            HLComboBox {}
+
+            HLLineEdit {
+                x: 60
+                y: 60
+                onReturnPressed: {
+                    showAlertMessage("HLLineEdit", 3000)
+                }
+            }
+
+            HLPassWordLineEdit {
+                x: 60
+                y: 100
+                onReturnPressed: {
+                    showAlertMessage("HLPassWordLineEdit", 3000)
+                }
+            }
+
+            HLWaterProgress {
+                id: waterProgress
+                x: 10
+                y: 200
+                width: 120
+                height: 120
+            }
+
+            Slider {
+                from: 0
+                to: 100
+                orientation: Qt.Horizontal
+                onValueChanged: {
+                    waterProgress.setValue(value)
+                }
+            }
+
+            Dial {
+                minimumValue: 0
+                maximumValue: 100
             }
         }
 
@@ -98,12 +144,14 @@ Rectangle {
             anchors.fill: parent
             color: "red"
             visible: false
+            radius: 8
         }
 
         Rectangle {
             id: displayWidget
             anchors.fill: parent
             color: "yellow"
+            radius: 8
             visible: false
         }
 
@@ -111,6 +159,7 @@ Rectangle {
             id: defaultAppWidget
             anchors.fill: parent
             color: "blue"
+            radius: 8
             visible: false
         }
 
@@ -118,6 +167,7 @@ Rectangle {
             id: netWorkWidget
             anchors.fill: parent
             color: "darkGreen"
+            radius: 8
             visible: false
         }
 

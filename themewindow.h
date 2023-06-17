@@ -39,6 +39,7 @@ public:
     Q_PROPERTY(QColor textWaining READ textWaining WRITE setTextWaining NOTIFY textWainingChanged)
     Q_PROPERTY(QColor frameBorder READ frameBorder WRITE setFrameBorder NOTIFY frameBorderChanged)
     Q_PROPERTY(QColor frameShadowBorder READ frameShadowBorder WRITE setFrameShadowBorder NOTIFY frameShadowBorderChanged)
+    Q_PROPERTY(QColor warningColor READ warningColor WRITE setWarningColor NOTIFY warningColorChanged)
     explicit ThemeWindow(QObject* parent = nullptr);
 
     ThemeType theme();
@@ -70,6 +71,7 @@ public:
     void setTextWaining(const QColor &color);
     void setFrameBorder(const QColor &color);
     void setFrameShadowBorder(const QColor &color);
+    void setWarningColor(const QColor &color);
 
     QColor window();
     QColor base();
@@ -94,6 +96,8 @@ public:
     QColor textWaining();
     QColor frameBorder();
     QColor frameShadowBorder();
+
+    QColor warningColor();
 
 signals:
     void themeChanged();
@@ -121,33 +125,35 @@ signals:
     void textWainingChanged();
     void frameBorderChanged();
     void frameShadowBorderChanged();
+    void warningColorChanged();
 
 private:
     ThemeType m_type = ThemeType::LightTheme;
     QColor m_buttonColor = QColor("#E5E5E5");
     QColor m_window = QColor("#F8F8F8");
     QColor m_base = QColor("#FFFFFF");
-    QColor m_alternatebase = QColor(0, 0, 0, 0.03*255);
-    QColor m_toolTipBase = QColor(255, 255, 255, 0.8*255);
+    QColor m_alternatebase = QColor(0, 0, 0, 0.03 * 255);
+    QColor m_toolTipBase = QColor(255, 255, 255, 0.8 * 255);
     QColor m_toolTipText = QColor("#000000");
-    QColor m_placeholderText = QColor(85, 85, 85, 0.4*255);
+    QColor m_placeholderText = QColor(85, 85, 85, 0.4 * 255);
     QColor m_text = QColor("#414D68");
     QColor m_light = QColor("#E6E6E6");
     QColor m_midlight = QColor("#E5E5E5");
     QColor m_buttonText = QColor("#414D68");
     QColor m_dark = QColor("#E3E3E3");
     QColor m_mid = QColor("#E4E4E4");
-    QColor m_shadow = QColor(0, 0, 0, 0.05*255);
+    QColor m_shadow = QColor(0, 0, 0, 0.05 * 255);
     QColor m_highlight = QColor("#0081FF");
     QColor m_highlightedText = QColor("#FFFFFF");
     QColor m_link = QColor("#0082FA");
     QColor m_linkVisited = QColor("#AD4579");
-    QColor m_itemBackgroud = QColor(0, 0, 0, 0.03*255);
+    QColor m_itemBackgroud = QColor(0, 0, 0, 0.03 * 255);
     QColor m_textTitle = QColor("#001A2E");
     QColor m_textTips = QColor("#8AA1B4");
     QColor m_textWaining = QColor("#FF5736");
-    QColor m_frameBorder = QColor(0, 0, 0, 0.05*255);
-    QColor m_frameShadowBorder = QColor(0, 0, 0, 0.1*255);
+    QColor m_frameBorder = QColor(0, 0, 0, 0.05 * 255);
+    QColor m_frameShadowBorder = QColor(0, 0, 0, 0.1 * 255);
+    QColor m_warningColor = QColor(240, 58, 50, 0.4 * 255);
 };
 
 #endif // THEMEWINDOW_H

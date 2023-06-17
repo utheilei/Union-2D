@@ -8,6 +8,8 @@ Button {
     property int buttonStatus: 0
     hoverEnabled: true
     antialiasing: true
+    width: 40
+    height: 40
 
     signal buttonPressed()
 
@@ -26,7 +28,7 @@ Button {
                 ctx.save();
                 ctx.beginPath();
                 ctx.ellipse(radius/4, radius/4, radius/2, radius/2);
-                ctx.fillStyle = sPalette.dark
+                ctx.fillStyle = windowTheme.dark
                 ctx.fill();
                 ctx.stroke();
             }

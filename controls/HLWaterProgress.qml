@@ -88,52 +88,10 @@ Item {
         color: "white"
     }
 
-    ParticleSystem {
-        id: particles
-        anchors.fill: parent
-        running: value >= 30
-
-        ImageParticle {
-            groups: ["stage1"]
-            source: (windowTheme.theme == 0) ? "qrc:/icon/light/Blister.svg" : "qrc:/icon/dark/Blister.svg"
-            alpha: 0.65
-            alphaVariation: 0.25
-            colorVariation: 0.6
-        }
-
-        Emitter {
-            id: burstEmitter
-            x: Math.min(parent.width, parent.height)/2
-            y: Math.min(parent.width, parent.height) - 2
-            group: "stage1"
-            emitRate: 3; lifeSpan: 1200;
-            size: 14;
-            velocity: AngleDirection {
-                angle: -90
-                angleVariation: 60
-                magnitude: 40
-            }
-            acceleration: AngleDirection {
-                angle: -90
-                angleVariation: 60
-                magnitude: 100
-            }
-        }
-
-        Age {
-            id: age
-            x: 0;
-            y: parent.height- parent.height/100 * value;
-            width: parent.width
-            height: 2
-        }
-    }
-
     function setValue(barValue) {
         if (value !== barValue) {
             value = barValue
             mycanvas.requestPaint()
         }
-        particles.visible = value < 30 ? false : true
     }
 }

@@ -299,6 +299,15 @@ void ThemeWindow::ThemeWindow::setFrameShadowBorder(const QColor &color)
     }
 }
 
+void ThemeWindow::setWarningColor(const QColor &color)
+{
+    if (m_warningColor != color)
+    {
+        m_warningColor = color;
+        emit warningColorChanged();
+    }
+}
+
 QColor ThemeWindow::window()
 {
     return m_window;
@@ -412,5 +421,10 @@ QColor ThemeWindow::frameBorder()
 QColor ThemeWindow::frameShadowBorder()
 {
     return m_frameShadowBorder;
+}
+
+QColor ThemeWindow::warningColor()
+{
+    return m_warningColor;
 }
 

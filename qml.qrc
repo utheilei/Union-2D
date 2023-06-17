@@ -51,5 +51,11 @@
         <file>icon/light/rightarrow.svg</file>
         <file>icon/dark/correct.svg</file>
         <file>icon/light/correct.svg</file>
+        <file>icon/dark/passwordhide.svg</file>
+        <file>icon/dark/passwordshow.svg</file>
+        <file>icon/light/passwordhide.svg</file>
+        <file>icon/light/passwordshow.svg</file>
+        <file>icon/dark/Blister.png</file>
+        <file>icon/light/Blister.png</file>
     </qresource>
 </RCC>

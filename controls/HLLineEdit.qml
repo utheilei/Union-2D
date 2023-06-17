@@ -16,9 +16,10 @@ TextField {
     echoMode : isPassword ? TextInput.Password : TextInput.Normal
     clip:true
     opacity:field.enabled ? 1 : 0.5
+    color: windowTheme.text
 
     background: Rectangle {
-        color: control.visible ? Qt.rgba(0.945, 0.224, 0.196, 0.15) : windowTheme.button
+        color: control.visible ? windowTheme.warningColor : windowTheme.button
         radius: 10
         border.color: field.activeFocus ? windowTheme.highlight : windowTheme.button
         border.width: field.activeFocus? 1.5 : 0
@@ -50,11 +51,11 @@ TextField {
         id: control
         visible: false
         timeout: 5000
-        x: field.x
-        y: field.y + field.height + 2
+        x: 0
+        y: field.height + 2
         parent: field
-        topPadding: 0
-        bottomPadding: 0
+        topPadding: 4
+        bottomPadding: 4
 
         contentItem: Text {
             text: control.text

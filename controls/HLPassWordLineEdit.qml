@@ -6,6 +6,8 @@ Item {
     id: name
     signal returnPressed
     property alias text: qmlLineEdit.text
+    width: 200
+    height:  38
 
     HLLineEdit {
         id: qmlLineEdit
@@ -26,13 +28,13 @@ Item {
         anchors.leftMargin: 10
         anchors.verticalCenter: parent.verticalCenter
         backgroundDefaultColor: windowTheme.highlight
-        icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg"
+        icon.source: (windowTheme.theme === 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg"
 
         onClicked: {
             qmlLineEdit.isPassword = !qmlLineEdit.isPassword
             icon.source = qmlLineEdit.isPassword ?
-                        ((windowTheme.theme == 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg")
-                      : ((windowTheme.theme == 0) ? "qrc:/icon/light/passwordhide.svg" : "qrc:/icon/dark/passwordhide.svg")
+                        ((windowTheme.theme === 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg")
+                      : ((windowTheme.theme === 0) ? "qrc:/icon/light/passwordhide.svg" : "qrc:/icon/dark/passwordhide.svg")
         }
     }
 

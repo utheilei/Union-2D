@@ -37,4 +37,12 @@ ScrollView {
         anchors.fill: parent
         color: "transparent"
     }
+
+    function updateItem() {
+        for(var i = 0; i< repeater.count; i++) {
+            console.info(windowTheme.button, windowTheme.theme)
+            repeater.itemAt(i).backgroudColor = windowTheme.button
+            repeater.itemAt(i).hoverColor = Qt.darker(windowTheme.button, 1.1)
+        }
+    }
 }

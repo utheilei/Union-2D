@@ -85,4 +85,12 @@ Button {
     onHoveredChanged: {
         btnColor = closeButton.hovered ? hoverColor : "transparent"
     }
+
+    onPressed: {
+        btnColor = Qt.darker(windowTheme.button, 1.1)
+    }
+
+    onReleased: {
+        btnColor = closeButton.hovered ? hoverColor : "transparent"
+    }
 }
