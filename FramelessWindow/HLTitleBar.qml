@@ -33,6 +33,7 @@ ToolBar {
             parentObj.x=parentObj.x+(mouse.x-xmouse);
             parentObj.y=parentObj.y+(mouse.y-ymouse);
         }
+        onDoubleClicked: showWindow()
     }
 
     RowLayout {

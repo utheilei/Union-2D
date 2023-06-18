@@ -150,6 +150,9 @@ QString QmlHelper::dayOfWeek(int index, int format)
 
 void QmlHelper::setTranslator(int language)
 {
+    if (m_language == language)
+        return;
+
     QTranslator translator;
     if (QLocale::Language::Chinese == language) {
         translator.load(qApp->applicationDirPath() + "/translation/language_zh_CN.qm");

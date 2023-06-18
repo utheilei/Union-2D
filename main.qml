@@ -23,13 +23,8 @@ ApplicationWindow {
     x: Screen.width/2 - width/2
     y: Screen.height/2 - height/2
 
-    SystemPalette {
-        id: windowPalette
-    }
-
     ThemeWindow {
         id: windowTheme
-        onThemeChanged: {console.info("onThemeChanged")}
     }
 
     RectangularGlow {
@@ -117,7 +112,8 @@ ApplicationWindow {
             id: leftButton
             x: framelessWindow.titleBar.x + 60
             y: 7.5
-            icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
+            z: 10
+            icon.source: (windowTheme.theme === 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
             implicitWidth: 35
             implicitHeight: 35
             icon.width: 16

@@ -51,8 +51,8 @@ Rectangle {
             bottomMargin: 10
             onHoverChanged: {edgeButton.visible = isHovered}
         }
-        NumberAnimation on width { id: animation; to: 0; duration: 1000; running: false}
-        NumberAnimation on width { id: animation1; to: parent.width/5; duration: 1000; running: false}
+        NumberAnimation on width { id: animation; to: 0; duration: 500; running: false}
+        NumberAnimation on width { id: animation1; to: parent.width/5; duration: 500; running: false}
     }
 
     HLEdgeButton {
@@ -68,6 +68,14 @@ Rectangle {
             } else {
                 animation.start()
             }
+        }
+
+        Component.onCompleted: {
+            windowTheme.themeChanged.connect(onThemeChanged)
+        }
+
+        function onThemeChanged() {
+            setExpand(edgeButton.expand)
         }
     }
 

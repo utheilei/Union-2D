@@ -22,6 +22,9 @@ public:
 
 signals:
     void languageChanged();
+
+private:
+    QLocale::Language m_language = QLocale::Chinese;
 };
 
 #endif // QMLHELPER_H

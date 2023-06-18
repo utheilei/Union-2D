@@ -10,7 +10,7 @@ MenuItem {
         rightPadding: menuItem.arrow.width
         text: menuItem.text
         font: menuItem.font
-        color: windowTheme.text
+        color: menuItem.highlighted ? windowTheme.highlightedText : windowTheme.text
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
