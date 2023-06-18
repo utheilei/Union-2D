@@ -1,6 +1,8 @@
 #include "qmlhelper.h"
 
 #include <QDebug>
+#include <QGuiApplication>
+#include <QTranslator>
 
 QmlHelper::QmlHelper(QObject* parent) : QObject(parent)
 {
@@ -143,5 +145,17 @@ QString QmlHelper::dayOfWeek(int index, int format)
             break;
     }
 
-    return week;
+        return week;
+}
+
+void QmlHelper::setTranslator(int language)
+{
+    QTranslator translator;
+    if (QLocale::Language::Chinese == language) {
+        translator.load(qApp->applicationDirPath() + "/translation/language_zh_CN.qm");
+    } else if (QLocale::Language::English == language) {
+        translator.load(qApp->applicationDirPath() + "/translation/language_en.qm");
+    }
+    qApp->installTranslator(&translator);
+    emit languageChanged();
 }

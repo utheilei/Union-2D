@@ -10,6 +10,7 @@ ComboBox {
     delegate: ItemDelegate {
         width: control.width
         background: Rectangle {
+            height: 30
             opacity: enabled ? 1 : 0.3
             color: highlighted ? windowTheme.highlight : "transparent"
         }

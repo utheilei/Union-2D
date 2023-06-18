@@ -17,6 +17,11 @@ public:
     Q_INVOKABLE QJsonArray listModel();
 
     Q_INVOKABLE QString dayOfWeek(int index, int format);
+
+    Q_INVOKABLE void setTranslator(int language);
+
+signals:
+    void languageChanged();
 };
 
 #endif // QMLHELPER_H

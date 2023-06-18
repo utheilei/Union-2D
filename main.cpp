@@ -25,7 +25,12 @@ int main(int argc, char* argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+
+    QObject::connect(&qmlHelper, &QmlHelper::languageChanged,
+                     &engine, &QQmlApplicationEngine::retranslate);
+
     engine.load(url);
+    qmlHelper.setTranslator(QLocale::Chinese);
 
     return app.exec();
 }

@@ -68,6 +68,23 @@ ApplicationWindow {
                 onTriggered: {checked = true;lightItem.checked = false; windowTheme.theme = 1}
             }
         }
+        HLMenu {
+            title: qsTr("translation")
+            HLMenuItem {
+                id: englishItem
+                text: "English"
+                checkable: true
+                checked: true
+                onTriggered: {checked = true;chineseItem.checked = false; qmlHelper.setTranslator(31)}
+            }
+            HLMenuItem {
+                id: chineseItem
+                text: "Chinese"
+                checkable: true
+                checked: false
+                onTriggered: {checked = true;englishItem.checked = false; qmlHelper.setTranslator(25)}
+            }
+        }
         HLMenuItem {
             text: qsTr("about")
             onTriggered: aboutDialog.open()

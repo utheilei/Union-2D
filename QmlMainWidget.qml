@@ -58,7 +58,7 @@ Rectangle {
     HLEdgeButton {
         id: edgeButton
         width: 10
-        height: 60
+        height: 80
         visible: false
         anchors.left: leftRectangle.right
         anchors.verticalCenter: leftRectangle.verticalCenter
@@ -131,11 +131,6 @@ Rectangle {
                 onValueChanged: {
                     waterProgress.setValue(value)
                 }
-            }
-
-            Dial {
-                minimumValue: 0
-                maximumValue: 100
             }
         }
 
