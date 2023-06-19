@@ -149,6 +149,7 @@ Popup {
             color: windowTheme.text
             Layout.maximumWidth: modalDialog.width - 10
             horizontalAlignment: Qt.AlignHCenter
+            onLinkActivated: {Qt.openUrlExternally(link)}
         }
 
         Row {

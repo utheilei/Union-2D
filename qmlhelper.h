@@ -20,6 +20,8 @@ public:
 
     Q_INVOKABLE void setTranslator(int language);
 
+    Q_INVOKABLE QString colorName(const QColor &color);
+
 signals:
     void languageChanged();
 

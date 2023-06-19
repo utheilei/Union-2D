@@ -1,5 +1,6 @@
 #include "qmlhelper.h"
 
+#include <QColor>
 #include <QDebug>
 #include <QGuiApplication>
 #include <QTranslator>
@@ -165,4 +166,9 @@ void QmlHelper::setTranslator(int language)
     }
     qApp->installTranslator(&translator);
     emit languageChanged();
+}
+
+QString QmlHelper::colorName(const QColor &color)
+{
+    return color.name();
 }

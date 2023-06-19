@@ -97,12 +97,15 @@ ApplicationWindow {
         Component.onCompleted: {
             initUi()
             qmlHelper.languageChanged.connect(initUi)
+            var test = "I am %1 years old."
+            console.log(test.arg(10))
         }
         function initUi() {
             setIcon(appIcon)
             setTitle(qsTr("about"))
             setContentTitle(qsTr("qml实现统一的通用控件库"))
-            setMessage(qsTr("https://gitee.com/uthelei/Union-2D"))
+            var message = "<a style='color: %1;' href=\"https://gitee.com/uthelei/Union-2D\">https://gitee.com/uthelei/Union-2D";
+            setMessage(message.arg(qmlHelper.colorName(windowTheme.highlight)))
         }
     }
 
