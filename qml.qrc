@@ -57,5 +57,8 @@
         <file>icon/light/passwordshow.svg</file>
         <file>icon/dark/Blister.png</file>
         <file>icon/light/Blister.png</file>
+        <file>controls/HLFloatingMessage.qml</file>
+        <file>icon/error.svg</file>
+        <file>icon/yes.svg</file>
     </qresource>
 </RCC>

@@ -50,14 +50,14 @@ ApplicationWindow {
             title: qsTr("theme")
             HLMenuItem {
                 id: lightItem
-                text: "light"
+                text: qsTr("light")
                 checkable: true
                 checked: true
                 onTriggered: {checked = true;darkItem.checked = false; windowTheme.theme = 0}
             }
             HLMenuItem {
                 id: darkItem
-                text: "dark"
+                text: qsTr("dark")
                 checkable: true
                 checked: false
                 onTriggered: {checked = true;lightItem.checked = false; windowTheme.theme = 1}
@@ -66,18 +66,18 @@ ApplicationWindow {
         HLMenu {
             title: qsTr("translation")
             HLMenuItem {
-                id: englishItem
-                text: "English"
+                id: chineseItem
+                text: qsTr("Chinese")
                 checkable: true
                 checked: true
-                onTriggered: {checked = true;chineseItem.checked = false; qmlHelper.setTranslator(31)}
+                onTriggered: {checked = true;englishItem.checked = false; qmlHelper.setTranslator(25)}
             }
             HLMenuItem {
-                id: chineseItem
-                text: "Chinese"
+                id: englishItem
+                text: qsTr("English")
                 checkable: true
                 checked: false
-                onTriggered: {checked = true;englishItem.checked = false; qmlHelper.setTranslator(25)}
+                onTriggered: {checked = true;chineseItem.checked = false; qmlHelper.setTranslator(31)}
             }
         }
         HLMenuItem {
@@ -95,11 +95,22 @@ ApplicationWindow {
     HLDialog {
         id: aboutDialog
         Component.onCompleted: {
+            initUi()
+            qmlHelper.languageChanged.connect(initUi)
+        }
+        function initUi() {
             setIcon(appIcon)
             setTitle(qsTr("about"))
             setContentTitle(qsTr("qml实现统一的通用控件库"))
             setMessage(qsTr("https://gitee.com/uthelei/Union-2D"))
         }
+    }
+
+    HLFloatingMessage {
+        id: floatingMessage
+        visible: false
+        y: (window.height - floatingMessage.height) - 30
+        maxWidth: window.width/3*2
     }
 
     FramelessWindow {
@@ -118,8 +129,8 @@ ApplicationWindow {
             implicitHeight: 35
             icon.width: 16
             icon.height: 16
-            visible: myLoader.sourceComponent === mainPage
-            onClicked: myLoader.sourceComponent = loginPage
+            visible: (myLoader.sourceComponent === mainPage)
+            onClicked: {myLoader.sourceComponent = loginPage}
         }
 
         Loader {
@@ -164,5 +175,15 @@ ApplicationWindow {
         layer.effect: OpacityMask {
             maskSource: rect
         }
+    }
+
+    function showFloatingMessage(isOk, text, time) {
+        if (floatingMessage.visible)
+            return
+
+        floatingMessage.iconSource = isOk ? "qrc:/icon/yes.svg" : "qrc:/icon/error.svg"
+        floatingMessage.text = text
+        floatingMessage.timeout = time
+        floatingMessage.visible = true
     }
 }

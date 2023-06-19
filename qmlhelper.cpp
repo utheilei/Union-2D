@@ -145,7 +145,7 @@ QString QmlHelper::dayOfWeek(int index, int format)
             break;
     }
 
-        return week;
+    return week;
 }
 
 void QmlHelper::setTranslator(int language)
@@ -153,10 +153,14 @@ void QmlHelper::setTranslator(int language)
     if (m_language == language)
         return;
 
+    m_language = QLocale::Language(language);
     QTranslator translator;
-    if (QLocale::Language::Chinese == language) {
+    if (QLocale::Language::Chinese == language)
+    {
         translator.load(qApp->applicationDirPath() + "/translation/language_zh_CN.qm");
-    } else if (QLocale::Language::English == language) {
+    }
+    else if (QLocale::Language::English == language)
+    {
         translator.load(qApp->applicationDirPath() + "/translation/language_en.qm");
     }
     qApp->installTranslator(&translator);

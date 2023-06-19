@@ -25,27 +25,27 @@
 <context>
     <name>HLTitleBar</name>
     <message>
-        <location filename="FramelessWindow/HLTitleBar.qml" line="56"/>
+        <location filename="FramelessWindow/HLTitleBar.qml" line="57"/>
         <source>菜单</source>
         <translation>菜单</translation>
     </message>
     <message>
-        <location filename="FramelessWindow/HLTitleBar.qml" line="65"/>
+        <location filename="FramelessWindow/HLTitleBar.qml" line="66"/>
         <source>最小化</source>
         <translation>最小化</translation>
     </message>
     <message>
-        <location filename="FramelessWindow/HLTitleBar.qml" line="75"/>
+        <location filename="FramelessWindow/HLTitleBar.qml" line="76"/>
         <source>恢复</source>
         <translation>恢复</translation>
     </message>
     <message>
-        <location filename="FramelessWindow/HLTitleBar.qml" line="75"/>
+        <location filename="FramelessWindow/HLTitleBar.qml" line="76"/>
         <source>最大化</source>
         <translation>最大化</translation>
     </message>
     <message>
-        <location filename="FramelessWindow/HLTitleBar.qml" line="84"/>
+        <location filename="FramelessWindow/HLTitleBar.qml" line="85"/>
         <source>关闭</source>
         <translation>关闭</translation>
     </message>
@@ -58,28 +58,53 @@
         <translation>Union-2D</translation>
     </message>
     <message>
-        <location filename="main.qml" line="55"/>
+        <location filename="main.qml" line="50"/>
         <source>theme</source>
         <translation>主题</translation>
     </message>
     <message>
-        <location filename="main.qml" line="72"/>
-        <location filename="main.qml" line="87"/>
+        <location filename="main.qml" line="53"/>
+        <source>light</source>
+        <translation>亮色</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="60"/>
+        <source>dark</source>
+        <translation>深色</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="67"/>
+        <source>translation</source>
+        <translation>语言</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="70"/>
+        <source>English</source>
+        <translation>英文</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="77"/>
+        <source>Chinese</source>
+        <translation>中文</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="84"/>
+        <location filename="main.qml" line="99"/>
         <source>about</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="main.qml" line="78"/>
+        <location filename="main.qml" line="90"/>
         <source>exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="main.qml" line="88"/>
+        <location filename="main.qml" line="100"/>
         <source>qml实现统一的通用控件库</source>
         <translation>QML实现统一的通用控件库</translation>
     </message>
     <message>
-        <location filename="main.qml" line="89"/>
+        <location filename="main.qml" line="101"/>
         <source>https://gitee.com/uthelei/Union-2D</source>
         <translation>https://gitee.com/uthelei/Union-2D</translation>
     </message>
@@ -89,7 +114,7 @@
     <message>
         <location filename="controls/settings.qml" line="78"/>
         <source>🗙</source>
-        <translation type="unfinished"></translation>
+        <translation>🗙</translation>
     </message>
 </context>
 </TS>

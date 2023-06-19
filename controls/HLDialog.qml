@@ -21,7 +21,7 @@ Popup {
     x: parent.width/2-width/2
     y: parent.height/2-height/2
     width: 420
-    height: 280
+    height: titleBar.height + contentLayout.height
     padding: 0
     margins: 0
     clip: true
@@ -104,6 +104,7 @@ Popup {
                 font.pixelSize: 15
                 font.family: "Microsoft Yahei"
                 color: windowTheme.text
+                horizontalAlignment: Qt.AlignCenter
             }
 
             HLButton {
@@ -121,34 +122,39 @@ Popup {
     }
 
     ColumnLayout {
+        id: contentLayout
         anchors.top: titleBar.bottom
-        anchors.margins: 0
-        anchors.topMargin: 10
-        spacing: 10
+        anchors.margins: 10
+        spacing: 20
         width: parent.width
-        height: parent.height - titleBar.height
+        height: titleLabel.contentHeight + messageLabel.contentHeight + 80 + 40
 
         Label {
             id: titleLabel
-            Layout.alignment: Qt.AlignCenter
+            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
             font.pixelSize: 22
             font.italic: true
             wrapMode : Text.WordWrap
             visible: false
             color: windowTheme.text
+            Layout.maximumWidth: modalDialog.width - 10
+            horizontalAlignment: Qt.AlignHCenter
         }
 
         Label {
             id: messageLabel
-            Layout.alignment: Qt.AlignCenter
+            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
             wrapMode : Text.WordWrap
             visible: false
             color: windowTheme.text
+            Layout.maximumWidth: modalDialog.width - 10
+            horizontalAlignment: Qt.AlignHCenter
         }
 
         Row {
-            Layout.alignment: Qt.AlignCenter
+            Layout.alignment: Qt.AlignBottom | Qt.AlignHCenter
             spacing: 10
+            Layout.fillHeight: true
             Repeater {
                 model: myModel
                 Button {
