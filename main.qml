@@ -104,7 +104,7 @@ ApplicationWindow {
             setIcon(appIcon)
             setTitle(qsTr("about"))
             setContentTitle(qsTr("qml实现统一的通用控件库"))
-            var message = "<a style='color: %1;' href=\"https://gitee.com/uthelei/Union-2D\">https://gitee.com/uthelei/Union-2D";
+            var message = "<a style='text-decoration:none;color: %1;' href=\"https://gitee.com/uthelei/Union-2D\">https://gitee.com/uthelei/Union-2D";
             setMessage(message.arg(qmlHelper.colorName(windowTheme.highlight)))
         }
     }

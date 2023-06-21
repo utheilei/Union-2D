@@ -60,5 +60,8 @@
         <file>controls/HLFloatingMessage.qml</file>
         <file>icon/error.svg</file>
         <file>icon/yes.svg</file>
+        <file>controls/HLSearchLineEdit.qml</file>
+        <file>icon/dark/search.svg</file>
+        <file>icon/light/search.svg</file>
     </qresource>
 </RCC>

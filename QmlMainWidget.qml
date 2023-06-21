@@ -140,6 +140,14 @@ Rectangle {
                     waterProgress.setValue(value)
                 }
             }
+
+            HLSearchLineEdit {
+                x: 280
+                y: 100
+                onReturnPressed: {
+                    showAlertMessage("HLSearchLineEdit", 3000)
+                }
+            }
         }
 
         Rectangle {

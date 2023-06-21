@@ -6,6 +6,7 @@ import "../"
 TextField {
     id: field
     property bool isPassword: false
+    property QtObject alertControl: control
     signal returnPressed
 
     width: 200

@@ -144,11 +144,11 @@ Popup {
         Label {
             id: messageLabel
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-            wrapMode : Text.WordWrap
             visible: false
             color: windowTheme.text
             Layout.maximumWidth: modalDialog.width - 10
             horizontalAlignment: Qt.AlignHCenter
+            textFormat: Text.RichText
             onLinkActivated: {Qt.openUrlExternally(link)}
         }
 
