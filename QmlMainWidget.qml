@@ -30,7 +30,7 @@ Rectangle {
 
     Rectangle {
         id: leftRectangle
-        color: windowTheme.base
+        color: HLTheme.base
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.topMargin: 10
@@ -71,7 +71,7 @@ Rectangle {
         }
 
         Component.onCompleted: {
-            windowTheme.themeChanged.connect(onThemeChanged)
+            HLTheme.themeChanged.connect(onThemeChanged)
         }
 
         function onThemeChanged() {

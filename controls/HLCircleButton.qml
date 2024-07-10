@@ -3,7 +3,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Styles 1.4
 
 Button {
-    property color btnColor: windowTheme.highlight
+    property color btnColor: HLTheme.highlight
     property int buttonPosition: 0
     property int buttonStatus: 0
     hoverEnabled: true
@@ -28,7 +28,7 @@ Button {
                 ctx.save();
                 ctx.beginPath();
                 ctx.ellipse(radius/4, radius/4, radius/2, radius/2);
-                ctx.fillStyle = windowTheme.dark
+                ctx.fillStyle = HLTheme.dark
                 ctx.fill();
                 ctx.stroke();
             }

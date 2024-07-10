@@ -32,7 +32,7 @@ ToolTip {
                 anchors.verticalCenter: parent.verticalCenter
                 text: control.text
                 font: control.font
-                color: windowTheme.text
+                color: HLTheme.text
                 opacity: control.enabled ? 1.0 : 0.3
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -47,7 +47,7 @@ ToolTip {
     }
 
     background: Rectangle {
-        color: windowTheme.base
+        color: HLTheme.base
         radius: toolTipRadius
         antialiasing: true
         layer.enabled: true

@@ -13,10 +13,16 @@ ToolBar {
 
     background: Rectangle {
         anchors.fill: parent
-        color: windowTheme.window
+        color: HLTheme.window
         layer.enabled: true
         layer.effect: DropShadow {
             color: "#000000"
+        }
+
+        Behavior on color {
+            ColorAnimation {
+                duration: 1000
+            }
         }
     }
 
@@ -50,7 +56,7 @@ ToolBar {
             id: menuButton
             width: titleBar.height
             height: titleBar.height
-            icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/menu.svg" : "qrc:/icon/dark/menu.svg"
+            icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/menu.svg" : "qrc:/icon/dark/menu.svg"
             icon.width: 20
             icon.height: 20
             onClicked: barMenu.popup(menuButton.x + 20, menuButton.height + 10)
@@ -59,7 +65,7 @@ ToolBar {
         HLButton {
             width: titleBar.height
             height: titleBar.height
-            icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/hide.svg" : "qrc:/icon/dark/hide.svg"
+            icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/hide.svg" : "qrc:/icon/dark/hide.svg"
             icon.width: 20
             icon.height: 20
             onClicked: parentObj.showMinimized()
@@ -69,7 +75,7 @@ ToolBar {
             id: maxButton
             width: titleBar.height
             height: titleBar.height
-            icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/max.svg" : "qrc:/icon/dark/max.svg"
+            icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/max.svg" : "qrc:/icon/dark/max.svg"
             icon.width: 20
             icon.height: 20
             onClicked: showWindow()
@@ -79,7 +85,7 @@ ToolBar {
             width: titleBar.height
             height: titleBar.height
             hoverColor: "#FB4C3E"
-            icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
+            icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
             icon.width: 20
             icon.height: 20
             ToolTip.text: qsTr("关闭")
@@ -93,16 +99,16 @@ ToolBar {
         font.family: "Microsoft Yahei"
         text: parentObj.title
         anchors.centerIn: parent
-        color: windowTheme.text
+        color: HLTheme.text
     }
 
     function showWindow() {
         if (!isMax) {
             parentObj.showFullScreen()
-            maxButton.icon.source = (windowTheme.theme == 0) ? "qrc:/icon/light/min.svg" : "qrc:/icon/dark/min.svg"
+            maxButton.icon.source = (HLTheme.theme == 0) ? "qrc:/icon/light/min.svg" : "qrc:/icon/dark/min.svg"
         } else {
             parentObj.showNormal()
-            maxButton.icon.source = (windowTheme.theme == 0) ? "qrc:/icon/light/max.svg" : "qrc:/icon/dark/max.svg"
+            maxButton.icon.source = (HLTheme.theme == 0) ? "qrc:/icon/light/max.svg" : "qrc:/icon/dark/max.svg"
         }
         isMax = !isMax
     }

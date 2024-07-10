@@ -27,14 +27,14 @@ Item {
         anchors.left: qmlLineEdit.right
         anchors.leftMargin: 10
         anchors.verticalCenter: parent.verticalCenter
-        backgroundDefaultColor: windowTheme.highlight
-        icon.source: (windowTheme.theme === 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg"
+        backgroundDefaultColor: HLTheme.highlight
+        icon.source: (HLTheme.theme === 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg"
 
         onClicked: {
             qmlLineEdit.isPassword = !qmlLineEdit.isPassword
             icon.source = qmlLineEdit.isPassword ?
-                        ((windowTheme.theme === 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg")
-                      : ((windowTheme.theme === 0) ? "qrc:/icon/light/passwordhide.svg" : "qrc:/icon/dark/passwordhide.svg")
+                        ((HLTheme.theme === 0) ? "qrc:/icon/light/passwordshow.svg" : "qrc:/icon/dark/passwordshow.svg")
+                      : ((HLTheme.theme === 0) ? "qrc:/icon/light/passwordhide.svg" : "qrc:/icon/dark/passwordhide.svg")
         }
     }
 

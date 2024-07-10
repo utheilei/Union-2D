@@ -2,6 +2,7 @@
 import QtQuick.Controls 2.4
 import QtQuick.Controls.Styles 1.4
 import "../"
+import an.window 1.0
 
 ListView {
     id: view
@@ -9,7 +10,7 @@ ListView {
     property int itemRadius: 10
     property bool iconVisible: false
     property bool buttonVisible: false
-    property color itemColor: windowTheme.itemBackgroud
+    property color itemColor: HLTheme.itemBackgroud
     signal hoverChanged(var isHovered)
 
     spacing: 5
@@ -23,8 +24,8 @@ ListView {
             width: view.width - leftMargin - rightMargin
             height: itemHeight
             radius: itemRadius
-            color: view.currentIndex === index ? windowTheme.highlight :
-                                                 (isEnter ? windowTheme.button : itemColor)
+            color: view.currentIndex === index ? HLTheme.highlight :
+                                                 (isEnter ? HLTheme.button : itemColor)
             Image {
                 id: iconItem
                 anchors.left: parent.left
@@ -45,7 +46,7 @@ ListView {
                 width: (parent.width - iconItem.width - closeButton.width - 20 -
                         (iconItem.visible ? 10 : 0) - (closeButton.visible ? 10 : 0))
                 text: modelData[0]
-                color: view.currentIndex === index ? windowTheme.highlightedText : windowTheme.text
+                color: view.currentIndex === index ? HLTheme.highlightedText : HLTheme.text
                 elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
             }
@@ -58,9 +59,9 @@ ListView {
                 anchors.rightMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
                 visible: false
-                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
+                icon.source: (HLTheme.theme === 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
                 buttonRadius: 15
-                backgroundDefaultColor: windowTheme.base
+                backgroundDefaultColor: HLTheme.base
 
                 onClicked: {
                     console.info(index)

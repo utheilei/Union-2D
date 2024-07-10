@@ -12,11 +12,11 @@ ComboBox {
         background: Rectangle {
             height: 30
             opacity: enabled ? 1 : 0.3
-            color: highlighted ? windowTheme.highlight : "transparent"
+            color: highlighted ? HLTheme.highlight : "transparent"
         }
         contentItem: Text {
             text: modelData
-            color: windowTheme.text
+            color: HLTheme.text
             font: control.font
             elide: Text.ElideRight
             verticalAlignment: Text.AlignVCenter
@@ -43,7 +43,7 @@ ComboBox {
             context.lineTo(width, 0);
             context.lineTo(width / 2, height);
             context.closePath();
-            context.fillStyle = control.pressed ? Qt.darker(windowTheme.highlight, 1.1) : windowTheme.highlight;
+            context.fillStyle = control.pressed ? Qt.darker(HLTheme.highlight, 1.1) : HLTheme.highlight;
             context.fill();
         }
     }
@@ -54,7 +54,7 @@ ComboBox {
 
         text: control.displayText
         font: control.font
-        color: windowTheme.text
+        color: HLTheme.text
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
     }
@@ -62,9 +62,9 @@ ComboBox {
     background: Rectangle {
         implicitWidth: 160
         implicitHeight: 30
-        border.color: control.pressed ? Qt.darker(windowTheme.highlight, 1.1) : windowTheme.highlight
+        border.color: control.pressed ? Qt.darker(HLTheme.highlight, 1.1) : HLTheme.highlight
         border.width: 1
-        color: windowTheme.base
+        color: HLTheme.base
         radius: 2
     }
 
@@ -82,8 +82,8 @@ ComboBox {
         }
 
         background: Rectangle {
-            border.color: windowTheme.highlight
-            color: windowTheme.window
+            border.color: HLTheme.highlight
+            color: HLTheme.window
             border.width: 1
             radius: 2
         }

@@ -23,10 +23,6 @@ ApplicationWindow {
     x: Screen.width/2 - width/2
     y: Screen.height/2 - height/2
 
-    ThemeWindow {
-        id: windowTheme
-    }
-
     RectangularGlow {
         id: effect
         anchors.fill: rect
@@ -41,7 +37,13 @@ ApplicationWindow {
         anchors.fill: parent
         anchors.margins: 10
         radius: 10
-        color: windowTheme.window
+        color: HLTheme.window
+
+        Behavior on color {
+            ColorAnimation {
+                duration: 1000
+            }
+        }
     }
 
     HLMenu {
@@ -53,14 +55,14 @@ ApplicationWindow {
                 text: qsTr("light")
                 checkable: true
                 checked: true
-                onTriggered: {checked = true;darkItem.checked = false; windowTheme.theme = 0}
+                onTriggered: {checked = true;darkItem.checked = false; HLTheme.theme = 0}
             }
             HLMenuItem {
                 id: darkItem
                 text: qsTr("dark")
                 checkable: true
                 checked: false
-                onTriggered: {checked = true;lightItem.checked = false; windowTheme.theme = 1}
+                onTriggered: {checked = true;lightItem.checked = false; HLTheme.theme = 1}
             }
         }
         HLMenu {
@@ -105,7 +107,7 @@ ApplicationWindow {
             setTitle(qsTr("about"))
             setContentTitle(qsTr("qml实现统一的通用控件库"))
             var message = "<a style='text-decoration:none;color: %1;' href=\"https://gitee.com/uthelei/Union-2D\">https://gitee.com/uthelei/Union-2D";
-            setMessage(message.arg(qmlHelper.colorName(windowTheme.highlight)))
+            setMessage(message.arg(qmlHelper.colorName(HLTheme.highlight)))
         }
     }
 
@@ -127,7 +129,7 @@ ApplicationWindow {
             x: framelessWindow.titleBar.x + 60
             y: 7.5
             z: 10
-            icon.source: (windowTheme.theme === 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
+            icon.source: (HLTheme.theme === 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
             implicitWidth: 35
             implicitHeight: 35
             icon.width: 16

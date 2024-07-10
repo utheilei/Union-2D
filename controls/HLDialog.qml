@@ -40,14 +40,14 @@ Popup {
         anchors.fill: parent
         anchors.margins: 10
         radius: 10
-        color: windowTheme.window
+        color: HLTheme.window
     }
 
     background: Rectangle {
         id: backgroundRectangle
         anchors.fill: parent
         anchors.margins: 10
-        color: windowTheme.window
+        color: HLTheme.window
         radius: 10
         border.width: 0
     }
@@ -103,7 +103,7 @@ Popup {
                 wrapMode : Text.WordWrap
                 font.pixelSize: 15
                 font.family: "Microsoft Yahei"
-                color: windowTheme.text
+                color: HLTheme.text
                 horizontalAlignment: Qt.AlignCenter
             }
 
@@ -115,7 +115,7 @@ Popup {
                 Layout.rightMargin: 0
                 hoverColor: "#FB4C3E"
                 buttonPosition: 3
-                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
+                icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
                 onClicked: modalDialog.close()
             }
         }
@@ -136,7 +136,7 @@ Popup {
             font.italic: true
             wrapMode : Text.WordWrap
             visible: false
-            color: windowTheme.text
+            color: HLTheme.text
             Layout.maximumWidth: modalDialog.width - 10
             horizontalAlignment: Qt.AlignHCenter
         }
@@ -145,7 +145,7 @@ Popup {
             id: messageLabel
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
             visible: false
-            color: windowTheme.text
+            color: HLTheme.text
             Layout.maximumWidth: modalDialog.width - 10
             horizontalAlignment: Qt.AlignHCenter
             textFormat: Text.RichText
@@ -170,7 +170,7 @@ Popup {
                         radius: 10
                         color: btnColor
                         border.width: 1
-                        border.color: windowTheme.frameBorder
+                        border.color: HLTheme.frameBorder
                     }
 
                     onClicked: {

@@ -4,7 +4,7 @@ Rectangle {
     id: item
     property alias icon: image.source
     property alias label: text.text
-    property color backgroudColor: windowTheme.button
+    property color backgroudColor: HLTheme.button
     property color hoverColor: Qt.darker(backgroudColor, 1.1)
     signal itemClicked
 
@@ -25,7 +25,7 @@ Rectangle {
         anchors.top: image.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
-        color: windowTheme.text
+        color: HLTheme.text
     }
 
     MouseArea {

@@ -17,16 +17,28 @@ int main(int argc, char* argv[])
 
     QTranslator translator;
     QLocale locale;
-    if( locale.language() == QLocale::English ) {
+    if (locale.language() == QLocale::English)
+    {
         translator.load(qApp->applicationDirPath() + "/translation/language_en.qm");
     }
-    else if( locale.language() == QLocale::Chinese ) {
+    else if (locale.language() == QLocale::Chinese)
+    {
         translator.load(qApp->applicationDirPath() + "/translation/language_zh_CN.qm");
     }
     app.installTranslator(&translator);
 
     QmlHelper qmlHelper;
-    qmlRegisterType<ThemeWindow>("an.window", 1, 0, "ThemeWindow");
+    qmlRegisterType<ThemeWindow>("an.themeWindow", 1, 0, "ThemeWindow");
+    qmlRegisterSingletonType(QStringLiteral("qrc:/controls/HLTheme.qml"), "an.window", 1, 0, "HLTheme");
+    //    qmlRegisterSingletonType<ThemeWindow>("an.window", 1, 0, "ThemeWindow", [](QQmlEngine * engine, QJSEngine * scriptEngine) -> QObject*
+    //    {
+    //        Q_UNUSED(engine);
+    //        Q_UNUSED(scriptEngine);
+
+    //        // 返回单例对象的指针
+    //        return new ThemeWindow;
+    //    });
+
     engine.rootContext()->setContextProperty("qmlHelper", &qmlHelper);
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

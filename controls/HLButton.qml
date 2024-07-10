@@ -5,7 +5,7 @@ import QtQuick.Controls.Styles 1.4
 Button {
     id: closeButton
     property string btnColor: "transparent"
-    property string hoverColor: windowTheme.button
+    property string hoverColor: HLTheme.button
     property int buttonPosition: 0
     hoverEnabled: true
     ToolTip.delay: 1000
@@ -26,7 +26,7 @@ Button {
                 text: closeButton.text
                 font: closeButton.font
                 opacity: closeButton.enabled ? 1.0 : 0.3
-                color: windowTheme.text
+                color: HLTheme.text
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight
@@ -87,7 +87,7 @@ Button {
     }
 
     onPressed: {
-        btnColor = Qt.darker(windowTheme.button, 1.1)
+        btnColor = Qt.darker(HLTheme.button, 1.1)
     }
 
     onReleased: {

@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.15
 
 MenuItem {
-    property color itemColor: windowTheme.highlight
+    property color itemColor: HLTheme.highlight
     id: menuItem
     implicitHeight: 30
     contentItem: Text {
@@ -10,7 +10,7 @@ MenuItem {
         rightPadding: menuItem.arrow.width
         text: menuItem.text
         font: menuItem.font
-        color: menuItem.highlighted ? windowTheme.highlightedText : windowTheme.text
+        color: menuItem.highlighted ? HLTheme.highlightedText : HLTheme.text
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
@@ -22,7 +22,7 @@ MenuItem {
         visible: checkable
         Image {
             anchors.centerIn: parent
-            source: (windowTheme.theme == 0) ? "qrc:/icon/light/correct.svg" : "qrc:/icon/dark/correct.svg"
+            source: (HLTheme.theme == 0) ? "qrc:/icon/light/correct.svg" : "qrc:/icon/dark/correct.svg"
             sourceSize: Qt.size(18, 18)
             visible: checked
         }
@@ -35,7 +35,7 @@ MenuItem {
         visible: menuItem.subMenu
         Image {
             anchors.centerIn: parent
-            source: (windowTheme.theme == 0) ? "qrc:/icon/light/right.svg" : "qrc:/icon/dark/right.svg"
+            source: (HLTheme.theme == 0) ? "qrc:/icon/light/right.svg" : "qrc:/icon/dark/right.svg"
             sourceSize: Qt.size(16, 16)
         }
     }

@@ -63,5 +63,6 @@
         <file>controls/HLSearchLineEdit.qml</file>
         <file>icon/dark/search.svg</file>
         <file>icon/light/search.svg</file>
+        <file>controls/HLTheme.qml</file>
     </qresource>
 </RCC>

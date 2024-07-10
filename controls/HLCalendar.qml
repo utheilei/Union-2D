@@ -14,18 +14,18 @@ Old.Calendar {
     style: CalendarStyle {
         gridVisible: false
         background: HLRoundedRectangle {
-            color: windowTheme.base
+            color: HLTheme.base
             radius: 8
             implicitWidth: 300
             implicitHeight: 300
         }
         navigationBar: Rectangle{
             height: control.height/8;
-            color: windowTheme.base
+            color: HLTheme.base
             Text{
                 id:dateText;
                 anchors.centerIn: parent;
-                color: windowTheme.text
+                color: HLTheme.text
                 font{family: "Microsoft YaHei"; pixelSize:14}
                 text:{
                     var str=control.visibleYear+"年"+fillZero(control.visibleMonth+1)+"月";
@@ -41,7 +41,7 @@ Old.Calendar {
                 height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
+                icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/left.svg" : "qrc:/icon/dark/left.svg"
                 onClicked: {
                     control.showPreviousMonth();
                 }
@@ -55,7 +55,7 @@ Old.Calendar {
                 height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/leftarrow.svg" : "qrc:/icon/dark/leftarrow.svg"
+                icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/leftarrow.svg" : "qrc:/icon/dark/leftarrow.svg"
                 onClicked: {
                     control.showPreviousYear();
                 }
@@ -69,7 +69,7 @@ Old.Calendar {
                 height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/right.svg" : "qrc:/icon/dark/right.svg"
+                icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/right.svg" : "qrc:/icon/dark/right.svg"
                 onClicked: {
                     control.showNextMonth();
                 }
@@ -83,7 +83,7 @@ Old.Calendar {
                 height: 20
                 icon.width: 16
                 icon.height: 16
-                icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/rightarrow.svg" : "qrc:/icon/dark/rightarrow.svg"
+                icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/rightarrow.svg" : "qrc:/icon/dark/rightarrow.svg"
                 onClicked: {
                     control.showNextYear();
                 }
@@ -93,7 +93,7 @@ Old.Calendar {
                 anchors.bottom: parent.bottom
                 height: 1
                 width: parent.width
-                color: windowTheme.buttonText
+                color: HLTheme.buttonText
             }
             //长度不足2 补零
             function fillZero(value) {
@@ -101,32 +101,32 @@ Old.Calendar {
             }
         }
         dayDelegate: Rectangle {
-            color: windowTheme.base
+            color: HLTheme.base
             Rectangle {
                 anchors.centerIn: parent
                 antialiasing: true
                 width: Math.min(parent.width, parent.height) - 4
                 height: Math.min(parent.width, parent.height) - 4
-                color: styleData.selected ? windowTheme.highlight : "transparent"
+                color: styleData.selected ? HLTheme.highlight : "transparent"
                 radius: height
-                border.color: windowTheme.highlight
+                border.color: HLTheme.highlight
                 border.width: (control.equalDate(styleData.date, control.currentDate)) ? 1 : 0
             }
             Label {
                 text: styleData.date.getDate()
                 anchors.centerIn: parent
-                color: windowTheme.text
+                color: HLTheme.text
                 opacity: styleData.visibleMonth ? 1 : 0.3
             }
         }
 
         dayOfWeekDelegate : Rectangle {
             height: control.height/8
-            color: windowTheme.base
+            color: HLTheme.base
             Label {
                 text: qmlHelper.dayOfWeek(styleData.index, control.dayOfWeekFormat)
                 anchors.centerIn: parent
-                color: windowTheme.text
+                color: HLTheme.text
                 font.bold: true
             }
             Rectangle {
@@ -134,7 +134,7 @@ Old.Calendar {
                 anchors.bottom: parent.bottom
                 height: 1
                 width: parent.width
-                color: windowTheme.buttonText
+                color: HLTheme.buttonText
             }
         }
     }

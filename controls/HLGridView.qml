@@ -40,9 +40,11 @@ ScrollView {
 
     function updateItem() {
         for(var i = 0; i< repeater.count; i++) {
-            console.info(windowTheme.button, windowTheme.theme)
-            repeater.itemAt(i).backgroudColor = windowTheme.button
-            repeater.itemAt(i).hoverColor = Qt.darker(windowTheme.button, 1.1)
+            repeater.itemAt(i).color = HLTheme.button
         }
+    }
+
+    Component.onCompleted: {
+        HLTheme.themeChanged.connect(updateItem)
     }
 }

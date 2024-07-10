@@ -3,7 +3,7 @@ import QtQuick.Controls 2.4
 
 Button {
     id: control
-    property color backgroundDefaultColor: windowTheme.button
+    property color backgroundDefaultColor: HLTheme.button
     property color backgroundHoverdColor: Qt.darker(backgroundDefaultColor, 1.2)
     property color backgroundPressedColor: Qt.darker(backgroundDefaultColor, 1.4)
     property int buttonRadius: 8
@@ -23,7 +23,7 @@ Button {
                 text: control.text
                 font: control.font
                 opacity: enabled ? 1.0 : 0.3
-                color: windowTheme.text
+                color: HLTheme.text
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight

@@ -17,12 +17,12 @@ TextField {
     echoMode : isPassword ? TextInput.Password : TextInput.Normal
     clip:true
     opacity:field.enabled ? 1 : 0.5
-    color: windowTheme.text
+    color: HLTheme.text
 
     background: Rectangle {
-        color: control.visible ? windowTheme.warningColor : windowTheme.button
+        color: control.visible ? HLTheme.warningColor : HLTheme.button
         radius: 10
-        border.color: field.activeFocus ? windowTheme.highlight : windowTheme.button
+        border.color: field.activeFocus ? HLTheme.highlight : HLTheme.button
         border.width: field.activeFocus? 1.5 : 0
     }
 
@@ -36,11 +36,11 @@ TextField {
         anchors.rightMargin: 10
         anchors.verticalCenter: parent.verticalCenter
         visible: !(field.text === "")
-        icon.source: (windowTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
+        icon.source: (HLTheme.theme == 0) ? "qrc:/icon/light/close.svg" : "qrc:/icon/dark/close.svg"
         icon.width: closeButton.width/2
         icon.height: closeButton.height/2
         buttonRadius: width/2
-        backgroundDefaultColor: windowTheme.base
+        backgroundDefaultColor: HLTheme.base
 
         onClicked: {
             field.clear()
@@ -65,7 +65,7 @@ TextField {
         }
 
         background: Rectangle {
-            color: windowTheme.base
+            color: HLTheme.base
             radius: 8
             layer.enabled: true
             layer.effect: DropShadow {
