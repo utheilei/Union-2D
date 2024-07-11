@@ -28,7 +28,7 @@ Rectangle {
             }
             Component.onCompleted: {
                 setCloseButtonVisible(false)
-                edit.returnPressed.connect(returnPressed)
+                edit.returnPressed.connect(searchEdit.returnPressed)
             }
         }
         Image {
@@ -40,7 +40,7 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: returnPressed()
+                onClicked: searchEdit.returnPressed()
             }
         }
     }
