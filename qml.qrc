@@ -35,35 +35,44 @@
         <file>icon/light/Blister.png</file>
         <file>icon/light/error.svg</file>
         <file>icon/light/yes.svg</file>
-		<file>icon/dark/error.svg</file>
+        <file>icon/dark/error.svg</file>
         <file>icon/dark/yes.svg</file>
         <file>icon/dark/search.svg</file>
         <file>icon/light/search.svg</file>
         <file>qml/controls/UButton.qml</file>
-		<file>qml/controls/UCalendar.qml</file>
-		<file>qml/controls/UCircleButton.qml</file>
-		<file>qml/controls/UComboBox.qml</file>
-		<file>qml/controls/UDialog.qml</file>
-		<file>qml/controls/UEdgeButton.qml</file>
-		<file>qml/controls/UFloatingMessage.qml</file>
-		<file>qml/controls/UGridView.qml</file>
-		<file>qml/controls/UIconItem.qml</file>
-		<file>qml/controls/ULineEdit.qml</file>
-		<file>qml/controls/UListView.qml</file>
-		<file>qml/controls/UMaskImage.qml</file>
-		<file>qml/controls/UMenu.qml</file>
-		<file>qml/controls/UMenuItem.qml</file>
-		<file>qml/controls/UPassWordLineEdit.qml</file>
-		<file>qml/controls/URoundedButton.qml</file>
-		<file>qml/controls/URoundedRectangle.qml</file>
-		<file>qml/controls/USearchLineEdit.qml</file>
-		<file>qml/controls/UTableView.qml</file>
-		<file>qml/controls/UTheme.qml</file>
-		<file>qml/controls/UWaterProgress.qml</file>
-		<file>qml/framelesswindow/UCustomMouseArea.qml</file>
-		<file>qml/framelesswindow/UFramelessWindow.qml</file>
-		<file>qml/framelesswindow/UTitleBar.qml</file>
-		<file>qml/main.qml</file>
-		<file>qml/QmlMainWidget.qml</file>
+        <file>qml/controls/UCalendar.qml</file>
+        <file>qml/controls/UCircleButton.qml</file>
+        <file>qml/controls/UComboBox.qml</file>
+        <file>qml/controls/UDialog.qml</file>
+        <file>qml/controls/UEdgeButton.qml</file>
+        <file>qml/controls/UFloatingMessage.qml</file>
+        <file>qml/controls/UGridView.qml</file>
+        <file>qml/controls/UIconItem.qml</file>
+        <file>qml/controls/ULineEdit.qml</file>
+        <file>qml/controls/UListView.qml</file>
+        <file>qml/controls/UMaskImage.qml</file>
+        <file>qml/controls/UMenu.qml</file>
+        <file>qml/controls/UMenuItem.qml</file>
+        <file>qml/controls/UPassWordLineEdit.qml</file>
+        <file>qml/controls/URoundedButton.qml</file>
+        <file>qml/controls/URoundedRectangle.qml</file>
+        <file>qml/controls/USearchLineEdit.qml</file>
+        <file>qml/controls/UTableView.qml</file>
+        <file>qml/controls/UTheme.qml</file>
+        <file>qml/controls/UWaterProgress.qml</file>
+        <file>qml/framelesswindow/UCustomMouseArea.qml</file>
+        <file>qml/framelesswindow/UFramelessWindow.qml</file>
+        <file>qml/framelesswindow/UTitleBar.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/QmlMainWidget.qml</file>
+        <file>qml/controls/UButtonGroup.qml</file>
+        <file>icon/dark/chinese.svg</file>
+        <file>icon/dark/dark.svg</file>
+        <file>icon/dark/english.svg</file>
+        <file>icon/dark/light.svg</file>
+        <file>icon/light/chinese.svg</file>
+        <file>icon/light/dark.svg</file>
+        <file>icon/light/english.svg</file>
+        <file>icon/light/light.svg</file>
     </qresource>
 </RCC>

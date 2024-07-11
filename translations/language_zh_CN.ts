@@ -66,12 +66,12 @@
 <context>
     <name>UTitleBar</name>
     <message>
-        <location filename="../qml/framelesswindow/UTitleBar.qml" line="63"/>
+        <location filename="../qml/framelesswindow/UTitleBar.qml" line="61"/>
         <source>菜单</source>
         <translation type="unfinished">菜单</translation>
     </message>
     <message>
-        <location filename="../qml/framelesswindow/UTitleBar.qml" line="72"/>
+        <location filename="../qml/framelesswindow/UTitleBar.qml" line="71"/>
         <source>最小化</source>
         <translation type="unfinished">最小化</translation>
     </message>
@@ -94,53 +94,58 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../qml/main.qml" line="23"/>
+        <location filename="../qml/main.qml" line="24"/>
         <source>Union-2D</source>
         <translation>Union-2D</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="53"/>
+        <location filename="../qml/main.qml" line="48"/>
         <source>theme</source>
         <translation>主题</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="56"/>
+        <location filename="../qml/main.qml" line="51"/>
         <source>light</source>
         <translation>亮色</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="63"/>
+        <location filename="../qml/main.qml" line="58"/>
         <source>dark</source>
         <translation>深色</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="70"/>
+        <location filename="../qml/main.qml" line="65"/>
         <source>translation</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="80"/>
+        <location filename="../qml/main.qml" line="75"/>
         <source>English</source>
         <translation>英文</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="73"/>
+        <location filename="../qml/main.qml" line="143"/>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="68"/>
         <source>Chinese</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="87"/>
-        <location filename="../qml/main.qml" line="108"/>
+        <location filename="../qml/main.qml" line="82"/>
+        <location filename="../qml/main.qml" line="103"/>
         <source>about</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="93"/>
+        <location filename="../qml/main.qml" line="88"/>
         <source>exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="109"/>
+        <location filename="../qml/main.qml" line="104"/>
         <source>qml实现统一的通用控件库</source>
         <translation>QML实现统一的通用控件库</translation>
     </message>

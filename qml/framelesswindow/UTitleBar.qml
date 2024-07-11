@@ -8,6 +8,9 @@ import "../"
 ToolBar {
     leftPadding: 10
     property bool isMax: false
+    property bool menuButtonVisible: true
+    property bool minButtonVisible: true
+    property bool maxButtonVisible: true
     property QtObject parentObj;
     property alias source: titleImage.source
 
@@ -48,6 +51,7 @@ ToolBar {
         }
         UButton {
             id: menuButton
+            visible: menuButtonVisible
             width: titleBar.height
             height: titleBar.height
             icon.source: "qrc:/icon/" + UTheme.themeName + "/menu.svg"
@@ -57,6 +61,7 @@ ToolBar {
             ToolTip.text: qsTr("菜单")
         }
         UButton {
+            visible: minButtonVisible
             width: titleBar.height
             height: titleBar.height
             icon.source: "qrc:/icon/" + UTheme.themeName + "/hide.svg"
@@ -66,6 +71,7 @@ ToolBar {
             ToolTip.text: qsTr("最小化")
         }
         UButton {
+            visible: maxButtonVisible
             id: maxButton
             width: titleBar.height
             height: titleBar.height
@@ -92,6 +98,7 @@ ToolBar {
         font.pixelSize: 15
         font.family: "Microsoft Yahei"
         text: parentObj.title
+        visible: parentObj.titleVisible
         anchors.centerIn: parent
         color: UTheme.text
     }

@@ -160,6 +160,25 @@ Rectangle {
             color: "red"
             visible: false
             radius: 8
+
+            UButtonGroup {
+                x:100
+                y:100
+                width: 140
+                height: 60
+                model: [["","qrc:/icon/dark/yes.svg"],["","qrc:/icon/dark/error.svg"]]
+            }
+
+            Rectangle {
+                x:100
+                y:200
+                width: 140
+                height: 60
+                radius: 8
+                color: UTheme.warningBackground
+                border.color: UTheme.text
+                border.width: 1
+            }
         }
 
         Rectangle {

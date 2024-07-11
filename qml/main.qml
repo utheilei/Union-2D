@@ -12,6 +12,7 @@ ApplicationWindow {
     property int magins: 5
     property int contentMargins: 10
     property string appIcon: "qrc:/Union-2D.ico"
+    property bool titleVisible: false
     id: window
     color: "transparent"
     flags: Qt.FramelessWindowHint | Qt.Window;
@@ -39,54 +40,6 @@ ApplicationWindow {
         anchors.margins: contentMargins
         radius: 10
         color: UTheme.window
-    }
-
-    UMenu {
-        id: barMenu
-        UMenu {
-            title: qsTr("theme")
-            UMenuItem {
-                id: lightItem
-                text: qsTr("light")
-                checkable: true
-                checked: UTheme.applicationTheme === 0
-                onTriggered: {checked = true;darkItem.checked = false; UTheme.applicationTheme = 0}
-            }
-            UMenuItem {
-                id: darkItem
-                text: qsTr("dark")
-                checkable: true
-                checked: UTheme.applicationTheme === 1
-                onTriggered: {checked = true;lightItem.checked = false; UTheme.applicationTheme = 1}
-            }
-        }
-        UMenu {
-            title: qsTr("translation")
-            UMenuItem {
-                id: chineseItem
-                text: qsTr("Chinese")
-                checkable: true
-                checked: UTheme.applicationLanguage === 25
-                onTriggered: {checked = true;englishItem.checked = false; qmlHelper.setTranslator(25)}
-            }
-            UMenuItem {
-                id: englishItem
-                text: qsTr("English")
-                checkable: true
-                checked: UTheme.applicationLanguage === 31
-                onTriggered: {checked = true;chineseItem.checked = false; qmlHelper.setTranslator(31)}
-            }
-        }
-        UMenuItem {
-            text: qsTr("about")
-            onTriggered: aboutDialog.open()
-        }
-        MenuSeparator {
-        }
-        UMenuItem {
-            text: qsTr("exit")
-            onTriggered: Qt.quit()
-        }
     }
 
     UDialog {
@@ -118,19 +71,79 @@ ApplicationWindow {
         anchors.fill: parent
         anchors.margins: contentMargins
         parentObj: window
+        minButtonVisible: false
+        menuButtonVisible: false
+        maxButtonVisible: false
+
+        Label {
+            id: titleLabel
+            x: framelessWindow.titleBar.x + 60
+            anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
+            z: 10
+            font.pixelSize: 15
+            font.family: "Microsoft Yahei"
+            text: window.title
+            color: UTheme.text
+        }
 
         URoundedButton {
             id: leftButton
-            x: framelessWindow.titleBar.x + 60
-            y: 7.5
+            anchors.left: titleLabel.right
+            anchors.leftMargin: 9
+            anchors.verticalCenter: titleLabel.verticalCenter
             z: 10
+            text: qsTr("Home")
             icon.source: "qrc:/icon/" + UTheme.themeName + "/left.svg"
-            implicitWidth: 35
+            implicitWidth: 65
             implicitHeight: 35
             icon.width: 16
             icon.height: 16
-            visible: (myLoader.sourceComponent === mainPage)
+            borderWidth: 1
+            backgroundDefaultColor: "transparent"
+            backgroundHoverdColor: Qt.darker(UTheme.informationBackground, 0.6)
+            backgroundPressedColor : UTheme.informationBackground
             onClicked: {myLoader.sourceComponent = loginPage}
+            enabled: myLoader.sourceComponent === mainPage
+        }
+
+        UButtonGroup {
+            id: buttonGroup
+            checkedIndex: UTheme.applicationTheme
+            anchors.rightMargin: 60
+            anchors.right: framelessWindow.titleBar.right
+            anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
+            width: 80
+            height: 40
+            model: [["","qrc:/icon/" + UTheme.themeName + "/light.svg"],["","qrc:/icon/" + UTheme.themeName + "/dark.svg"]]
+            onButtonClicked: {UTheme.applicationTheme = index}
+        }
+
+        UButton {
+            id: languageButton
+            anchors.rightMargin: 9
+            anchors.right: buttonGroup.left
+            anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
+            implicitWidth: 40
+            implicitHeight: 40
+            icon.source: (UTheme.applicationLanguage === 25) ? "qrc:/icon/" + UTheme.themeName + "/chinese.svg"
+                                                             : "qrc:/icon/" + UTheme.themeName + "/english.svg"
+            onClicked: {
+                if (UTheme.applicationLanguage === 25) {
+                    UTheme.applicationLanguage = 31
+                } else {
+                    UTheme.applicationLanguage = 25
+                }
+            }
+        }
+
+        UButton {
+            anchors.rightMargin: 9
+            anchors.right: languageButton.left
+            anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
+            implicitWidth: 40
+            implicitHeight: 40
+            text: qsTr("关于")
+            onClicked: {aboutDialog.open()}
         }
 
         Loader {

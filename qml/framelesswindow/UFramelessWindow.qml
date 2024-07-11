@@ -5,6 +5,9 @@ import QtGraphicalEffects 1.12
 Page {
     property QtObject parentObj
     property QtObject titleBar: hlTitleBar
+    property alias menuButtonVisible: hlTitleBar.menuButtonVisible
+    property alias minButtonVisible: hlTitleBar.minButtonVisible
+    property alias maxButtonVisible: hlTitleBar.maxButtonVisible
     id: root
     anchors.fill: parent;
     background: Rectangle {

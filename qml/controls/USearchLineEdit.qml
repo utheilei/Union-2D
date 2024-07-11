@@ -19,6 +19,7 @@ Rectangle {
         spacing: 6
         ULineEdit {
             id: edit
+            placeholderText: qsTr("搜索")
             Layout.fillHeight: true
             Layout.fillWidth: true
             background: Rectangle {
