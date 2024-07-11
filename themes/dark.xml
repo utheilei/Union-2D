@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+ <General>
+   <ThemeName>dark</ThemeName>
+   <Index>1</Index>
+ </General>
+  <Palette>
+   <WindowText index="0" opacity="1.0">#C0C6D4</WindowText>
+   <Button index="1" opacity="1.0">#444444</Button>
+   <Light index="2" opacity="1.0">#484848</Light>
+   <Midlight index="3" opacity="1.0">#474747</Midlight>
+   <Dark index="4" opacity="1.0">#414141</Dark>
+   <Mid index="5" opacity="1.0">#434343</Mid>
+   <Text index="6" opacity="1.0">#FFFFFF</Text>
+   <BrightText index="7" opacity="1.0">#C0C6D4</BrightText>
+   <ButtonText index="8" opacity="1.0">#C0C6D4</ButtonText>
+   <Base index="9" opacity="1.0">#282828</Base>
+   <Window index="10" opacity="1.0">#252525</Window>
+   <Shadow index="11" opacity="1.0">#131111</Shadow>
+   <Highlight index="12" opacity="1.0">#00A1E5</Highlight>
+   <HighlightedText index="13" opacity="1.0">#F1F6FF</HighlightedText>
+   <Link index="14" opacity="1.0">#0082FA</Link>
+   <LinkVisited index="15" opacity="1.0">#AD4579</LinkVisited>
+   <AlternateBase index="16" opacity="0.2">#000000</AlternateBase>
+   <ToolTipBase index="18" opacity="1.0">#2d2d2d</ToolTipBase>
+   <ToolTipText index="19" opacity="1.0">#FFFFFF</ToolTipText>
+   <PlaceholderText index="20" opacity="0.4">#c0c6d4</PlaceholderText>
+   <ItemBackground index="100" opacity="0.05">#FFFFFF</ItemBackground>
+   <SuccessBackground index="101" opacity="1.0">#19DA2F</SuccessBackground>
+   <WarningBackground index="102" opacity="1.0">#D89614</WarningBackground>
+   <ErrorBackground index="103" opacity="1.0">#9A2F2F</ErrorBackground>
+   <OrangeBackground index="104" opacity="1.0">#C45E00</OrangeBackground>
+   <OfflineBackground index="105" opacity="1.0">#808080</OfflineBackground>
+   <InformationBackground index="106" opacity="1.0">#177DDC</InformationBackground>
+   <SplitLineBackground index="107" opacity="1.0">#FFFFFF</SplitLineBackground>
+   <FrameBorder index="108" opacity="0.1">#FFFFFF</FrameBorder>
+ </Palette>
+</theme>
