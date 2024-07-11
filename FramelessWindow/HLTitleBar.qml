@@ -104,9 +104,11 @@ ToolBar {
 
     function showWindow() {
         if (!isMax) {
+            parentObj.contentMargins = 0
             parentObj.showFullScreen()
             maxButton.icon.source = (HLTheme.theme == 0) ? "qrc:/icon/light/min.svg" : "qrc:/icon/dark/min.svg"
         } else {
+            parentObj.contentMargins = 10
             parentObj.showNormal()
             maxButton.icon.source = (HLTheme.theme == 0) ? "qrc:/icon/light/max.svg" : "qrc:/icon/dark/max.svg"
         }

@@ -10,15 +10,16 @@ import "./controls"
 ApplicationWindow {
     property int itemCount: Math.floor((window.width - 10)/190)
     property int magins: 5
+    property int contentMargins: 10
     property string appIcon: "qrc:/Union-2D.ico"
     id: window
     color: "transparent"
     flags: Qt.FramelessWindowHint | Qt.Window;
     visible: true
-    minimumWidth: 500
-    minimumHeight: 300
-    width: 970
-    height: 670
+    minimumWidth: 980
+    minimumHeight: 680
+    width: 980
+    height: 680
     title: qsTr("Union-2D")
     x: Screen.width/2 - width/2
     y: Screen.height/2 - height/2
@@ -35,7 +36,7 @@ ApplicationWindow {
     Rectangle {
         id: rect
         anchors.fill: parent
-        anchors.margins: 10
+        anchors.margins: contentMargins
         radius: 10
         color: HLTheme.window
 
@@ -121,7 +122,7 @@ ApplicationWindow {
     FramelessWindow {
         id: framelessWindow
         anchors.fill: parent
-        anchors.margins: 10
+        anchors.margins: contentMargins
         parentObj: window
 
         HLRoundedButton {
