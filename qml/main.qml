@@ -19,8 +19,8 @@ ApplicationWindow {
     visible: true
     minimumWidth: 980
     minimumHeight: 680
-    width: 980
-    height: 680
+    width: 1300
+    height: 900
     title: qsTr("Union-2D")
     x: Screen.width/2 - width/2
     y: Screen.height/2 - height/2

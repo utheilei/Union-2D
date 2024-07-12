@@ -74,5 +74,7 @@
         <file>icon/light/dark.svg</file>
         <file>icon/light/english.svg</file>
         <file>icon/light/light.svg</file>
+        <file>qml/controls/USwitch.qml</file>
+        <file>qml/controls/UCheckBox.qml</file>
     </qresource>
 </RCC>

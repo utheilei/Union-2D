@@ -12,6 +12,7 @@ Button {
     property color borderColor: UTheme.text
     property color borderHoverdColor: UTheme.informationBackground
     property color borderPressedColor: Qt.darker(borderHoverdColor, 1.4)
+    property alias textColor: text.color
 
     contentItem: Item {
         Row {
@@ -26,6 +27,7 @@ Button {
                 visible: true
             }
             Text {
+                id: text
                 text: control.text
                 font: control.font
                 opacity: enabled ? 1.0 : 0.3

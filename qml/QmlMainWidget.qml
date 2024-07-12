@@ -157,7 +157,7 @@ Rectangle {
         Rectangle {
             id: unionIDWidget
             anchors.fill: parent
-            color: "red"
+            color: UTheme.base
             visible: false
             radius: 8
 
@@ -169,6 +169,11 @@ Rectangle {
                 model: [["","qrc:/icon/dark/yes.svg"],["","qrc:/icon/dark/error.svg"]]
             }
 
+            USwitch {
+                x:280
+                y:100
+            }
+
             Rectangle {
                 x:100
                 y:200
@@ -178,6 +183,22 @@ Rectangle {
                 color: UTheme.warningBackground
                 border.color: UTheme.text
                 border.width: 1
+            }
+
+            URoundedButton {
+                x:280
+                y:200
+                width: 100
+                height: 40
+                text: "URoundedButton"
+                textColor: UTheme.errorBackground
+            }
+
+            UCheckBox {
+                x:400
+                y:200
+                text: "URoundedButton"
+                checkState: Qt.Checked
             }
         }
 
