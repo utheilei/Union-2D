@@ -1,28 +1,32 @@
 ﻿#ifndef TREEMODEL_H
 #define TREEMODEL_H
 
-#include "UIComponent/uicomponent_global.h"
-
 #include <QAbstractItemModel>
 #include <QModelIndex>
 #include <QVariant>
 
 class TreeItem;
-class UICOMPONENT_EXPORT TreeModel : public QAbstractItemModel
+class TreeModel : public QAbstractItemModel
 {
     Q_OBJECT
 
 public:
-    TreeModel(const QStringList &headers, QObject* parent = Q_NULLPTR);
+    Q_PROPERTY(QStringList headers READ headers WRITE setHeaders NOTIFY headersChanged)
+
+    explicit TreeModel(QObject* parent = Q_NULLPTR);
     ~TreeModel() override;
+
+    void setHeaders(const QStringList &headers);
+
+    QStringList headers();
 
     QVariant data(const QModelIndex &index, int role) const override;
     QVariant headerData(int section, Qt::Orientation orientation,
                         int role = Qt::DisplayRole) const override;
 
-    QModelIndex index(int row, int column,
+    Q_INVOKABLE QModelIndex index(int row, int column,
                       const QModelIndex &parent = QModelIndex()) const override;
-    QModelIndex parent(const QModelIndex &index) const override;
+    Q_INVOKABLE QModelIndex parent(const QModelIndex &index) const override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     int columnCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -42,35 +46,43 @@ public:
     bool removeRows(int position, int rows,
                     const QModelIndex &parent = QModelIndex()) override;
 
-    TreeItem* getItem(const QModelIndex &index) const;
+    Q_INVOKABLE bool moveItem(const QModelIndex &source, int sourceRow,
+                 const QModelIndex &destination, int destinationChild);
 
-    void insertItem(int position, TreeItem* item, const QModelIndex &parent = QModelIndex());
+    Q_INVOKABLE QVariant itemData(int column, const QModelIndex &index) const;
 
-    void insertItems(int position, QList<TreeItem*> items);
+    Q_INVOKABLE TreeItem* item(const QModelIndex &index) const;
 
-    void appendItem(TreeItem* item);
+    Q_INVOKABLE void insertItem(int position, TreeItem* item, const QModelIndex &parent = QModelIndex());
 
-    void appendItems(QList<TreeItem*> items);
+    Q_INVOKABLE void insertItems(int position, QList<TreeItem*> items);
 
-    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
+    Q_INVOKABLE void appendItem(TreeItem* item);
 
-    TreeItem* rootItem() const;
+    Q_INVOKABLE void appendItems(QList<TreeItem*> items);
+
+    Q_INVOKABLE void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
+
+    Q_INVOKABLE TreeItem* rootItem() const;
 
     QModelIndex createTreeIndex(int row, int column, TreeItem* parent) const;
 
     void changeTreePersistentIndexList(const QModelIndexList &from, const QModelIndexList &to);
 
-    TreeItem* itemFromIndex(const QModelIndex &index) const;
+    Q_INVOKABLE TreeItem* itemFromIndex(const QModelIndex &index) const;
 
-    QModelIndex indexFromItem(const TreeItem* item) const;
+    Q_INVOKABLE QModelIndex indexFromItem(const TreeItem* item) const;
 
-    QList<TreeItem*> findItems(const QString &text, Qt::SortOrder order);
+    Q_INVOKABLE QList<TreeItem*> findItems(const QString &text, Qt::SortOrder order);
 
-    QModelIndexList findModelIndexs(const QString &text, Qt::SortOrder order);
+    Q_INVOKABLE QModelIndexList findModelIndexs(const QString &text, Qt::SortOrder order);
 
-    void clearModel(TreeItem* item = nullptr);
+    Q_INVOKABLE void clearModel(TreeItem* item = nullptr);
 
-    void setSortEnabled(bool enabled);
+    Q_INVOKABLE void setSortEnabled(bool enabled);
+
+signals:
+    void headersChanged();
 
 private:
     QList<TreeItem*> matchItems(TreeItem* item, const QString &text);

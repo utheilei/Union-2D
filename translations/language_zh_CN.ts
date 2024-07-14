@@ -64,6 +64,14 @@
     </message>
 </context>
 <context>
+    <name>USearchLineEdit</name>
+    <message>
+        <location filename="../qml/controls/USearchLineEdit.qml" line="22"/>
+        <source>搜索</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UTitleBar</name>
     <message>
         <location filename="../qml/framelesswindow/UTitleBar.qml" line="61"/>
@@ -92,6 +100,14 @@
     </message>
 </context>
 <context>
+    <name>UToolTip</name>
+    <message>
+        <location filename="../qml/controls/UToolTip.qml" line="14"/>
+        <source>Please Input</source>
+        <translation type="unfinished">请输入文字</translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
         <location filename="../qml/main.qml" line="24"/>
@@ -99,53 +115,50 @@
         <translation>Union-2D</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="48"/>
-        <source>theme</source>
-        <translation>主题</translation>
-    </message>
-    <message>
-        <location filename="../qml/main.qml" line="51"/>
-        <source>light</source>
-        <translation>亮色</translation>
-    </message>
-    <message>
-        <location filename="../qml/main.qml" line="58"/>
-        <source>dark</source>
-        <translation>深色</translation>
-    </message>
-    <message>
-        <location filename="../qml/main.qml" line="65"/>
-        <source>translation</source>
-        <translation>语言</translation>
-    </message>
-    <message>
-        <location filename="../qml/main.qml" line="75"/>
-        <source>English</source>
-        <translation>英文</translation>
-    </message>
-    <message>
         <location filename="../qml/main.qml" line="143"/>
+        <source>关于</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>theme</source>
+        <translation type="vanished">主题</translation>
+    </message>
+    <message>
+        <source>light</source>
+        <translation type="vanished">亮色</translation>
+    </message>
+    <message>
+        <source>dark</source>
+        <translation type="vanished">深色</translation>
+    </message>
+    <message>
+        <source>translation</source>
+        <translation type="vanished">语言</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation type="vanished">英文</translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="93"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="68"/>
         <source>Chinese</source>
-        <translation>中文</translation>
+        <translation type="vanished">中文</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="82"/>
-        <location filename="../qml/main.qml" line="103"/>
+        <location filename="../qml/main.qml" line="55"/>
         <source>about</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="88"/>
         <source>exit</source>
-        <translation>退出</translation>
+        <translation type="vanished">退出</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="104"/>
+        <location filename="../qml/main.qml" line="56"/>
         <source>qml实现统一的通用控件库</source>
         <translation>QML实现统一的通用控件库</translation>
     </message>

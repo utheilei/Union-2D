@@ -43,10 +43,12 @@ execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINA
 
 FILE(GLOB HEADERS
     ${CMAKE_SOURCE_DIR}/src/*.h
+    ${CMAKE_SOURCE_DIR}/src/model/*.h
 )
 
 FILE(GLOB SOURCES
     ${CMAKE_SOURCE_DIR}/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/src/model/*.cpp
 )
 
 set(PROJECT_SOURCES

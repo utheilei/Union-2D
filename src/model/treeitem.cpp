@@ -36,6 +36,13 @@ QFont TreeItem::font() const
     return m_font;
 }
 
+TreeItem *TreeItem::takeItem(int index)
+{
+    if (index < 0 || index > childItems.size())
+        return nullptr;
+    return childItems.takeAt(index);
+}
+
 void TreeItem::setEnabled(bool enabled)
 {
     m_propertyMap["Enabled"] = enabled;
@@ -165,6 +172,10 @@ void TreeItem::insertChild(int position, TreeItem* item)
     if (position < 0 || position > childItems.size())
         return;
 
+    if (nullptr == item)
+    {
+        return;
+    }
     childItems.insert(position, item);
 }
 
@@ -206,6 +217,11 @@ int TreeItem::depth() const
     }
 
     return d;
+}
+
+void TreeItem::setAllData(const QVector<QVariant> &data)
+{
+    itemData = data;
 }
 
 QVector<QVariant> TreeItem::allData() const

@@ -1,19 +1,51 @@
 ﻿#include "treeitem.h"
 #include "treemodel.h"
 
-TreeModel::TreeModel(const QStringList &headers, QObject* parent)
-    : QAbstractItemModel(parent)
-{
-    QVector<QVariant> rootData;
-    foreach (QString header, headers)
-        rootData << header;
+#include <QDebug>
 
-    m_rootItem = new TreeItem(rootData);
+TreeModel::TreeModel(QObject* parent) : QAbstractItemModel(parent)
+{
+    m_rootItem = new TreeItem(QVector<QVariant>());
+
+    QVector<QVariant> data = {"frist", "yes"};
+    QVector<QVariant> secendData = {"secend", "yes"};
+    TreeItem *item = new TreeItem(data, m_rootItem);
+    TreeItem *chidItem = new TreeItem(data, item);
+    TreeItem *thirdChidItem = new TreeItem(data, chidItem);
+    qDebug() << chidItem << thirdChidItem->parent();
+    TreeItem *secendChidItem = new TreeItem(secendData, item);
+    chidItem->appendChild(thirdChidItem);
+    item->appendChild(chidItem);
+    item->appendChild(secendChidItem);
+    appendItem(item);
 }
 
 TreeModel::~TreeModel()
 {
     delete m_rootItem;
+}
+
+void TreeModel::setHeaders(const QStringList &headers)
+{
+    if (m_rootItem)
+    {
+        QVector<QVariant> data;
+        foreach (const auto &text, headers) {
+            data.append(text);
+        }
+        m_rootItem->setAllData(data);
+    }
+    emit headersChanged();
+}
+
+QStringList TreeModel::headers()
+{
+    QStringList list;
+    foreach (const auto &text, m_rootItem->allData())
+    {
+        list.append(text.toString());
+    }
+    return list;
 }
 
 int TreeModel::columnCount(const QModelIndex & /* parent */) const
@@ -31,12 +63,12 @@ QVariant TreeModel::data(const QModelIndex &index, int role) const
         case Qt::DisplayRole:
         case Qt::EditRole:
         {
-            const TreeItem* item = getItem(index);
+            const TreeItem* item = this->item(index);
             return item->data(index.column());
         }
         case Qt::FontRole:
         {
-            const TreeItem* item = getItem(index);
+            const TreeItem* item = this->item(index);
             return item->font();
         }
         default:
@@ -49,11 +81,11 @@ QVariant TreeModel::data(const QModelIndex &index, int role) const
 Qt::ItemFlags TreeModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid())
-        return Q_NULLPTR;
+        return QAbstractItemModel::flags(index);
 
     auto flags = Qt::ItemIsEditable | QAbstractItemModel::flags(index);
 
-    if (!getItem(index)->isEnabled())
+    if (!item(index)->isEnabled())
     {
         flags = flags & ~(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
     }
@@ -61,7 +93,7 @@ Qt::ItemFlags TreeModel::flags(const QModelIndex &index) const
     return flags;
 }
 
-TreeItem* TreeModel::getItem(const QModelIndex &index) const
+TreeItem* TreeModel::item(const QModelIndex &index) const
 {
     if (index.isValid())
     {
@@ -77,7 +109,7 @@ void TreeModel::insertItem(int position, TreeItem* item, const QModelIndex &pare
     if (nullptr == item)
         return;
 
-    TreeItem* parentItem = getItem(parent);
+    TreeItem* parentItem = this->item(parent);
     beginInsertRows(parent, position, position);
     parentItem->insertChild(position, item);
     endInsertRows();
@@ -147,10 +179,6 @@ void TreeModel::changeTreePersistentIndexList(const QModelIndexList &from, const
 
 TreeItem* TreeModel::itemFromIndex(const QModelIndex &index) const
 {
-    auto model = index.model();
-    if (nullptr == model)
-        return nullptr;
-
     if (!index.isValid())
         return m_rootItem;
 
@@ -171,7 +199,7 @@ QList<TreeItem*> TreeModel::findItems(const QString &text, Qt::SortOrder order)
 {
     QList<TreeItem*> items = matchItems(m_rootItem, text);
 
-    qSort(items.begin(), items.end(), [order, this](const TreeItem * infoA, const TreeItem * infoB)
+    std::stable_sort(items.begin(), items.end(), [order, this](const TreeItem * infoA, const TreeItem * infoB)
     {
         if (Qt::SortOrder::AscendingOrder == order)
         {
@@ -256,7 +284,7 @@ QModelIndex TreeModel::index(int row, int column, const QModelIndex &parent) con
     if (parent.isValid() && parent.column() != 0)
         return QModelIndex();
 
-    TreeItem* parentItem = getItem(parent);
+    TreeItem* parentItem = this->item(parent);
 
     TreeItem* childItem = parentItem->child(row);
     if (childItem)
@@ -278,7 +306,7 @@ bool TreeModel::insertColumns(int position, int columns, const QModelIndex &pare
 
 bool TreeModel::insertRows(int position, int rows, const QModelIndex &parent)
 {
-    TreeItem* parentItem = getItem(parent);
+    TreeItem* parentItem = this->item(parent);
     bool success;
 
     beginInsertRows(parent, position, position + rows - 1);
@@ -293,7 +321,7 @@ QModelIndex TreeModel::parent(const QModelIndex &index) const
     if (!index.isValid())
         return QModelIndex();
 
-    const TreeItem* childItem = getItem(index);
+    const TreeItem* childItem = this->item(index);
     TreeItem* parentItem = childItem->parent();
 
     if (parentItem == m_rootItem || !parentItem)
@@ -318,7 +346,7 @@ bool TreeModel::removeColumns(int position, int columns, const QModelIndex &pare
 
 bool TreeModel::removeRows(int position, int rows, const QModelIndex &parent)
 {
-    TreeItem* parentItem = getItem(parent);
+    TreeItem* parentItem = this->item(parent);
     bool success = true;
 
     beginRemoveRows(parent, position, position + rows - 1);
@@ -328,11 +356,31 @@ bool TreeModel::removeRows(int position, int rows, const QModelIndex &parent)
     return success;
 }
 
+bool TreeModel::moveItem(const QModelIndex &source, int sourceRow,
+                         const QModelIndex &destination, int destinationChild)
+{
+    auto sourceItem = itemFromIndex(source);
+    auto sourceParentItem = itemFromIndex(source.parent());
+    auto destinationItem = itemFromIndex(destination);
+    beginResetModel();
+    auto item = sourceParentItem->takeItem(sourceItem->childNumber());
+    item->setParent(destinationItem);
+    destinationItem->insertChild(destination.row(), item);
+    endResetModel();
+    emit layoutChanged();
+    return true;
+}
+
+QVariant TreeModel::itemData(int column, const QModelIndex &index) const
+{
+    return item(index)->data(column);
+}
+
 int TreeModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.column() > 0) return 0;
 
-    const TreeItem* parentItem = getItem(parent);
+    const TreeItem* parentItem = this->item(parent);
 
     return parentItem->childCount();
 }
@@ -342,7 +390,11 @@ bool TreeModel::setData(const QModelIndex &index, const QVariant &value, int rol
     if (role != Qt::EditRole)
         return false;
 
-    TreeItem* item = getItem(index);
+    TreeItem* item = this->item(index);
+    if (value == item->data(index.column()))
+    {
+        return true;
+    }
     bool result = item->setData(index.column(), value);
 
     if (result)

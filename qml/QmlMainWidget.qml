@@ -2,6 +2,7 @@ import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.0
 import "./controls"
+import utk.model 1.0
 
 Rectangle {
     id: mainRectangle
@@ -208,6 +209,22 @@ Rectangle {
             color: "yellow"
             radius: 8
             visible: false
+
+            TextField {
+                id: input
+                selectByMouse: !readOnly
+                x:10
+                y:10
+                text: "111"
+                readOnly: false
+
+            }
+
+            UTreeView {
+                id: treeView
+                anchors.top:input.bottom
+                anchors.left: input.left
+            }
         }
 
         Rectangle {

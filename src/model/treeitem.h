@@ -1,8 +1,6 @@
 ﻿#ifndef TREEITEM_H
 #define TREEITEM_H
 
-#include "UIComponent/uicomponent_global.h"
-
 #include <QIcon>
 #include <QVariant>
 #include <QVector>
@@ -10,38 +8,44 @@
 
 class TreeModel;
 
-class UICOMPONENT_EXPORT TreeItem
+class TreeItem
 {
 public:
     explicit TreeItem(const QVector<QVariant> &data, TreeItem* parent = nullptr);
     ~TreeItem();
 
-    void setProperty(const QString &name, const QVariant &value);
-    QVariant property(const QString &name) const;
+    Q_INVOKABLE void setProperty(const QString &name, const QVariant &value);
+    Q_INVOKABLE QVariant property(const QString &name) const;
 
     void setFont(const QFont &font);
     QFont font() const;
 
-    void setEnabled(bool enabled);
-    bool isEnabled() const;
+    TreeItem *takeItem(int index);
 
-    TreeItem* child(int number);
-    int childCount() const;
-    bool isEmpty() const;
-    int columnCount() const;
-    QVariant data(int column) const;
+    Q_INVOKABLE void setEnabled(bool enabled);
+    Q_INVOKABLE bool isEnabled() const;
+
+    Q_INVOKABLE TreeItem* child(int number);
+    Q_INVOKABLE int childCount() const;
+    Q_INVOKABLE bool isEmpty() const;
+    Q_INVOKABLE int columnCount() const;
+    Q_INVOKABLE QVariant data(int column) const;
+
     bool insertChildren(int position, int count, int columns);
     bool insertColumns(int position, int columns);
-    TreeItem* parent() const;
+
+    Q_INVOKABLE TreeItem* parent() const;
+
     bool removeChildren(int position, int count);
     bool removeColumns(int position, int columns);
-    int childNumber() const;
-    bool setData(int column, const QVariant &value);
 
-    void appendChild(TreeItem* item);
-    void appendChildren(QList<TreeItem*> items);
-    void insertChild(int position, TreeItem* item);
-    void insertChildren(int position, QList<TreeItem*> items);
+    Q_INVOKABLE int childNumber() const;
+    Q_INVOKABLE bool setData(int column, const QVariant &value);
+
+    Q_INVOKABLE void appendChild(TreeItem* item);
+    Q_INVOKABLE void appendChildren(QList<TreeItem*> items);
+    Q_INVOKABLE void insertChild(int position, TreeItem* item);
+    Q_INVOKABLE void insertChildren(int position, QList<TreeItem*> items);
 
     inline QIcon icon() const
     {
@@ -50,15 +54,16 @@ public:
 
     void removeAllChildren();
 
-    void setIcon(const QIcon &icon);
+    Q_INVOKABLE void setIcon(const QIcon &icon);
 
-    int depth() const;
+    Q_INVOKABLE int depth() const;
 
-    QVector<QVariant> allData() const;
+    Q_INVOKABLE void setAllData(const QVector<QVariant> &data);
+    Q_INVOKABLE QVector<QVariant> allData() const;
 
     void sortChildren(int column, Qt::SortOrder order, TreeModel* model);
 
-    void setParent(TreeItem* parent);
+    Q_INVOKABLE void setParent(TreeItem* parent);
 
     static bool isVariantLessThan(const QVariant &left, const QVariant &right,
                                   bool isLocaleAware = true, Qt::CaseSensitivity caseSensitivity = Qt::CaseInsensitive);

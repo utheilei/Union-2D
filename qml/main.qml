@@ -71,9 +71,7 @@ ApplicationWindow {
         anchors.fill: parent
         anchors.margins: contentMargins
         parentObj: window
-        minButtonVisible: false
         menuButtonVisible: false
-        maxButtonVisible: false
 
         Label {
             id: titleLabel
@@ -109,7 +107,7 @@ ApplicationWindow {
         UButtonGroup {
             id: buttonGroup
             checkedIndex: UTheme.applicationTheme
-            anchors.rightMargin: 60
+            anchors.rightMargin: 165
             anchors.right: framelessWindow.titleBar.right
             anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
             width: 80
