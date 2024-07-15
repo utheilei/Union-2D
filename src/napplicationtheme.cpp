@@ -227,12 +227,6 @@ int UApplicationTheme::applicationTheme()
     return settings.value("Settings/Theme", UApplicationTheme::LightTheme).toInt();
 }
 
-QColor UApplicationTheme::color(ThemeType type, int ct)
-{
-    Q_D(UApplicationTheme);
-    return d->data->brushMap[d->themeName][ct];
-}
-
 QColor UApplicationTheme::color(int ct)
 {
     Q_D(UApplicationTheme);

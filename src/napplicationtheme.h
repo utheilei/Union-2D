@@ -71,8 +71,6 @@ public:
 
     int applicationTheme();
 
-    Q_INVOKABLE QColor color(ThemeType type, int ct);
-
     Q_INVOKABLE QColor color(int ct);
 
 signals:

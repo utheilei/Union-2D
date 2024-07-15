@@ -14,12 +14,14 @@ Old.TreeView {
     alternatingRowColors : false
     sortIndicatorVisible:true
     horizontalScrollBarPolicy: Qt.ScrollBarAlwaysOff
+    verticalScrollBarPolicy: Qt.ScrollBarAlwaysOff
     headerVisible: false
     frameVisible : false
+    property bool dragEnabled: false
     property var dragIndex: null
-    property int dragRow: -1
     property bool iconVisible: true
     property Item currentItem: null
+    property alias treeViewModel: treeModel
     signal pressBlankArea()
 
     MouseArea {
@@ -31,6 +33,54 @@ Old.TreeView {
                 treeView.pressBlankArea();
             }
             mouse.accepted = false
+        }
+    }
+
+    ScrollBar {
+        id: verticalBar
+        hoverEnabled: true
+        active: hovered || pressed
+        orientation: Qt.Vertical
+        size: treeView.height / treeView.flickableItem.contentHeight
+        width: visible ? 12 : 0
+        height: treeView.height
+        anchors.top: treeView.top
+        anchors.right: treeView.right
+        policy: ScrollBar.AsNeeded
+        onPositionChanged: {
+            treeView.flickableItem.contentY = position * (treeView.flickableItem.contentHeight)
+        }
+    }
+
+    ScrollBar {
+        id: horizonBar
+        hoverEnabled: true
+        active: hovered || pressed
+        orientation: Qt.Horizontal
+        size: treeView.width / treeView.flickableItem.contentWidth
+        width: treeView.width - verticalBar.width
+        height: visible ? 12 : 0
+        anchors.bottom: treeView.bottom
+        anchors.left: treeView.left
+        policy: ScrollBar.AsNeeded
+        onPositionChanged: {
+            treeView.flickableItem.contentX = position * (treeView.flickableItem.contentWidth)
+        }
+    }
+
+    Connections{
+        target: treeView.flickableItem
+        function onContentXChanged(x) {
+            horizonBar.position = treeView.flickableItem.contentX /
+            treeView.flickableItem.contentWidth
+        }
+    }
+
+    Connections {
+        target: treeView.flickableItem
+        function onContentYChanged(y) {
+            verticalBar.position = treeView.flickableItem.contentY /
+                treeView.flickableItem.contentHeight
         }
     }
 
@@ -72,7 +122,6 @@ Old.TreeView {
     }
 
     onDoubleClicked: {
-        console.log("tree onDoubleClicked")
         var pos = currentItem.mapToItem(treeView, currentItem.x, currentItem.y)
         edit.x = currentItem.x + 10 + 16
         edit.y = pos.y
@@ -87,10 +136,6 @@ Old.TreeView {
     TreeModel {
         id: treeModel
         headers: ["title"]
-        onDataChanged: {
-            console.log(topLeft + " " + bottomRight+ " " + roles)
-            console.log(treeModel.itemData(0, topLeft))
-        }
     }
 
     ItemSelectionModel {
@@ -146,11 +191,10 @@ Old.TreeView {
                 acceptedButtons: Qt.RightButton | Qt.LeftButton
                 propagateComposedEvents: true
                 hoverEnabled: true
-                drag.target: delegateRect
+                drag.target: dragEnabled ? delegateRect : null
                 drag.onActiveChanged: {
                     if (rowMouseArea.drag.active) {
                         dragIndex = styleData.index
-                        dragRow = styleData.row
                     }
                     delegateRect.Drag.drop()
                 }
@@ -200,11 +244,12 @@ Old.TreeView {
             border.color: dropHoverd ? UTheme.errorBackground : "transparent"
             DropArea {
                 id: dropArea
+                enabled: dragEnabled
                 anchors.fill: parent
                 keys: ["treeItem"]
                 onDropped: {
                     var pos = dropArea.mapToItem(treeView, drop.x, drop.y)
-                    treeModel.moveItem(dragIndex, dragRow, treeView.indexAt(pos.x, pos.y), styleData.row)
+                    treeModel.moveItem(dragIndex, 0, treeView.indexAt(pos.x, pos.y), styleData.row)
                     dropHoverd = false
                 }
                 onEntered: {

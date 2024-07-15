@@ -70,18 +70,6 @@ Rectangle {
                 animation.start()
             }
         }
-
-        Component.onCompleted: {
-            UTheme.applicationThemeChanged.connect(edgeButton.onThemeChanged)
-        }
-
-        Component.onDestruction: {
-            UTheme.applicationThemeChanged.disconnect(edgeButton.onThemeChanged)
-        }
-
-        function onThemeChanged() {
-            setExpand(edgeButton.expand)
-        }
     }
 
     Item {
@@ -99,7 +87,7 @@ Rectangle {
         Rectangle {
             id: accountWidget
             anchors.fill: parent
-            color: "green"
+            color: UTheme.base
             visible: true
             radius: 8
             UCalendar {
@@ -201,36 +189,66 @@ Rectangle {
                 text: "URoundedButton"
                 checkState: Qt.Checked
             }
+
+            UEdgeButton {
+                id: edgeBtn
+                orientation: Qt.Horizontal
+                width: 80
+                height: 10
+                visible: true
+                x:600
+                y:200
+            }
         }
 
         Rectangle {
             id: displayWidget
             anchors.fill: parent
-            color: "yellow"
+            color: UTheme.base
             radius: 8
             visible: false
 
-            TextField {
-                id: input
-                selectByMouse: !readOnly
+            URoundedButton {
+                id: add
                 x:10
                 y:10
-                text: "111"
-                readOnly: false
-
+                text: "append"
+                onClicked: {
+                    treeView.treeViewModel.insertItem(0, ["append", "yes"])
+                }
             }
 
             UTreeView {
                 id: treeView
-                anchors.top:input.bottom
-                anchors.left: input.left
+                anchors.top: add.bottom
+                anchors.left: add.left
+            }
+
+            UProgressBar {
+                id: bar
+                anchors.top: treeView.bottom
+                anchors.left: treeView.left
+            }
+
+            UCircleProgressBar {
+                id: circleProgressBar
+                anchors.topMargin: 50
+                anchors.top: bar.bottom
+                anchors.left: bar.left
+            }
+
+            UBusyIndicator {
+                id: indicator
+                anchors.topMargin: 20
+                anchors.top: circleProgressBar.bottom
+                anchors.left: circleProgressBar.left
             }
         }
 
         Rectangle {
             id: defaultAppWidget
             anchors.fill: parent
-            color: "blue"
+            color: UTheme.base
             radius: 8
             visible: false
         }
@@ -238,7 +256,7 @@ Rectangle {
         Rectangle {
             id: netWorkWidget
             anchors.fill: parent
-            color: "darkGreen"
+            color: UTheme.base
             radius: 8
             visible: false
         }

@@ -102,9 +102,8 @@
 <context>
     <name>UToolTip</name>
     <message>
-        <location filename="../qml/controls/UToolTip.qml" line="14"/>
         <source>Please Input</source>
-        <translation type="unfinished">Please Input</translation>
+        <translation type="obsolete">Please Input</translation>
     </message>
 </context>
 <context>

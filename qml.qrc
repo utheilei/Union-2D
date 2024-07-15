@@ -83,5 +83,8 @@
         <file>qml/controls/UTreeView.qml</file>
         <file>qml/controls/UTreeEdit.qml</file>
         <file>qml/controls/UToolTip.qml</file>
+        <file>qml/controls/UCircleProgressBar.qml</file>
+        <file>qml/controls/UProgressBar.qml</file>
+        <file>qml/controls/UBusyIndicator.qml</file>
     </qresource>
 </RCC>

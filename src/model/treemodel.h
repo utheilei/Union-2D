@@ -25,7 +25,7 @@ public:
                         int role = Qt::DisplayRole) const override;
 
     Q_INVOKABLE QModelIndex index(int row, int column,
-                      const QModelIndex &parent = QModelIndex()) const override;
+                                  const QModelIndex &parent = QModelIndex()) const override;
     Q_INVOKABLE QModelIndex parent(const QModelIndex &index) const override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -47,19 +47,21 @@ public:
                     const QModelIndex &parent = QModelIndex()) override;
 
     Q_INVOKABLE bool moveItem(const QModelIndex &source, int sourceRow,
-                 const QModelIndex &destination, int destinationChild);
+                              const QModelIndex &destination, int destinationChild);
+
+    Q_INVOKABLE void insertItem(int position, const QVariantList &data, const QModelIndex &parent = QModelIndex());
 
     Q_INVOKABLE QVariant itemData(int column, const QModelIndex &index) const;
 
     Q_INVOKABLE TreeItem* item(const QModelIndex &index) const;
 
-    Q_INVOKABLE void insertItem(int position, TreeItem* item, const QModelIndex &parent = QModelIndex());
+    void insertItem(int position, TreeItem* item, const QModelIndex &parent = QModelIndex());
 
-    Q_INVOKABLE void insertItems(int position, QList<TreeItem*> items);
+    void insertItems(int position, QList<TreeItem*> items);
 
-    Q_INVOKABLE void appendItem(TreeItem* item);
+    void appendItem(TreeItem* item);
 
-    Q_INVOKABLE void appendItems(QList<TreeItem*> items);
+    void appendItems(QList<TreeItem*> items);
 
     Q_INVOKABLE void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
 

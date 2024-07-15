@@ -9,11 +9,10 @@ TreeModel::TreeModel(QObject* parent) : QAbstractItemModel(parent)
 
     QVector<QVariant> data = {"frist", "yes"};
     QVector<QVariant> secendData = {"secend", "yes"};
-    TreeItem *item = new TreeItem(data, m_rootItem);
-    TreeItem *chidItem = new TreeItem(data, item);
-    TreeItem *thirdChidItem = new TreeItem(data, chidItem);
-    qDebug() << chidItem << thirdChidItem->parent();
-    TreeItem *secendChidItem = new TreeItem(secendData, item);
+    TreeItem* item = new TreeItem(data, m_rootItem);
+    TreeItem* chidItem = new TreeItem(data, item);
+    TreeItem* thirdChidItem = new TreeItem(data, chidItem);
+    TreeItem* secendChidItem = new TreeItem(secendData, item);
     chidItem->appendChild(thirdChidItem);
     item->appendChild(chidItem);
     item->appendChild(secendChidItem);
@@ -30,7 +29,8 @@ void TreeModel::setHeaders(const QStringList &headers)
     if (m_rootItem)
     {
         QVector<QVariant> data;
-        foreach (const auto &text, headers) {
+        foreach (const auto &text, headers)
+        {
             data.append(text);
         }
         m_rootItem->setAllData(data);
@@ -369,6 +369,15 @@ bool TreeModel::moveItem(const QModelIndex &source, int sourceRow,
     endResetModel();
     emit layoutChanged();
     return true;
+}
+
+void TreeModel::insertItem(int position, const QVariantList &data, const QModelIndex &parent)
+{
+    TreeItem* parentItem = this->item(parent);
+    beginInsertRows(parent, position, position);
+    TreeItem* item = new TreeItem(data.toVector(), parentItem);
+    parentItem->insertChild(position, item);
+    endInsertRows();
 }
 
 QVariant TreeModel::itemData(int column, const QModelIndex &index) const
