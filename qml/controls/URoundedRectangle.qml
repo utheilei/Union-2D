@@ -11,6 +11,8 @@ Rectangle {
             width: root.width
             height: root.height
             radius: 10
+            border.width: 1
+            border.color: UTheme.text
         }
     }
 }

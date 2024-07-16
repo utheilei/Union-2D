@@ -22,6 +22,8 @@ public:
 
     Q_INVOKABLE QString colorName(const QColor &color);
 
+    Q_INVOKABLE QColor colorAlpha(const QColor &color, int alpha);
+
 signals:
     void languageChanged();
 

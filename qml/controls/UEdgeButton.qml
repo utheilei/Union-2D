@@ -67,7 +67,7 @@ Item {
             }
             context.closePath();
             ctx.strokeStyle = color;
-            ctx.fillStyle = UTheme.base;
+            ctx.fillStyle = UTheme.button;
             ctx.fill();
             ctx.stroke();
         }

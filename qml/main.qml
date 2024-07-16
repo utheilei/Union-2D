@@ -192,7 +192,7 @@ ApplicationWindow {
         if (floatingMessage.visible)
             return
 
-        floatingMessage.iconSource = isOk ? "qrc:/icon/yes.svg" : "qrc:/icon/error.svg"
+        floatingMessage.iconSource = isOk ? "qrc:/icon/" + UTheme.themeName + "/success.svg" : "qrc:/icon/" + UTheme.themeName + "/error.svg"
         floatingMessage.text = text
         floatingMessage.timeout = time
         floatingMessage.visible = true

@@ -42,6 +42,12 @@ UApplicationTheme {
         }
     }
 
+    Behavior on base {
+        ColorAnimation {
+            duration: 1000
+        }
+    }
+
     onApplicationThemeChanged: {
         updateColor()
     }

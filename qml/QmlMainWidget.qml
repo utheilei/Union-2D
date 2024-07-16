@@ -155,7 +155,7 @@ Rectangle {
                 y:100
                 width: 140
                 height: 60
-                model: [["","qrc:/icon/dark/yes.svg"],["","qrc:/icon/dark/error.svg"]]
+                model: [["","qrc:/icon/dark/success.svg"],["","qrc:/icon/dark/error.svg"]]
             }
 
             USwitch {
@@ -214,7 +214,7 @@ Rectangle {
                 y:10
                 text: "append"
                 onClicked: {
-                    treeView.treeViewModel.insertItem(0, ["append", "yes"])
+                    treeView.treeViewModel.insertItem(0, ["append", "success"])
                 }
             }
 
@@ -251,6 +251,48 @@ Rectangle {
             color: UTheme.base
             radius: 8
             visible: false
+
+            UAlert {
+                id: successMessage
+                x: 10
+                y: 10
+                maxWidth: 300
+                visible: true
+                text: "成功提示的文案"
+            }
+
+            UAlert {
+                id: message
+                x: 10
+                y: 70
+                alertColor: UTheme.informationBackground
+                alertType: UAlert.AlertType.Message
+                maxWidth: 300
+                visible: true
+                text: "消息提示的文案"
+            }
+
+            UAlert {
+                id: wainingMessage
+                x: 10
+                y: 130
+                alertColor: UTheme.warningBackground
+                alertType: UAlert.AlertType.Waining
+                maxWidth: 300
+                visible: true
+                text: "警告提示的文案"
+            }
+
+            UAlert {
+                id: errorMessage
+                x: 10
+                y: 190
+                alertColor: UTheme.errorBackground
+                alertType: UAlert.AlertType.Error
+                maxWidth: 300
+                visible: true
+                text: "错误提示的文案"
+            }
         }
 
         Rectangle {

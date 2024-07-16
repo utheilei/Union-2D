@@ -13,11 +13,13 @@ Old.Calendar {
     dayOfWeekFormat: Locale.ShortFormat
     style: CalendarStyle {
         gridVisible: false
-        background: URoundedRectangle {
+        background: Rectangle {
             color: UTheme.base
             radius: 8
             implicitWidth: 300
             implicitHeight: 300
+            border.width: 1
+            border.color: UTheme.text
         }
         navigationBar: Rectangle{
             height: control.height/8;
@@ -140,12 +142,11 @@ Old.Calendar {
     }
 
     layer.enabled: true
-    layer.effect: OpacityMask {
-        maskSource: Rectangle {
-            width: calendar.width
-            height: calendar.height
-            radius: 8
-        }
+    layer.effect: DropShadow {
+        transparentBorder: true
+        radius: 8.0
+        samples: 17
+        color: "#80000000"
     }
     function equalDate(date, otherDate) {
         return date.toLocaleDateString() === otherDate.toLocaleDateString()

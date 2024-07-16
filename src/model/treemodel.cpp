@@ -7,8 +7,8 @@ TreeModel::TreeModel(QObject* parent) : QAbstractItemModel(parent)
 {
     m_rootItem = new TreeItem(QVector<QVariant>());
 
-    QVector<QVariant> data = {"frist", "yes"};
-    QVector<QVariant> secendData = {"secend", "yes"};
+    QVector<QVariant> data = {"frist", "success"};
+    QVector<QVariant> secendData = {"secend", "success"};
     TreeItem* item = new TreeItem(data, m_rootItem);
     TreeItem* chidItem = new TreeItem(data, item);
     TreeItem* thirdChidItem = new TreeItem(data, chidItem);

@@ -9,31 +9,17 @@ BusyIndicator {
     height: 80
     property color background: UTheme.highlight
     style: BusyIndicatorStyle {
-        indicator: Rectangle {
+        indicator: Image {
             id: back
             width: control.width
             height: control.height
-            radius: width / 2
-            color: "transparent"
-            border.width: 10
-
-            ConicalGradient {
-                anchors.fill: back
-                source: back
-                gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#FFFFFF" }
-                    GradientStop { position: 0.1 ; color: "#FFFFFF" }
-                    GradientStop { position: 0.25 ; color: Qt.rgba(198/255,234/255,249/255,1) }
-                    GradientStop { position: 0.5; color: Qt.rgba(136/255,212/255,243/255,1) }
-                    GradientStop { position: 0.75; color: Qt.rgba(69/255,185/255,236/255,1) }
-                    GradientStop { position: 1.0; color: Qt.rgba(4/255,162/255,229/255,1) }
-                }
-            }
+            source: "qrc:/icon/" + UTheme.themeName + "/loading.svg"
+            sourceSize: Qt.size(control.width, control.height)
 
             RotationAnimator on rotation {
                 running: control.running
                 loops: Animation.Infinite
-                duration: 2000
+                duration: 1800
                 from: 0 ; to: 360
             }
         }

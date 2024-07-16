@@ -34,9 +34,7 @@
         <file>icon/dark/Blister.png</file>
         <file>icon/light/Blister.png</file>
         <file>icon/light/error.svg</file>
-        <file>icon/light/yes.svg</file>
         <file>icon/dark/error.svg</file>
-        <file>icon/dark/yes.svg</file>
         <file>icon/dark/search.svg</file>
         <file>icon/light/search.svg</file>
         <file>qml/controls/UButton.qml</file>
@@ -86,5 +84,14 @@
         <file>qml/controls/UCircleProgressBar.qml</file>
         <file>qml/controls/UProgressBar.qml</file>
         <file>qml/controls/UBusyIndicator.qml</file>
+        <file>qml/controls/UAlert.qml</file>
+        <file>icon/dark/info.svg</file>
+        <file>icon/dark/success.svg</file>
+        <file>icon/dark/waining.svg</file>
+        <file>icon/light/info.svg</file>
+        <file>icon/light/success.svg</file>
+        <file>icon/light/waining.svg</file>
+        <file>icon/dark/loading.svg</file>
+        <file>icon/light/loading.svg</file>
     </qresource>
 </RCC>

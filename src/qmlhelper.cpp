@@ -172,3 +172,10 @@ QString QmlHelper::colorName(const QColor &color)
 {
     return color.name();
 }
+
+QColor QmlHelper::colorAlpha(const QColor &color, int alpha)
+{
+    QColor col(color);
+    col.setAlpha(alpha);
+    return col;
+}
