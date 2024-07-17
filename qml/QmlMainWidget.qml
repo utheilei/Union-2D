@@ -91,7 +91,7 @@ Rectangle {
             visible: true
             radius: 8
             UCalendar {
-               anchors.centerIn: parent
+                anchors.centerIn: parent
             }
 
             UCircleButton {
@@ -294,30 +294,28 @@ Rectangle {
                 text: "错误提示的文案"
             }
 
-            ListModel {
-                 id: fruitModel
+            Component {
+                id: switchComponent
+                USwitch {
+                }
+            }
 
-                 ListElement {
-                     text: "Apple"
-                     iconName: "success"
-                 }
-                 ListElement {
-                     text: "Orange"
-                     iconName: "success"
-                 }
-                 ListElement {
-                     text: "Banana"
-                     iconName: "success"
-                 }
-             }
+            ListModel {
+                id: fruitModel
+                Component.onCompleted: {
+                    append({"text": "Apple", "iconName": "success", itemComponent: switchComponent});
+                    append({"text": "Orange", "iconName": "success", itemComponent: switchComponent});
+                    append({"text": "Banana", "iconName": "success", itemComponent: switchComponent});
+                }
+            }
 
             USettingGroup {
+                id: group
                 model: fruitModel
                 spacing: 2
                 x: 10
                 y: 10
                 width: 200
-                itemColor: UTheme.successBackground
             }
         }
 
@@ -327,6 +325,26 @@ Rectangle {
             color: UTheme.base
             radius: 8
             visible: false
+
+            UNavigationBar {
+                x: 10
+                y:10
+                width: 500
+                height: 46
+                model: [["西安","qrc:/icon/dark/success.svg"],["汉中","qrc:/icon/dark/info.svg"],
+                    ["宝鸡","qrc:/icon/dark/waining.svg"], ["安康","qrc:/icon/dark/dark.svg"]]
+            }
+
+            UNavigationBar {
+                x: 10
+                y:80
+                width: 500
+                height: 46
+                iconVisible: false
+                buttonSize: Qt.size(60,30)
+                model: [["西安","qrc:/icon/dark/success.svg"],["汉中","qrc:/icon/dark/info.svg"],
+                    ["宝鸡","qrc:/icon/dark/waining.svg"], ["安康","qrc:/icon/dark/dark.svg"]]
+            }
         }
 
         function setCurrentIndex(index) {

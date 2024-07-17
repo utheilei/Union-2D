@@ -8,33 +8,32 @@ URadiusRectangle {
     property alias itemFont: settingText.font
     property size iconSize: Qt.size(18, 18)
 
-    Row {
-        id: rowLayout
-        anchors.fill: parent
+    Image {
+        id: settingIcon
+        sourceSize: iconSize
         anchors.leftMargin: 10
-        anchors.rightMargin: 10
-        spacing: 5
-        Image {
-            id: settingIcon
-            sourceSize: iconSize
-            anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+    }
+    Text {
+        id: settingText
+        FontMetrics {
+            id: fontMetrics
+            font: itemFont
         }
-        Text {
-            id: settingText
-            FontMetrics {
-                id: fontMetrics
-                font: itemFont
-            }
-            color: UTheme.text
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            anchors.verticalCenter: parent.verticalCenter
-            width: fontMetrics.boundingRect(text).width
-        }
+        color: UTheme.text
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        anchors.leftMargin: 5
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: settingIcon.right
+        width: fontMetrics.boundingRect(text).width
+    }
 
-        Loader {
-            id: myLoader
-            anchors.verticalCenter: parent.verticalCenter
-        }
+    Loader {
+        id: myLoader
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.rightMargin: 0
+        anchors.right: parent.right
     }
 }

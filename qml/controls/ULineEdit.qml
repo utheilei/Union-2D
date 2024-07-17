@@ -23,7 +23,7 @@ TextField {
         color: control.visible ? UTheme.errorBackground : UTheme.button
         radius: 10
         border.color: field.activeFocus ? UTheme.highlight : UTheme.button
-        border.width: field.activeFocus? 1.5 : 0
+        border.width: field.activeFocus? 1 : 0
     }
 
     onTextChanged: hideAlertMessage()
@@ -48,33 +48,13 @@ TextField {
         }
     }
 
-    ToolTip {
+    UToolTip {
         id: control
         visible: false
         timeout: 5000
         x: 0
         y: field.height + 2
         parent: field
-        topPadding: 4
-        bottomPadding: 4
-
-        contentItem: Text {
-            text: control.text
-            font: control.font
-            color: Qt.rgba(0.945, 0.224, 0.196, 1)
-        }
-
-        background: Rectangle {
-            color: UTheme.base
-            radius: 8
-            layer.enabled: true
-            layer.effect: DropShadow {
-                transparentBorder: true
-                radius: 8.0
-                samples: 17
-                color: "#80000000"
-            }
-        }
     }
 
     Keys.onPressed: {

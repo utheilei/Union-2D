@@ -20,6 +20,7 @@ ListView {
             itemColor: view.itemColor
             itemText: text
             itemIcon: "qrc:/icon/" + UTheme.themeName + "/" + iconName + ".svg"
+            component: itemComponent
         }
     }
 

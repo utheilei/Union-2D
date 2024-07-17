@@ -114,7 +114,7 @@
         <translation>Union-2D</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="143"/>
+        <location filename="../qml/main.qml" line="144"/>
         <source>关于</source>
         <translation type="unfinished"></translation>
     </message>
@@ -139,7 +139,7 @@
         <translation type="vanished">English</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="93"/>
+        <location filename="../qml/main.qml" line="94"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>

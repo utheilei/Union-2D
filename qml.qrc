@@ -96,5 +96,8 @@
         <file>qml/controls/USettingGroup.qml</file>
         <file>qml/controls/USettingItem.qml</file>
         <file>qml/controls/URadiusRectangle.qml</file>
+        <file>qml/controls/UNavigationBar.qml</file>
+        <file>svg.cso</file>
+        <file>qml/controls/USVGIcon.qml</file>
     </qresource>
 </RCC>

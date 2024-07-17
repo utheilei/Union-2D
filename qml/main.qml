@@ -79,9 +79,10 @@ ApplicationWindow {
             anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
             z: 10
             font.pixelSize: 15
+            font.bold: true
             font.family: "Microsoft Yahei"
             text: window.title
-            color: UTheme.text
+            color: UTheme.highlight
         }
 
         URoundedButton {

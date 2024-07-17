@@ -11,7 +11,7 @@ Rectangle {
     implicitWidth: 260
     implicitHeight: 36
     border.color: edit.activeFocus ? UTheme.highlight : UTheme.button
-    border.width: edit.activeFocus? 1.5 : 0
+    border.width: edit.activeFocus? 1 : 0
     signal returnPressed
 
     RowLayout {
