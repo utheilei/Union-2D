@@ -114,7 +114,7 @@ Popup {
                 Layout.alignment: Qt.AlignRight
                 Layout.rightMargin: 0
                 hoverColor: "#FB4C3E"
-                buttonPosition: 3
+                buttonPosition: URadiusRectangle.ItemPosition.TopLeft | URadiusRectangle.ItemPosition.BottomLeft | URadiusRectangle.ItemPosition.BottomRight
                 icon.source: "qrc:/icon/" + UTheme.themeName + "/close.svg"
                 onClicked: modalDialog.close()
             }

@@ -18,12 +18,16 @@ Old.Calendar {
             radius: 8
             implicitWidth: 300
             implicitHeight: 300
-            border.width: 1
-            border.color: UTheme.text
+            layer.enabled: true
+            layer.effect: DropShadow {
+                transparentBorder: true
+                radius: 8.0
+                samples: 17
+                color: "#80000000"
+            }
         }
-        navigationBar: Rectangle{
+        navigationBar: Item {
             height: control.height/8;
-            color: UTheme.base
             Text{
                 id:dateText;
                 anchors.centerIn: parent;
@@ -102,8 +106,7 @@ Old.Calendar {
                 return value.toString().length < 2 ? ('0' + value) : value
             }
         }
-        dayDelegate: Rectangle {
-            color: UTheme.base
+        dayDelegate: Item {
             Rectangle {
                 anchors.centerIn: parent
                 antialiasing: true
@@ -122,9 +125,8 @@ Old.Calendar {
             }
         }
 
-        dayOfWeekDelegate : Rectangle {
+        dayOfWeekDelegate : Item {
             height: control.height/8
-            color: UTheme.base
             Label {
                 text: qmlHelper.dayOfWeek(styleData.index, control.dayOfWeekFormat)
                 anchors.centerIn: parent
@@ -139,14 +141,6 @@ Old.Calendar {
                 color: UTheme.buttonText
             }
         }
-    }
-
-    layer.enabled: true
-    layer.effect: DropShadow {
-        transparentBorder: true
-        radius: 8.0
-        samples: 17
-        color: "#80000000"
     }
     function equalDate(date, otherDate) {
         return date.toLocaleDateString() === otherDate.toLocaleDateString()

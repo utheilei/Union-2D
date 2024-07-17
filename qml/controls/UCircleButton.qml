@@ -4,7 +4,6 @@ import QtQuick.Controls.Styles 1.4
 
 Button {
     property color btnColor: UTheme.highlight
-    property int buttonPosition: 0
     property int buttonStatus: 0
     hoverEnabled: true
     antialiasing: true

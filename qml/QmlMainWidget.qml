@@ -254,7 +254,7 @@ Rectangle {
 
             UAlert {
                 id: successMessage
-                x: 10
+                x: 800
                 y: 10
                 maxWidth: 300
                 visible: true
@@ -263,7 +263,7 @@ Rectangle {
 
             UAlert {
                 id: message
-                x: 10
+                x: 800
                 y: 70
                 alertColor: UTheme.informationBackground
                 alertType: UAlert.AlertType.Message
@@ -274,7 +274,7 @@ Rectangle {
 
             UAlert {
                 id: wainingMessage
-                x: 10
+                x: 800
                 y: 130
                 alertColor: UTheme.warningBackground
                 alertType: UAlert.AlertType.Waining
@@ -285,13 +285,39 @@ Rectangle {
 
             UAlert {
                 id: errorMessage
-                x: 10
+                x: 800
                 y: 190
                 alertColor: UTheme.errorBackground
                 alertType: UAlert.AlertType.Error
                 maxWidth: 300
                 visible: true
                 text: "错误提示的文案"
+            }
+
+            ListModel {
+                 id: fruitModel
+
+                 ListElement {
+                     text: "Apple"
+                     iconName: "success"
+                 }
+                 ListElement {
+                     text: "Orange"
+                     iconName: "success"
+                 }
+                 ListElement {
+                     text: "Banana"
+                     iconName: "success"
+                 }
+             }
+
+            USettingGroup {
+                model: fruitModel
+                spacing: 2
+                x: 10
+                y: 10
+                width: 200
+                itemColor: UTheme.successBackground
             }
         }
 

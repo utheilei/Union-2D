@@ -93,5 +93,8 @@
         <file>icon/light/waining.svg</file>
         <file>icon/dark/loading.svg</file>
         <file>icon/light/loading.svg</file>
+        <file>qml/controls/USettingGroup.qml</file>
+        <file>qml/controls/USettingItem.qml</file>
+        <file>qml/controls/URadiusRectangle.qml</file>
     </qresource>
 </RCC>
