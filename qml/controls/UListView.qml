@@ -12,6 +12,11 @@ ListView {
     property bool buttonVisible: false
     property color itemColor: UTheme.itemBackground
     signal hoverChanged(var isHovered)
+    signal itemDataChanged(var itemData)
+    enum ItemRoles {
+        Group,
+        Member
+    }
 
     spacing: 5
     delegate: listDelegate
@@ -31,11 +36,11 @@ ListView {
                 anchors.left: parent.left
                 anchors.leftMargin: iconVisible ? 10 : 0
                 anchors.verticalCenter: parent.verticalCenter
-                source: modelData[1]
+                source: sourceUrl
                 sourceSize: Qt.size(35, 35)
-                visible: iconVisible
-                width: iconVisible ? sourceSize.width : 0
-                height: iconVisible ? sourceSize.height : 0
+                visible: (UListView.ItemRoles.Group === itemRole) ? false : iconVisible
+                width: visible ? sourceSize.width : 0
+                height: visible ? sourceSize.height : 0
             }
 
             Text {
@@ -45,8 +50,9 @@ ListView {
                 anchors.verticalCenter: parent.verticalCenter
                 width: (parent.width - iconItem.width - closeButton.width - 20 -
                         (iconItem.visible ? 10 : 0) - (closeButton.visible ? 10 : 0))
-                text: modelData[0]
-                color: view.currentIndex === index ? UTheme.highlightedText : UTheme.text
+                text: itemName
+                color: (UListView.ItemRoles.Group === itemRole) ? qmlHelper.colorAlpha(UTheme.text, 0.3)
+                                                                : (view.currentIndex === index ? UTheme.highlightedText : UTheme.text)
                 elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
             }
@@ -73,14 +79,25 @@ ListView {
                 hoverEnabled: true
                 anchors.fill: parent
                 propagateComposedEvents: true
-                onClicked: {view.focus = true; view.currentIndex = index; mouse.accepted = false}
+                onClicked: {
+                    view.focus = true
+                    if (UListView.ItemRoles.Member === itemRole) {
+                        view.currentIndex = index
+                        itemDataChanged(itemData)
+                    }
+                    mouse.accepted = false
+                }
                 onEntered: {
+                    if (UListView.ItemRoles.Group === itemRole)
+                        return
                     isEnter = true
                     if (buttonVisible)
                         closeButton.visible = true
                     hoverChanged(true)
                 }
                 onExited: {
+                    if (UListView.ItemRoles.Group === itemRole)
+                        return
                     isEnter = false
                     if (buttonVisible)
                         closeButton.visible = false

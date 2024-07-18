@@ -10,6 +10,7 @@ Rectangle {
     radius: 20
 
     property var listWidget: [accountWidget, unionIDWidget, displayWidget, defaultAppWidget, netWorkWidget]
+    property var listMap: new Map([[0, accountWidget], [1, unionIDWidget], [2, displayWidget], [3, defaultAppWidget], [4, netWorkWidget]]);
 
     MouseArea {
         anchors.fill: parent
@@ -39,10 +40,38 @@ Rectangle {
         anchors.bottomMargin: 10
         width: parent.width/5
         radius: 8
+        ListModel {
+            id: leftModel
+            ListElement {
+                itemRole: UListView.ItemRoles.Member
+                itemName: "ButtonWidgets"
+                sourceUrl: "qrc:/image/button.svg"
+            }
+            ListElement {
+                itemRole: UListView.ItemRoles.Member
+                itemName: "InputWidgets"
+                sourceUrl: "qrc:/image/inputedit.svg"
+            }
+            ListElement {
+                itemRole: UListView.ItemRoles.Member
+                itemName: "ProgressWidgets"
+                sourceUrl: "qrc:/image/progress.svg"
+            }
+            ListElement {
+                itemRole: UListView.ItemRoles.Member
+                itemName: "DialogWidgets"
+                sourceUrl: "qrc:/image/dialog.svg"
+            }
+            ListElement {
+                itemRole: UListView.ItemRoles.Member
+                itemName: "TooltipWidgets"
+                sourceUrl: "qrc:/image/tooltip.svg"
+            }
+        }
         UListView {
             id: listView
             anchors.fill: parent
-            model: qmlHelper.listModel()
+            model: leftModel
             iconVisible: true
             clip: true
             onCurrentIndexChanged: rightRectangle.setCurrentIndex(currentIndex)
