@@ -43,6 +43,49 @@
     </message>
 </context>
 <context>
+    <name>UColorPicker</name>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="114"/>
+        <source>选择新颜色</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="333"/>
+        <source>红色</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="340"/>
+        <source>绿色</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="347"/>
+        <source>蓝色</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="354"/>
+        <source>透明度</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="361"/>
+        <source>十六进制 (ARGB)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="513"/>
+        <source>确定</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/controls/UColorPicker.qml" line="534"/>
+        <source>取消</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UDialog</name>
     <message>
         <location filename="../qml/controls/UDialog.qml" line="58"/>
@@ -66,7 +109,7 @@
 <context>
     <name>USearchLineEdit</name>
     <message>
-        <location filename="../qml/controls/USearchLineEdit.qml" line="22"/>
+        <location filename="../qml/controls/USearchLineEdit.qml" line="24"/>
         <source>搜索</source>
         <translation type="unfinished"></translation>
     </message>
@@ -114,8 +157,33 @@
         <translation>Union-2D</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="144"/>
-        <source>关于</source>
+        <location filename="../qml/main.qml" line="113"/>
+        <source>输入关键字</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="178"/>
+        <source>首页</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="178"/>
+        <source>设计</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="178"/>
+        <source>研发</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="178"/>
+        <source>组件</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="178"/>
+        <source>资源</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

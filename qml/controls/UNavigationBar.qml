@@ -79,4 +79,7 @@ Item {
             }
         }
     }
+    function itemAt(index) {
+        return repeater.itemAt(index)
+    }
 }

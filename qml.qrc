@@ -99,5 +99,10 @@
         <file>qml/controls/UNavigationBar.qml</file>
         <file>svg.cso</file>
         <file>qml/controls/USVGIcon.qml</file>
+        <file>qml/controls/UColorPicker.qml</file>
+        <file>qml/controls/UAvatar.qml</file>
+        <file>image/gitee_logo.jpg</file>
+        <file>icon/dark/about.svg</file>
+        <file>icon/light/about.svg</file>
     </qresource>
 </RCC>

@@ -13,6 +13,8 @@ Rectangle {
     border.color: edit.activeFocus ? UTheme.highlight : UTheme.button
     border.width: edit.activeFocus? 1 : 0
     signal returnPressed
+    property alias placeholderText: edit.placeholderText
+    property alias text: edit.text
 
     RowLayout {
         anchors.fill: parent

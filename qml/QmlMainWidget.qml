@@ -345,6 +345,22 @@ Rectangle {
                 model: [["西安","qrc:/icon/dark/success.svg"],["汉中","qrc:/icon/dark/info.svg"],
                     ["宝鸡","qrc:/icon/dark/waining.svg"], ["安康","qrc:/icon/dark/dark.svg"]]
             }
+
+            UColorPicker {
+                x: 10
+                y: 140
+                Component.onCompleted: {
+                    open()
+                }
+            }
+
+            UAvatar {
+                x: 10
+                y: 140
+                width: 80
+                height: 80
+                source: "qrc:/image/button.svg"
+            }
         }
 
         function setCurrentIndex(index) {

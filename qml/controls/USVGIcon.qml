@@ -20,7 +20,9 @@ Item {
         asynchronous: svgicon.asynchronous
         anchors.fill: svgicon
         source:  svgicon.source
+        sourceSize: Qt.size(svgicon.width, svgicon.height)
         smooth: svgicon.smooth
+        fillMode: Image.PreserveAspectFit
     }
 
     ShaderEffect {

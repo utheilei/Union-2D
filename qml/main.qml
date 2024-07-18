@@ -13,6 +13,7 @@ ApplicationWindow {
     property int contentMargins: 10
     property string appIcon: "qrc:/Union-2D.ico"
     property bool titleVisible: false
+    property int navigationBarIndex: 0
     id: window
     color: "transparent"
     flags: Qt.FramelessWindowHint | Qt.Window;
@@ -85,31 +86,32 @@ ApplicationWindow {
             color: UTheme.highlight
         }
 
-        URoundedButton {
-            id: leftButton
+        USearchLineEdit {
+            id: searchLineEdit
             anchors.left: titleLabel.right
             anchors.leftMargin: 9
             anchors.verticalCenter: titleLabel.verticalCenter
-            z: 10
-            text: qsTr("Home")
-            icon.source: "qrc:/icon/" + UTheme.themeName + "/left.svg"
-            implicitWidth: 65
-            implicitHeight: 35
-            icon.width: 16
-            icon.height: 16
-            borderWidth: 1
-            backgroundDefaultColor: "transparent"
-            backgroundHoverdColor: Qt.darker(UTheme.informationBackground, 0.6)
-            backgroundPressedColor : UTheme.informationBackground
-            onClicked: {myLoader.sourceComponent = loginPage}
-            enabled: myLoader.sourceComponent === mainPage
+            placeholderText: qsTr("输入关键字")
+        }
+
+        UButton {
+            id: giteeButton
+            anchors.rightMargin: 165
+            anchors.right: framelessWindow.titleBar.right
+            anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
+            implicitWidth: 40
+            implicitHeight: 40
+            icon.source: "qrc:/image/gitee_logo.jpg"
+            onClicked: {
+                Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/tree/develop")
+            }
         }
 
         UButtonGroup {
             id: buttonGroup
             checkedIndex: UTheme.applicationTheme
-            anchors.rightMargin: 165
-            anchors.right: framelessWindow.titleBar.right
+            anchors.rightMargin: 9
+            anchors.right: giteeButton.left
             anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
             width: 80
             height: 40
@@ -136,13 +138,52 @@ ApplicationWindow {
         }
 
         UButton {
+            id: aboutButton
             anchors.rightMargin: 9
             anchors.right: languageButton.left
             anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
             implicitWidth: 40
             implicitHeight: 40
-            text: qsTr("关于")
+            icon.source: "qrc:/icon/" + UTheme.themeName + "/about.svg"
             onClicked: {aboutDialog.open()}
+        }
+
+        UNavigationBar {
+            id: navigationBar
+            anchors.rightMargin: 20
+            anchors.right: aboutButton.left
+            anchors.verticalCenter: framelessWindow.titleBar.verticalCenter
+            width: 220
+            height: 46
+            iconVisible: false
+            buttonSize: Qt.size(46, 46)
+            model: [[qsTr("首页"), ""], [qsTr("设计"), ""], [qsTr("研发"), ""], [qsTr("组件"), ""], [qsTr("资源"), ""]]
+            checkedIndex: navigationBarIndex
+            onButtonClicked: {
+                switch(index) {
+                case 0:
+                    if (navigationBarIndex !== 0) {
+                        console.info("switch page:" + navigationBarIndex)
+                        myLoader.sourceComponent = loginPage
+                        navigationBarIndex = 0
+                    }
+                    break
+                case 1:
+                    break
+                case 2:
+                    break
+                case 3:
+                    if (navigationBarIndex !== 3) {
+                        console.info("switch page:" + navigationBarIndex)
+                        myLoader.sourceComponent = mainPage
+                        myLoader.item.setCurrentItem(0)
+                        navigationBarIndex = 3
+                    }
+                    break
+                default:
+                    break
+                }
+            }
         }
 
         Loader {
@@ -171,6 +212,7 @@ ApplicationWindow {
                     console.info("HLIconItem Clicked Index=", index, count)
                     myLoader.sourceComponent = mainPage
                     myLoader.item.setCurrentItem(index)
+                    navigationBarIndex = 3
                 }
             }
         }
