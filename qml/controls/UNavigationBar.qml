@@ -5,6 +5,7 @@ import QtQuick.Controls.Styles 1.4
 Item {
     signal buttonClicked(var index)
     property int checkedIndex: 0
+    property int fontSize: 14
     property size iconSize: Qt.size(16, 16)
     property size buttonSize: Qt.size(80, 40)
     property alias model: repeater.model
@@ -23,6 +24,7 @@ Item {
                 autoExclusive: true
                 text: modelData[0]
                 icon.source: modelData[1]
+                font.pixelSize: fontSize
                 contentItem: Item {
                     Row {
                         anchors.centerIn: parent

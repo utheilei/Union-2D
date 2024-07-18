@@ -6,6 +6,7 @@ import QtQuick.Layouts 1.3
 import utk.window 1.0
 import "./framelesswindow"
 import "./controls"
+import "./example"
 
 ApplicationWindow {
     property int itemCount: Math.floor((window.width - 10)/190)
@@ -25,6 +26,7 @@ ApplicationWindow {
     title: qsTr("Union-2D")
     x: Screen.width/2 - width/2
     y: Screen.height/2 - height/2
+    font.family: "Microsoft Yahei"
 
     RectangularGlow {
         id: effect
@@ -162,22 +164,27 @@ ApplicationWindow {
             onButtonClicked: {
                 switch(index) {
                 case 0:
-                    if (navigationBarIndex !== 0) {
+                    if (navigationBarIndex !== index) {
                         console.info("switch page:" + navigationBarIndex)
                         myLoader.sourceComponent = loginPage
-                        navigationBarIndex = 0
+                        navigationBarIndex = index
                     }
                     break
                 case 1:
+                    if (navigationBarIndex !== index) {
+                        console.info("switch page:" + navigationBarIndex)
+                        myLoader.sourceComponent = controlsPage
+                        navigationBarIndex = index
+                    }
                     break
                 case 2:
                     break
                 case 3:
-                    if (navigationBarIndex !== 3) {
+                    if (navigationBarIndex !== index) {
                         console.info("switch page:" + navigationBarIndex)
                         myLoader.sourceComponent = mainPage
                         myLoader.item.setCurrentItem(0)
-                        navigationBarIndex = 3
+                        navigationBarIndex = index
                     }
                     break
                 default:
@@ -221,7 +228,13 @@ ApplicationWindow {
             id: mainPage
             QmlMainWidget {
                 id: qmlMainWidget
-                clip: true
+            }
+        }
+
+        Component {
+            id: controlsPage
+            ControlsWidget {
+                id: controlsWidget
             }
         }
 

@@ -43,26 +43,31 @@ Rectangle {
         ListModel {
             id: leftModel
             ListElement {
+                itemData: 0
                 itemRole: UListView.ItemRoles.Member
                 itemName: "ButtonWidgets"
                 sourceUrl: "qrc:/image/button.svg"
             }
             ListElement {
+                itemData: 1
                 itemRole: UListView.ItemRoles.Member
                 itemName: "InputWidgets"
                 sourceUrl: "qrc:/image/inputedit.svg"
             }
             ListElement {
+                itemData: 2
                 itemRole: UListView.ItemRoles.Member
                 itemName: "ProgressWidgets"
                 sourceUrl: "qrc:/image/progress.svg"
             }
             ListElement {
+                itemData: 3
                 itemRole: UListView.ItemRoles.Member
                 itemName: "DialogWidgets"
                 sourceUrl: "qrc:/image/dialog.svg"
             }
             ListElement {
+                itemData: 4
                 itemRole: UListView.ItemRoles.Member
                 itemName: "TooltipWidgets"
                 sourceUrl: "qrc:/image/tooltip.svg"

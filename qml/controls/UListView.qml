@@ -8,6 +8,7 @@ ListView {
     id: view
     property int itemHeight: 46
     property int itemRadius: 10
+    property int fontSize: 14
     property bool iconVisible: false
     property bool buttonVisible: false
     property color itemColor: UTheme.itemBackground
@@ -51,10 +52,12 @@ ListView {
                 width: (parent.width - iconItem.width - closeButton.width - 20 -
                         (iconItem.visible ? 10 : 0) - (closeButton.visible ? 10 : 0))
                 text: itemName
-                color: (UListView.ItemRoles.Group === itemRole) ? qmlHelper.colorAlpha(UTheme.text, 0.3)
+                color: (UListView.ItemRoles.Group === itemRole) ? qmlHelper.colorAlpha(UTheme.text, 0.3*255)
                                                                 : (view.currentIndex === index ? UTheme.highlightedText : UTheme.text)
                 elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
+                font.family: "Microsoft YaHei"
+                font.pixelSize: fontSize
             }
 
             URoundedButton {
@@ -73,6 +76,15 @@ ListView {
                     console.info(index)
                     listModel.remove(index)
                 }
+            }
+
+            Rectangle {
+                width: parent.width
+                height: 1
+                color: UTheme.frameBorder
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+                visible: UListView.ItemRoles.Group === itemRole
             }
 
             MouseArea {

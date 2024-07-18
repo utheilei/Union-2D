@@ -104,5 +104,6 @@
         <file>image/gitee_logo.jpg</file>
         <file>icon/dark/about.svg</file>
         <file>icon/light/about.svg</file>
+        <file>qml/example/ControlsWidget.qml</file>
     </qresource>
 </RCC>
