@@ -105,5 +105,7 @@
         <file>icon/dark/about.svg</file>
         <file>icon/light/about.svg</file>
         <file>qml/example/ControlsWidget.qml</file>
+        <file>qml/example/OverviewWidget.qml</file>
+        <file>qml/example/ControlsListView.qml</file>
     </qresource>
 </RCC>

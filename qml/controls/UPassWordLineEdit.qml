@@ -5,6 +5,7 @@ import "../"
 Item {
     id: name
     signal returnPressed
+    signal editTextChanged
     property alias text: qmlLineEdit.text
     width: 200
     height:  38
@@ -16,7 +17,7 @@ Item {
         isPassword: true
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
-
+        onTextChanged: name.editTextChanged()
         onReturnPressed: {name.returnPressed()}
     }
 

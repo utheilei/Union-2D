@@ -13,6 +13,7 @@ Rectangle {
     border.color: edit.activeFocus ? UTheme.highlight : UTheme.button
     border.width: edit.activeFocus? 1 : 0
     signal returnPressed
+    signal editTextChanged
     property alias placeholderText: edit.placeholderText
     property alias text: edit.text
 
@@ -33,6 +34,7 @@ Rectangle {
                 setCloseButtonVisible(false)
                 edit.returnPressed.connect(searchEdit.returnPressed)
             }
+            onTextChanged: searchEdit.editTextChanged()
         }
         Image {
             id: search

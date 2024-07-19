@@ -1,6 +1,7 @@
 #include "qmlhelper.h"
 #include "napplicationtheme.h"
 #include "model/treemodel.h"
+#include "model/tablemodel.h"
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -19,6 +20,8 @@ int main(int argc, char* argv[])
     QmlHelper qmlHelper;
     qmlRegisterType<UApplicationTheme>("utk.UApplicationTheme", 1, 0, "UApplicationTheme");
     qmlRegisterType<TreeModel>("utk.model", 1, 0, "TreeModel");
+    qmlRegisterType<TableModel>("utk.model", 1, 0, "TableModel");
+    qmlRegisterType<FuzzyFilterProxyModel>("utk.model", 1, 0, "FuzzyFilterProxyModel");
     qmlRegisterSingletonType(QStringLiteral("qrc:/qml/controls/UTheme.qml"), "utk.window", 1, 0, "UTheme");
 
     engine.rootContext()->setContextProperty("qmlHelper", &qmlHelper);

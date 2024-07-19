@@ -5,10 +5,8 @@ import "../controls"
 import utk.model 1.0
 
 Item {
-    id: mainRectangle
-
-    property var listWidget: [accountWidget, unionIDWidget, displayWidget, defaultAppWidget, netWorkWidget]
-    property var listMap: new Map([[0, accountWidget], [1, unionIDWidget], [2, displayWidget], [3, defaultAppWidget], [4, netWorkWidget]])
+    property var listWidget: [accountWidget]
+    property var listMap: {"0": accountWidget}
 
     Rectangle {
         id: leftRectangle
@@ -322,66 +320,6 @@ Item {
                 itemName: qsTr("Result 结果")
                 sourceUrl: ""
             }
-            ListElement {
-                itemData: 29
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Image 图片")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 30
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("List 列表")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 31
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Loading 加载")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 32
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Progress 进度条")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 33
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Swiper 轮播框")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 34
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Table 表格")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 35
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Tag 标签")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 36
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Timeline 时间轴")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 37
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Tooltip 提示")
-                sourceUrl: ""
-            }
-            ListElement {
-                itemData: 38
-                itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Tree 树")
-                sourceUrl: ""
-            }
         }
         UListView {
             id: listView
@@ -418,7 +356,7 @@ Item {
         }
     }
 
-    Item {
+    Rectangle {
         id: rightRectangle
         anchors.left: edgeButton.right
         anchors.leftMargin: 5
@@ -428,14 +366,14 @@ Item {
         anchors.bottomMargin: 10
         anchors.right: parent.right
         anchors.rightMargin: 10
-        clip: true
+        color: UTheme.base
+        radius: 8
 
-        Rectangle {
+        OverviewWidget {
             id: accountWidget
             anchors.fill: parent
-            color: UTheme.base
+            anchors.margins: 30
             visible: true
-            radius: 8
         }
 
         function setCurrentIndex(index) {
