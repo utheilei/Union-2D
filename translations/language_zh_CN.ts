@@ -2,507 +2,302 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
-    <name>ControlsListView</name>
+    <name>ButtonWidget</name>
     <message>
-        <location filename="../qml/example/ControlsListView.qml" line="26"/>
-        <source>组件总览</source>
+        <location filename="../qml/example/ButtonWidget.qml" line="8"/>
+        <source>常规按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsListView.qml" line="32"/>
-        <source>基础</source>
+        <location filename="../qml/example/ButtonWidget.qml" line="18"/>
+        <source>主要按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsListView.qml" line="38"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="26"/>
+        <source>次要按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ButtonWidget.qml" line="37"/>
+        <source>成功按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ButtonWidget.qml" line="46"/>
+        <source>警告按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ButtonWidget.qml" line="55"/>
+        <source>危险按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ButtonWidget.qml" line="70"/>
         <source>Button 按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsListView.qml" line="44"/>
-        <source>Icon 图标</source>
+        <location filename="../qml/example/ButtonWidget.qml" line="79"/>
+        <source>常用的操作按钮。</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsListView.qml" line="50"/>
-        <source>Link 按钮</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="56"/>
-        <source>布局</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="62"/>
-        <source>Grid 栅格</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="68"/>
-        <source>Layout 布局</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="74"/>
-        <source>Space 间距</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="80"/>
-        <source>导航</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="86"/>
-        <source>Anchor 锚点</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="92"/>
-        <source>Dropdown 下拉菜单</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="98"/>
-        <source>Menu 导航菜单</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="104"/>
-        <source>Pagination 分页</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="110"/>
-        <source>Steps 步骤条</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="116"/>
-        <source>输入</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="122"/>
-        <source>ComboBox 组合框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="128"/>
-        <source>Checkbox 多选框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="134"/>
-        <source>ColorPicker 颜色选择器</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="140"/>
-        <source>DatePicker 日期选择</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="146"/>
-        <source>Input 输入框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="152"/>
-        <source>SpinBox 数字框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="158"/>
-        <source>Radio 单选框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="164"/>
-        <source>Rate 评分</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="170"/>
-        <source>Slider 滑块</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="176"/>
-        <source>Switch 开关</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="182"/>
-        <source>Transfer 穿梭框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="188"/>
-        <source>TextEdit 多行文本框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="194"/>
-        <source>数据展示</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="200"/>
-        <source>Avatar 头像</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="206"/>
-        <source>Badge 徽标数</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="212"/>
-        <source>Calendar 日历</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="218"/>
-        <source>Card 卡片</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="224"/>
-        <source>Collapse 折叠面板</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="230"/>
-        <source>Image 图片</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="236"/>
-        <source>List 列表</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="242"/>
-        <source>Loading 加载</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="248"/>
-        <source>Progress 进度条</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="254"/>
-        <source>Swiper 轮播框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="260"/>
-        <source>Table 表格</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="266"/>
-        <source>Tag 标签</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="272"/>
-        <source>Timeline 时间轴</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="278"/>
-        <source>Tooltip 提示</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="284"/>
-        <source>Tree 树</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="290"/>
-        <source>消息提醒</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="296"/>
-        <source>Alert 警告</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="302"/>
-        <source>Dialog 对话框</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="308"/>
-        <source>Drawer 抽屉</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="314"/>
-        <source>Message 全局提示</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/ControlsListView.qml" line="320"/>
-        <source>Result 结果</source>
+        <location filename="../qml/example/ButtonWidget.qml" line="87"/>
+        <source>代码演示</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ControlsWidget</name>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="26"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="25"/>
         <source>组件总览</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="32"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="31"/>
         <source>基础</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="38"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="37"/>
         <source>Button 按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="44"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="43"/>
         <source>Icon 图标</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="50"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="49"/>
         <source>Link 按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="56"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="55"/>
         <source>布局</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="62"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="61"/>
         <source>Grid 栅格</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="68"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="67"/>
         <source>Layout 布局</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="74"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="73"/>
         <source>Space 间距</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="80"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="79"/>
         <source>导航</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="86"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="85"/>
         <source>Anchor 锚点</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="92"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="91"/>
         <source>Dropdown 下拉菜单</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="98"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="97"/>
         <source>Menu 导航菜单</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="104"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="103"/>
         <source>Pagination 分页</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="110"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="109"/>
         <source>Steps 步骤条</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="116"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="115"/>
         <source>输入</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="122"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="121"/>
         <source>ComboBox 组合框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="128"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="127"/>
         <source>Checkbox 多选框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="134"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="133"/>
         <source>ColorPicker 颜色选择器</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="140"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="139"/>
         <source>DatePicker 日期选择</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="146"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="145"/>
         <source>Input 输入框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="152"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="151"/>
         <source>SpinBox 数字框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="158"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="157"/>
         <source>Radio 单选框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="164"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="163"/>
         <source>Rate 评分</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="170"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="169"/>
         <source>Slider 滑块</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="176"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="175"/>
         <source>Switch 开关</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="182"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="181"/>
         <source>Transfer 穿梭框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="188"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="187"/>
         <source>TextEdit 多行文本框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="194"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="193"/>
         <source>数据展示</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="200"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="199"/>
         <source>Avatar 头像</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="206"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="205"/>
         <source>Badge 徽标数</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="212"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="211"/>
         <source>Calendar 日历</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="218"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="217"/>
         <source>Card 卡片</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="224"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="223"/>
         <source>Collapse 折叠面板</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="230"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="229"/>
         <source>Image 图片</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="236"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="235"/>
         <source>List 列表</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="242"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="241"/>
         <source>Loading 加载</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="248"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="247"/>
         <source>Progress 进度条</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="254"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="253"/>
         <source>Swiper 轮播框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="260"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="259"/>
         <source>Table 表格</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="266"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="265"/>
         <source>Tag 标签</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="272"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="271"/>
         <source>Timeline 时间轴</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="278"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="277"/>
         <source>Tooltip 提示</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="284"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="283"/>
         <source>Tree 树</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="290"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="289"/>
         <source>消息提醒</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="296"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="295"/>
         <source>Alert 警告</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="302"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="301"/>
         <source>Dialog 对话框</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="308"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="307"/>
         <source>Drawer 抽屉</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="314"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="313"/>
         <source>Message 全局提示</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ControlsWidget.qml" line="320"/>
+        <location filename="../qml/example/ControlsWidget.qml" line="319"/>
         <source>Result 结果</source>
         <translation type="unfinished"></translation>
     </message>
@@ -556,13 +351,46 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/OverviewWidget.qml" line="29"/>
-        <source>    为客户端应用提供了丰富的基础UI组件，常用控件可以分为基础控件、布局控件、导航控件、输入控件、数据展示控件以及消息提示控件，用户通过合理选择和组合这些控件，可以创建出功能强大、易于使用的用户界面</source>
+        <location filename="../qml/example/OverviewWidget.qml" line="27"/>
+        <source>       为客户端应用提供了丰富的基础UI组件，常用控件可以分为基础控件、布局控件、导航控件、输入控件、数据展示控件以及消息提示控件，用户通过合理选择和组合这些控件，可以创建出功能强大、易于使用的用户界面</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/OverviewWidget.qml" line="74"/>
+        <location filename="../qml/example/OverviewWidget.qml" line="48"/>
         <source>通用</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/OverviewWidget.qml" line="65"/>
+        <source>布局</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/OverviewWidget.qml" line="82"/>
+        <source>导航</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/OverviewWidget.qml" line="101"/>
+        <source>输入</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/OverviewWidget.qml" line="127"/>
+        <source>数据展示</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/OverviewWidget.qml" line="156"/>
+        <source>消息提醒</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QmlMainWidget</name>
+    <message>
+        <location filename="../qml/QmlMainWidget.qml" line="402"/>
+        <source>ULinkButton</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -12,7 +12,7 @@ Button {
     property color borderColor: UTheme.text
     property color borderHoverdColor: UTheme.informationBackground
     property color borderPressedColor: Qt.darker(borderHoverdColor, 1.4)
-    property alias textColor: text.color
+    property color textColor: UTheme.text
 
     contentItem: Item {
         Row {
@@ -31,7 +31,7 @@ Button {
                 text: control.text
                 font: control.font
                 opacity: enabled ? 1.0 : 0.3
-                color: UTheme.text
+                color: textColor
                 anchors.verticalCenter: parent.verticalCenter
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter

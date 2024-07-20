@@ -6,12 +6,13 @@ Rectangle {
     property alias label: text.text
     property color backgroudColor: UTheme.button
     property color hoverColor: Qt.darker(backgroudColor, 1.1)
+    property bool hoverd: false
     signal itemClicked
 
     implicitWidth: Math.max(text.implicitWidth, image.implicitWidth) + 20
     implicitHeight: image.implicitHeight + text.implicitHeight + 25
     radius: 8
-    color: backgroudColor
+    color: hoverd ? hoverColor : backgroudColor
 
     Image {
         id: image
@@ -32,7 +33,7 @@ Rectangle {
         anchors.fill: parent
         hoverEnabled: true
         onClicked: itemClicked()
-        onEntered: item.color = hoverColor
-        onExited: item.color = backgroudColor
+        onEntered: hoverd = true
+        onExited: hoverd = false
     }
 }

@@ -24,6 +24,7 @@ Item {
             id: commonLabel
             font.pixelSize: 14
             font.bold: true
+            color: UTheme.text
             text: title + "(" + (listView.children.length-1) + ")"
         }
 

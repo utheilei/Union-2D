@@ -395,6 +395,12 @@ Rectangle {
                 height: 80
                 source: "qrc:/image/button.svg"
             }
+
+            ULinkButton {
+                x: 10
+                y: 340
+                text: qsTr("ULinkButton")
+            }
         }
 
         function setCurrentIndex(index) {

@@ -5,8 +5,7 @@ import "../controls"
 import utk.model 1.0
 
 Item {
-    property var listWidget: [accountWidget]
-    property var listMap: {"0": accountWidget}
+    property var listMap: {"0": accountWidget, "2": buttonWidget}
 
     Rectangle {
         id: leftRectangle
@@ -376,7 +375,21 @@ Item {
             visible: true
         }
 
+        ButtonWidget {
+            id: buttonWidget
+            anchors.fill: parent
+            anchors.margins: 30
+            visible: false
+        }
+
         function setCurrentIndex(index) {
+            for(var key in listMap){
+                var widget = listMap[key]
+                console.info(key + ":" + widget + ":" + index)
+                if (null === widget)
+                    continue
+                widget.visible = (index.toString() === key)
+            }
         }
     }
 

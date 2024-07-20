@@ -107,5 +107,10 @@
         <file>qml/example/ControlsWidget.qml</file>
         <file>qml/example/OverviewWidget.qml</file>
         <file>qml/example/ControlsListView.qml</file>
+        <file>qml/example/ButtonWidget.qml</file>
+        <file>qml/controls/UCard.qml</file>
+        <file>qml/controls/ULinkButton.qml</file>
+        <file>icon/dark/codedome.svg</file>
+        <file>icon/light/codedome.svg</file>
     </qresource>
 </RCC>

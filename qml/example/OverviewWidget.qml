@@ -12,8 +12,9 @@ ScrollView {
         spacing: 10
         Label {
             id: titleLabel
-            font.pixelSize: 16
+            font.pixelSize: 24
             font.bold: true
+            color: UTheme.text
             text: qsTr("组件总览")
         }
 
@@ -21,13 +22,15 @@ ScrollView {
             id: describeLabel
             width: scrollView.width
             font.pixelSize: 14
+            color: UTheme.text
             wrapMode: Text.WordWrap
-            text: qsTr("    为客户端应用提供了丰富的基础UI组件，常用控件可以分为基础控件、布局控件、导航控件、输入控件、数据展示控件以及消息提示控件，用户通过合理选择和组合这些控件，可以创建出功能强大、易于使用的用户界面")
+            text: qsTr("       为客户端应用提供了丰富的基础UI组件，常用控件可以分为基础控件、布局控件、导航控件、输入控件、数据展示控件以及消息提示控件，用户通过合理选择和组合这些控件，可以创建出功能强大、易于使用的用户界面")
         }
 
         USearchLineEdit {
             id: searchLineEdit
             width: scrollView.width
+            height: 36
             onEditTextChanged: {
                 commonView.model.setFilterFixedString(searchLineEdit.text)
                 layoutView.model.setFilterFixedString(searchLineEdit.text)

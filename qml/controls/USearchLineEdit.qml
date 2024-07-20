@@ -39,9 +39,11 @@ Rectangle {
         Image {
             id: search
             Layout.rightMargin: 8
-            width: Math.min(searchEdit.width, searchEdit.height)
+            Layout.alignment: Qt.AlignVCenter
+            width: 30
+            height: 30
             source: "qrc:/icon/" + UTheme.themeName + "/search.svg"
-            sourceSize: Qt.size(searchEdit.height/3*2, searchEdit.height/3*2)
+            sourceSize: Qt.size(24, 24)
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
