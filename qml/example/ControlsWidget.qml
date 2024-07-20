@@ -5,6 +5,7 @@ import "../controls"
 import utk.model 1.0
 
 Item {
+    id: controlsWidget
     property var listMap: {"0": accountWidget, "2": buttonWidget}
 
     Rectangle {

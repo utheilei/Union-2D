@@ -50,12 +50,15 @@ ScrollView {
                 model.horHeader = ["111"]
                 model.insertRoleName(1257, "iconName");
                 model.insertRoleName(1258, "itemName");
-                var buttonMap = {"iconName": "about", "itemName": "Button 按钮"}
+                var buttonMap = {"iconName": "button", "itemName": "Button 按钮"}
                 var iconMap = {"iconName": "about", "itemName": "Icon 图标"}
                 var linkMap = {"iconName": "about", "itemName": "Link 按钮"}
                 modelData = [[buttonMap],[iconMap],[linkMap]]
             }
-            onItemClicked: {console.log(index, name)}
+            onItemClicked: {
+                console.log(index, name)
+                controlsWidget.setCurrentItem(index + 2)
+            }
         }
 
         ControlsListView {

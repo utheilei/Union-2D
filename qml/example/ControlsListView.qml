@@ -39,6 +39,7 @@ Item {
                 UIconItem {
                     width: 216
                     height: 150
+                    iconSize: Qt.size(90, 60)
                     icon: "qrc:/icon/" + UTheme.themeName + "/" + iconName + ".svg"
                     label: itemName
                     onItemClicked: {listItem.itemClicked(index, label)}

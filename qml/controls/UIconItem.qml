@@ -7,6 +7,7 @@ Rectangle {
     property color backgroudColor: UTheme.button
     property color hoverColor: Qt.darker(backgroudColor, 1.1)
     property bool hoverd: false
+    property size iconSize: Qt.size(60, 60)
     signal itemClicked
 
     implicitWidth: Math.max(text.implicitWidth, image.implicitWidth) + 20
@@ -16,8 +17,11 @@ Rectangle {
 
     Image {
         id: image
+        anchors.top: parent.top
+        anchors.topMargin: (item.height - text.height - 10 - image.height) / 2
+        anchors.horizontalCenter: parent.horizontalCenter
+        sourceSize: iconSize
         fillMode: Image.PreserveAspectFit
-        anchors.centerIn: parent
     }
 
     Text {

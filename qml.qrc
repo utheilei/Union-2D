@@ -112,5 +112,7 @@
         <file>qml/controls/ULinkButton.qml</file>
         <file>icon/dark/codedome.svg</file>
         <file>icon/light/codedome.svg</file>
+        <file>icon/dark/button.svg</file>
+        <file>icon/light/button.svg</file>
     </qresource>
 </RCC>
