@@ -161,7 +161,8 @@ ApplicationWindow {
             buttonSize: Qt.size(46, 46)
             model: [[qsTr("首页"), ""], [qsTr("设计"), ""], [qsTr("研发"), ""], [qsTr("组件"), ""], [qsTr("资源"), ""]]
             checkedIndex: navigationBarIndex
-            onButtonClicked: {
+            onButtonClicked: switchNavigationBar(index)
+            function switchNavigationBar(index) {
                 switch(index) {
                 case 0:
                     if (navigationBarIndex !== index) {
@@ -173,7 +174,8 @@ ApplicationWindow {
                 case 1:
                     if (navigationBarIndex !== index) {
                         console.info("switch page:" + navigationBarIndex)
-                        myLoader.sourceComponent = controlsPage
+                        myLoader.sourceComponent = mainPage
+                        myLoader.item.setCurrentItem(0)
                         navigationBarIndex = index
                     }
                     break
@@ -182,8 +184,7 @@ ApplicationWindow {
                 case 3:
                     if (navigationBarIndex !== index) {
                         console.info("switch page:" + navigationBarIndex)
-                        myLoader.sourceComponent = mainPage
-                        myLoader.item.setCurrentItem(0)
+                        myLoader.sourceComponent = controlsPage
                         navigationBarIndex = index
                     }
                     break
