@@ -396,43 +396,38 @@
 <context>
     <name>HomePage</name>
     <message>
-        <location filename="../qml/example/HomePage.qml" line="18"/>
-        <source>组件总览</source>
+        <location filename="../qml/example/HomePage.qml" line="15"/>
+        <source>开源</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/HomePage.qml" line="19"/>
+        <source>研发</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/HomePage.qml" line="23"/>
+        <source>组件</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/example/HomePage.qml" line="27"/>
-        <source>       为客户端应用提供了丰富的基础UI组件，常用控件可以分为基础控件、布局控件、导航控件、输入控件、数据展示控件以及消息提示控件，用户通过合理选择和组合这些控件，可以创建出功能强大、易于使用的用户界面</source>
+        <source>资源</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/HomePage.qml" line="48"/>
-        <source>通用</source>
+        <location filename="../qml/example/HomePage.qml" line="96"/>
+        <source>       Union-2D是基于QML开发的一整套简单且实用的通用开发框架平台，有助于开发者快速进行项目开发</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/HomePage.qml" line="68"/>
-        <source>布局</source>
+        <location filename="../qml/example/HomePage.qml" line="107"/>
+        <source>开始使用</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/HomePage.qml" line="85"/>
-        <source>导航</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/HomePage.qml" line="104"/>
-        <source>输入</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/HomePage.qml" line="130"/>
-        <source>数据展示</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/example/HomePage.qml" line="159"/>
-        <source>消息提醒</source>
+        <location filename="../qml/example/HomePage.qml" line="113"/>
+        <source>设计规范</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

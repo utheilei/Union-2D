@@ -190,7 +190,7 @@ ScrollView {
                 anchors.rightMargin: -100
                 anchors.top: parent.top
                 z: 0
-                source: "qrc:/icon/" + UTheme.themeName + "/homepage.jpg"
+                source: "qrc:/icon/" + UTheme.themeName + "/homepage.png"
                 sourceSize: Qt.size(610, 580)
                 transform: [Rotation {origin.x: backgroudImage.width/2; origin.y: backgroudImage.height/2; axis { x: 1; y: 0; z: 0 } angle: 18},
                             Rotation{origin.x: backgroudImage.width/2; origin.y: backgroudImage.height/2; axis { x: 0; y: 1; z: 0 } angle: -18}]
