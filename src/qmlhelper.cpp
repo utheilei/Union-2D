@@ -168,6 +168,11 @@ void QmlHelper::setTranslator(int language)
     emit languageChanged();
 }
 
+QString QmlHelper::appPath()
+{
+    return qApp->applicationDirPath();
+}
+
 QString QmlHelper::colorName(const QColor &color)
 {
     return color.name();

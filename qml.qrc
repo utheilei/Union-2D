@@ -114,5 +114,9 @@
         <file>icon/light/codedome.svg</file>
         <file>icon/dark/button.svg</file>
         <file>icon/light/button.svg</file>
+        <file>icon/dark/homepage.jpg</file>
+        <file>icon/light/homepage.jpg</file>
+        <file>qml/example/CodeDialog.qml</file>
+        <file>qml/example/HomePage.qml</file>
     </qresource>
 </RCC>

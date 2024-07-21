@@ -166,7 +166,7 @@ ApplicationWindow {
                 case 0:
                     if (navigationBarIndex !== index) {
                         console.info("switch page:" + navigationBarIndex)
-                        myLoader.sourceComponent = loginPage
+                        myLoader.sourceComponent = homepagePage
                         navigationBarIndex = index
                     }
                     break
@@ -203,24 +203,13 @@ ApplicationWindow {
             anchors.rightMargin: magins
             anchors.bottom: parent.bottom
             anchors.bottomMargin: magins
-            sourceComponent: loginPage
+            sourceComponent: homepagePage
         }
 
         Component {
-            id: loginPage
-            UGridView {
+            id: homepagePage
+            HomePage {
                 id: scrollView
-                count: itemCount
-                parentObj: window
-                model: qmlHelper.listModel()
-                paddings: (window.width - itemCount*itemWidth - (itemCount-1)*20 - 28)/2
-                ScrollBar.horizontal: ScrollBar{visible: false}
-                onIconItemClicked: {
-                    console.info("HLIconItem Clicked Index=", index, count)
-                    myLoader.sourceComponent = mainPage
-                    myLoader.item.setCurrentItem(index)
-                    navigationBarIndex = 3
-                }
             }
         }
 

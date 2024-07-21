@@ -20,6 +20,8 @@ public:
 
     Q_INVOKABLE void setTranslator(int language);
 
+    Q_INVOKABLE QString appPath();
+
     Q_INVOKABLE QString colorName(const QColor &color);
 
     Q_INVOKABLE QColor colorAlpha(const QColor &color, int alpha);

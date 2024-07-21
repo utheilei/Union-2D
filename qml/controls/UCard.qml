@@ -8,7 +8,8 @@ Rectangle {
     property alias component: myLoader.sourceComponent
     property alias item: myLoader.item
     property alias switchText: itemText.text
-    property alias itemText: titleLabel.text
+    property alias titleText: titleLabel.text
+    property alias itemText: bottomLabel.text
     property alias itemFont: titleLabel.font
     signal switchClicked(var checked)
     signal rightButtonClicked()
@@ -26,7 +27,6 @@ Rectangle {
             height: 36
             Label {
                 id: titleLabel
-                anchors.leftMargin: 10
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 color: UTheme.text
@@ -84,6 +84,7 @@ Rectangle {
             id: bottomLabel
             Layout.fillWidth: true
             color: UTheme.text
+            wrapMode: Text.WordWrap
         }
     }
 }
