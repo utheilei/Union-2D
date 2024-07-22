@@ -1,10 +1,13 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.4
+import QtQuick.Controls 1.4 as Old
 import "../controls"
+import utk.model 1.0
 
 ScrollView {
     id: scrollView
     clip: true
+    property var tableModelData
 
     CodeDialog {
         id: codeDialog
@@ -325,6 +328,69 @@ ScrollView {
                    onSwitchClicked: item.enabled = !checked
                    onRightButtonClicked: codeDialog.open()
                 }
+            }
+        }
+
+        Label {
+            id: apiLabel
+            width: scrollView.width
+            font.pixelSize: 16
+            font.bold: true
+            color: UTheme.text
+            wrapMode: Text.WordWrap
+            text: qsTr("API")
+        }
+
+        Label {
+            id: apiDescribeLabel
+            font.pixelSize: 14
+            color: UTheme.text
+            text: qsTr("按钮的属性说明如下：")
+        }
+
+        UTableView {
+            id: tableView
+            width: scrollView.width
+            height: (rowCount + 1) * 36
+            Old.TableViewColumn {
+                title: qsTr("属性")
+                role: "property"
+                width: 160
+                movable: false
+            }
+            Old.TableViewColumn {
+                title: qsTr("说明")
+                role: "note"
+                width: 320
+                movable: false
+            }
+
+            Old.TableViewColumn {
+                title: qsTr("类型")
+                role: "type"
+                width: 80
+                movable: false
+            }
+
+            Old.TableViewColumn {
+                title: qsTr("默认值")
+                role: "default"
+                width: tableView.resizeColumn()
+                movable: false
+                resizable: false
+            }
+            TableModel {
+                id: tableModel
+                horHeader: [qsTr("属性"), qsTr("说明"), qsTr("类型"), qsTr("默认值")]
+                modelData: tableModelData
+            }
+            model: tableModel
+            Component.onCompleted: {
+                tableModel.insertRoleName(1257, "property");
+                tableModel.insertRoleName(1258, "note");
+                tableModel.insertRoleName(1259, "type");
+                tableModel.insertRoleName(1260, "default");
+                tableModelData = qmlHelper.loadClassProperty("uroundedbutton")
             }
         }
     }

@@ -10,7 +10,7 @@ class TableModel : public QAbstractTableModel, public QQmlParserStatus
     Q_OBJECT
     Q_INTERFACES(QQmlParserStatus)
     Q_PROPERTY(QStringList horHeader READ getHorHeader WRITE setHorHeader NOTIFY horHeaderChanged)
-    Q_PROPERTY(QList<QList<QVariantMap>> modelData READ getModelData WRITE setModelData)
+    Q_PROPERTY(QList<QList<QVariantMap>> modelData READ getModelData WRITE setModelData NOTIFY modelDataChanged)
 
 public:
     explicit TableModel(QObject* parent = nullptr);
@@ -50,6 +50,7 @@ public:
 
 signals:
     void horHeaderChanged();
+    void modelDataChanged();
 
 private:
     bool m_completed = false;

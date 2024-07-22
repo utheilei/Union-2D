@@ -26,6 +26,8 @@ public:
 
     Q_INVOKABLE QColor colorAlpha(const QColor &color, int alpha);
 
+    Q_INVOKABLE QList<QList<QVariantMap>> loadClassProperty(const QString &className);
+
 signals:
     void languageChanged();
 

@@ -118,5 +118,6 @@
         <file>qml/example/HomePage.qml</file>
         <file>icon/dark/homepage.png</file>
         <file>icon/light/homepage.png</file>
+        <file>image/theme.png</file>
     </qresource>
 </RCC>

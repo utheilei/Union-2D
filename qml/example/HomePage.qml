@@ -35,7 +35,7 @@ ScrollView {
         spacing: 10
         Item {
             width: scrollView.width
-            height: 600
+            height: 500
             Rectangle {
                 x: scrollView.width/12
                 y: 60
@@ -202,6 +202,44 @@ ScrollView {
                         var xAngle = -(mouse.y - backgroudImage.height/2) / 15
                         backgroudImage.transform[0].angle = xAngle
                         backgroudImage.transform[1].angle = yAngle
+                    }
+                }
+            }
+        }
+        Item {
+            width: scrollView.width
+            height: 624
+            ColumnLayout {
+                anchors.fill: parent
+                Label {
+                    id: themeLabel
+                    Layout.alignment: Qt.AlignHCenter
+                    font.pixelSize: 26
+                    font.bold: true
+                    color: UTheme.text
+                    text: "亮暗主题切换"
+                }
+
+                Label {
+                    id: themeDescribeLabel
+                    width: 600
+                    Layout.alignment: Qt.AlignHCenter
+                    font.pixelSize: 14
+                    color: UTheme.text
+                    wrapMode: Text.WordWrap
+                    text: qsTr("主题切换便捷，适应不同使用场景")
+                }
+                Image {
+                    id: themeImage
+                    Layout.alignment: Qt.AlignHCenter
+                    source: "qrc:/image/theme.png"
+                    sourceSize: Qt.size(810, 524)
+                    layer.enabled: true
+                    layer.effect: DropShadow {
+                        transparentBorder: true
+                        radius: 8.0
+                        samples: 17
+                        color: "#AA000000"
                     }
                 }
             }

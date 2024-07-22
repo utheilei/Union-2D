@@ -27,6 +27,7 @@ void TableModel::setModelData(const QList<QList<QVariantMap>> &modelData)
     beginResetModel();
     m_modelData = modelData;
     endResetModel();
+    emit modelDataChanged();
 }
 
 void TableModel::classBegin()
@@ -129,6 +130,7 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
     {
         return QVariant();
     }
+
     return m_modelData.at(index.row()).at(index.column())[m_roleNames[role]];
 }
 

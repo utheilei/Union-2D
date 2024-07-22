@@ -4,6 +4,10 @@
 #include <QDebug>
 #include <QGuiApplication>
 #include <QTranslator>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QFile>
 
 QmlHelper::QmlHelper(QObject* parent) : QObject(parent)
 {
@@ -183,4 +187,44 @@ QColor QmlHelper::colorAlpha(const QColor &color, int alpha)
     QColor col(color);
     col.setAlpha(alpha);
     return col;
+}
+
+QList<QList<QVariantMap>> QmlHelper::loadClassProperty(const QString &className)
+{
+    QList<QList<QVariantMap>> result;
+    QFile file(QString("%1/configs/%2.json").arg(qApp->applicationDirPath()).arg(className));
+    if (!file.open(QFile::ReadOnly))
+    {
+        qCritical() << "file open failed:" << file.errorString();
+        return result;
+    }
+
+    QJsonParseError jsonError;
+    QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &jsonError);
+    if (QJsonParseError::NoError != jsonError.error)
+    {
+        qCritical() << "Json load failed:" << jsonError.errorString();
+        return result;
+    }
+
+    auto apiArray = doc.object()["api"].toArray();
+    if (apiArray.isEmpty()) {
+        return result;
+    }
+
+    for (const auto &value : apiArray)
+    {
+        QList<QVariantMap> rowList;
+        QVariantMap map;
+        map.insert("property", value.toObject()["property"].toVariant());
+        map.insert("note", value.toObject()["note"].toVariant());
+        map.insert("type", value.toObject()["type"].toVariant());
+        map.insert("default", value.toObject()["default"].toVariant());
+        rowList.append(map);
+        rowList.append(map);
+        rowList.append(map);
+        rowList.append(map);
+        result.append(rowList);
+    }
+    return result;
 }
