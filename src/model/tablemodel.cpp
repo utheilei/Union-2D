@@ -32,12 +32,10 @@ void TableModel::setModelData(const QList<QList<QVariantMap>> &modelData)
 
 void TableModel::classBegin()
 {
-    qInfo() << "TableModel::classBegin()";
 }
 
 void TableModel::componentComplete()
 {
-    qInfo() << "TableModel::componentComplete()";
     m_roleNames = QAbstractItemModel::roleNames();
     m_completed = true;
 }
@@ -221,12 +219,10 @@ void FuzzyFilterProxyModel::insertRoleName(int role, const QByteArray &roleName)
 
 void FuzzyFilterProxyModel::classBegin()
 {
-    qInfo() << "FuzzyFilterProxyModel::classBegin()";
 }
 
 void FuzzyFilterProxyModel::componentComplete()
 {
-    qInfo() << "FuzzyFilterProxyModel::componentComplete()";
     setSortRole(Qt::UserRole + 1000);
     sort(0);
 }

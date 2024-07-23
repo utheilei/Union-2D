@@ -17,8 +17,8 @@ MenuItem {
     }
 
     indicator: Item {
-        implicitWidth: 30
-        implicitHeight: 30
+        implicitWidth: checkable ? 30 : 0
+        implicitHeight: checkable ? 30 : 0
         visible: checkable
         Image {
             anchors.centerIn: parent

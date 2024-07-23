@@ -50,8 +50,6 @@ ApplicationWindow {
         Component.onCompleted: {
             initUi()
             qmlHelper.languageChanged.connect(initUi)
-            var test = "I am %1 years old."
-            console.log(test.arg(10))
         }
         function initUi() {
             setIcon(appIcon)

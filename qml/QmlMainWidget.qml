@@ -135,6 +135,27 @@ Rectangle {
 
             UComboBox {}
 
+            UDropdown {
+                x: 10
+                y: 400
+                id: dropdown
+                text: copy.text
+                Action {
+                    id: copy
+                    text: "Copy"
+                    onTriggered: dropdown.text = text
+                }
+                Action {
+                    id: parse
+                    text: "Parse"
+                    onTriggered: dropdown.text = text
+                }
+                Component.onCompleted: {
+                    buttonMenu.addAction(copy)
+                    buttonMenu.addAction(parse)
+                }
+            }
+
             ULineEdit {
                 x: 60
                 y: 60

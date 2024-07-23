@@ -3,6 +3,7 @@ import QtQuick.Controls 2.4
 
 Button {
     id: control
+    property alias buttonMenu: popMenu
     indicator: Canvas {
         id: canvas
         x: control.width - width - control.rightPadding
@@ -28,10 +29,10 @@ Button {
     }
 
     contentItem: Text {
-        leftPadding: 12
+        leftPadding: 2
         rightPadding: control.indicator.width + control.spacing
 
-        text: control.displayText
+        text: control.text
         font: control.font
         color: UTheme.text
         verticalAlignment: Text.AlignVCenter
@@ -49,9 +50,15 @@ Button {
 
     UMenu {
         id: popMenu
+        x: 0
+        y: control.height
+        menuRadius: 2
+        layerEnabled: false
+        backgroundColor: UTheme.window
+        borderColor: UTheme.highlight
     }
 
-    onClicked: {
-        popMenu.popup()
+    onPressed: {
+        popMenu.visible = true
     }
 }
