@@ -71,7 +71,7 @@ Item {
             ListElement {
                 itemData: 6
                 itemRole: UListView.ItemRoles.Member
-                itemName: qsTr("Space 间距")
+                itemName: qsTr("Flow 流式布局")
                 sourceUrl: ""
             }
             ListElement {

@@ -303,6 +303,24 @@ ScrollView {
             text: qsTr("常用的操作按钮。")
         }
 
+        Item {
+            width: scrollView.width
+            height: 30
+            Row {
+                anchors.fill: parent
+                Text {
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: qsTr("源码")
+                    color: UTheme.text
+                }
+                ULinkButton {
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: "URoundedButton"
+                    onClicked: Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/blob/develop/qml/controls/URoundedButton.qml")
+                }
+            }
+        }
+
         Label {
             id: codeLabel
             font.pixelSize: 16

@@ -86,6 +86,8 @@ TableView {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             elide: Text.ElideRight
+            font.bold: true
+            font.pixelSize: 14
         }
 
         Rectangle{

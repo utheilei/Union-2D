@@ -208,7 +208,8 @@ QList<QList<QVariantMap>> QmlHelper::loadClassProperty(const QString &className)
     }
 
     auto apiArray = doc.object()["api"].toArray();
-    if (apiArray.isEmpty()) {
+    if (apiArray.isEmpty())
+    {
         return result;
     }
 

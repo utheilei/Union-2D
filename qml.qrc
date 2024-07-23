@@ -119,5 +119,7 @@
         <file>icon/dark/homepage.png</file>
         <file>icon/light/homepage.png</file>
         <file>image/theme.png</file>
+        <file>qml/controls/UDelayButton.qml</file>
+        <file>qml/controls/UDropdown.qml</file>
     </qresource>
 </RCC>
