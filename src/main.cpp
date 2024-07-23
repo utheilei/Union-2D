@@ -23,12 +23,8 @@ int main(int argc, char* argv[])
     qmlRegisterType<TreeModel>("utk.model", 1, 0, "TreeModel");
     qmlRegisterType<TableModel>("utk.model", 1, 0, "TableModel");
     qmlRegisterType<FuzzyFilterProxyModel>("utk.model", 1, 0, "FuzzyFilterProxyModel");
+    qmlRegisterType<ComponentLoader>("utk.component", 1, 0, "ComponentLoader");
     qmlRegisterSingletonType(QStringLiteral("qrc:/qml/controls/UTheme.qml"), "utk.window", 1, 0, "UTheme");
-
-    qmlRegisterSingletonType<ComponentLoader>("utk.component", 1, 0, "ComponentLoader", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
-        Q_UNUSED(scriptEngine);
-        return new ComponentLoader(engine);
-    });
 
     engine.rootContext()->setContextProperty("qmlHelper", &qmlHelper);
 

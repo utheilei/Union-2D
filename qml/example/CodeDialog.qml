@@ -138,11 +138,11 @@ Popup {
                 width: 470
                 textMargin: 16
                 color: UTheme.text
-                text: ComponentLoader.loadFile(qmlHelper.appPath() + "/URoundedButton.qml")
+                text: componentLoader.loadFile(qmlHelper.appPath() + "/codedemo/URoundedButton.qml")
                 wrapMode: TextEdit.WordWrap
                 selectByMouse: true
                 Component.onCompleted: {
-                    ComponentLoader.setData(textArea.text)
+                    componentLoader.setData(textArea.text)
                 }
             }
             background: Rectangle {
@@ -168,16 +168,20 @@ Popup {
             implicitHeight: 40
             text: qsTr("预览")
             onClicked: {
-                ComponentLoader.setData(textArea.text)
+                componentLoader.setData(textArea.text)
             }
         }
     }
+    ComponentLoader {
+        id: componentLoader
+    }
+
     Connections {
-        target: ComponentLoader
+        target: componentLoader
         function onComponentChanged() {
-            var obj = ComponentLoader.create(titleItem)
-            console.info(obj)
+            var obj = componentLoader.create(titleItem)
             obj.parent = titleItem
+            obj.x = (titleItem.width - obj.width)/2
         }
     }
 }
