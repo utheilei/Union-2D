@@ -49,6 +49,8 @@ public:
     Q_INVOKABLE bool moveItem(const QModelIndex &source, int sourceRow,
                               const QModelIndex &destination, int destinationChild);
 
+    Q_INVOKABLE void insertItems(int position, const QList<QVariantList> &datas, const QModelIndex &parent = QModelIndex());
+
     Q_INVOKABLE void insertItem(int position, const QVariantList &data, const QModelIndex &parent = QModelIndex());
 
     Q_INVOKABLE QVariant itemData(int column, const QModelIndex &index) const;

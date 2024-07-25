@@ -121,5 +121,6 @@
         <file>image/theme.png</file>
         <file>qml/controls/UDelayButton.qml</file>
         <file>qml/controls/UDropdown.qml</file>
+        <file>qml/controls/UTreeNavigationBar.qml</file>
     </qresource>
 </RCC>

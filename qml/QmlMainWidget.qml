@@ -277,6 +277,10 @@ Rectangle {
                 id: treeView
                 anchors.top: add.bottom
                 anchors.left: add.left
+                Component.onCompleted: {
+                    treeView.treeViewModel.insertItem(0, ["append", "success"])
+                    treeView.treeViewModel.insertItem(0, ["append", "success"], treeView.treeViewModel.index(0,0))
+                }
             }
 
             UProgressBar {
@@ -421,6 +425,17 @@ Rectangle {
                 x: 10
                 y: 340
                 text: qsTr("ULinkButton")
+            }
+
+            UTreeNavigationBar {
+                x: 10
+                y: 440
+                id: treeNavigationBar
+                Component.onCompleted: {
+                    treeNavigationBar.treeViewModel.insertItems(0, [["Navigation1", "success"],["Navigation2", "success"]])
+                    treeNavigationBar.treeViewModel.insertItems(0, [["Option1", ""],["Option2", ""]], treeNavigationBar.treeViewModel.index(0, 0))
+                    treeNavigationBar.treeViewModel.insertItems(0, [["Option3", ""],["Option4", ""]], treeNavigationBar.treeViewModel.index(1, 0))
+                }
             }
         }
 

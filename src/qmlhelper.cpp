@@ -13,6 +13,20 @@ QmlHelper::QmlHelper(QObject* parent) : QObject(parent)
 {
 }
 
+QmlHelper::~QmlHelper()
+{
+}
+
+bool QmlHelper::isImageValid(const QUrl &url)
+{
+    QString fileName = url.toString();
+    if (fileName.startsWith("qrc"))
+    {
+        fileName.remove("qrc");
+    }
+    return QFile::exists(fileName);
+}
+
 bool QmlHelper::contains(QRectF rect, QPointF point)
 {
     return rect.contains(point);

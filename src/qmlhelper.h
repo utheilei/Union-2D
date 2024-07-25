@@ -11,6 +11,9 @@ class QmlHelper : public QObject
 
 public:
     explicit QmlHelper(QObject* parent = nullptr);
+    ~QmlHelper();
+
+    Q_INVOKABLE bool isImageValid(const QUrl &url);
 
     Q_INVOKABLE bool contains(QRectF rect, QPointF point);
 
