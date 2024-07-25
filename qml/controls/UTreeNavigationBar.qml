@@ -98,11 +98,11 @@ Old.TreeView {
             hoverEnabled: true
             indicator: Canvas {
                 id: canvas
-                property color penColor: styleData.selected ? UTheme.highlightedText : UTheme.text
+                property color penColor: treeModel.childHasSelected(styleData.index, selectionModel.selectedIndexes) ? UTheme.highlight : UTheme.text
                 x: control.width - width - control.rightPadding
                 y: control.topPadding + (control.availableHeight - height) / 2
                 width: styleData.hasChildren ? 12 : 0
-                height: styleData.hasChildren ? 6 : 0
+                height: styleData.hasChildren ? 7 : 0
                 visible: styleData.hasChildren
 
                 Connections {
@@ -119,13 +119,14 @@ Old.TreeView {
                     context.reset();
                     if (styleData.isExpanded) {
                         context.moveTo(0, 0);
-                        context.lineTo(width / 2, height);
+                        context.lineTo(width / 2, height - 1);
                         context.lineTo(width, 0);
                     } else {
-                        context.moveTo(0, height);
+                        context.moveTo(0, height - 1);
                         context.lineTo(width / 2, 0);
-                        context.lineTo(width, height);
+                        context.lineTo(width, height - 1);
                     }
+                    context.lineWidth = 2;
                     context.strokeStyle = penColor;
                     context.stroke();
                 }
@@ -149,7 +150,8 @@ Old.TreeView {
                         text: control.text
                         font: control.font
                         opacity: enabled ? 1.0 : 0.3
-                        color: styleData.selected ? UTheme.highlightedText : UTheme.text
+                        color: treeModel.childHasSelected(styleData.index, selectionModel.selectedIndexes) ?
+                                   UTheme.highlight : (styleData.selected ? UTheme.highlightedText : UTheme.text)
                         anchors.verticalCenter: parent.verticalCenter
                         verticalAlignment: Text.AlignVCenter
                         elide: Text.ElideRight
@@ -166,8 +168,9 @@ Old.TreeView {
             onClicked: {
                 if (styleData.hasChildren) {
                     styleData.isExpanded ? collapse(styleData.index) : expand(styleData.index)
+                } else {
+                    setCurIndex(styleData.index)
                 }
-                setCurIndex(styleData.index)
                 itemClicked(styleData.index)
             }
         }

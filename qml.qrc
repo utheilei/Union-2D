@@ -122,5 +122,6 @@
         <file>qml/controls/UDelayButton.qml</file>
         <file>qml/controls/UDropdown.qml</file>
         <file>qml/controls/UTreeNavigationBar.qml</file>
+        <file>qml/controls/UBusyIndicator2.qml</file>
     </qresource>
 </RCC>

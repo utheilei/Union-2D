@@ -302,6 +302,13 @@ Rectangle {
                 anchors.top: circleProgressBar.bottom
                 anchors.left: circleProgressBar.left
             }
+
+            UBusyIndicator2 {
+                id: indicator2
+                anchors.topMargin: 20
+                anchors.top: indicator.bottom
+                anchors.left: indicator.left
+            }
         }
 
         Rectangle {

@@ -85,6 +85,8 @@ public:
 
     Q_INVOKABLE void setSortEnabled(bool enabled);
 
+    Q_INVOKABLE bool childHasSelected(const QModelIndex &currentIndex, const QModelIndexList &selectIndexs);
+
 signals:
     void headersChanged();
 

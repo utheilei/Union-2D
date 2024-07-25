@@ -227,6 +227,39 @@ void TreeModel::setSortEnabled(bool enabled)
     m_sortEnabled = enabled;
 }
 
+bool TreeModel::childHasSelected(const QModelIndex &currentIndex, const QModelIndexList &selectIndexs)
+{
+    if (!currentIndex.isValid())
+        return false;
+
+    if (!hasChildren(currentIndex))
+        return false;
+
+    for (int i = 0; i < rowCount(currentIndex); i++)
+    {
+        auto childIndex = this->index(i, 0, currentIndex);
+        if (!childIndex.isValid())
+            continue;
+
+        if (!hasChildren(childIndex))
+        {
+            if (selectIndexs.contains(childIndex))
+            {
+                return true;
+            }
+        }
+        else
+        {
+            if (childHasSelected(childIndex, selectIndexs))
+            {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 QList<TreeItem*> TreeModel::matchItems(TreeItem* item, const QString &text)
 {
     QList<TreeItem*> items;
