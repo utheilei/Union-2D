@@ -123,5 +123,6 @@
         <file>qml/controls/UDropdown.qml</file>
         <file>qml/controls/UTreeNavigationBar.qml</file>
         <file>qml/controls/UBusyIndicator2.qml</file>
+        <file>qml/example/DesignWidget.qml</file>
     </qresource>
 </RCC>

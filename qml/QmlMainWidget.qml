@@ -10,7 +10,6 @@ Rectangle {
     radius: 20
 
     property var listWidget: [accountWidget, unionIDWidget, displayWidget, defaultAppWidget, netWorkWidget]
-    property var listMap: new Map([[0, accountWidget], [1, unionIDWidget], [2, displayWidget], [3, defaultAppWidget], [4, netWorkWidget]]);
 
     MouseArea {
         anchors.fill: parent

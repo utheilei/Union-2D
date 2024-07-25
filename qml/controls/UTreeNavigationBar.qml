@@ -18,6 +18,7 @@ Old.TreeView {
     verticalScrollBarPolicy: Qt.ScrollBarAlwaysOff
     headerVisible: false
     frameVisible : false
+    property int leftMargin: 20
     property bool iconVisible: true
     property alias treeViewModel: treeModel
     property size iconSize: Qt.size(16, 16)
@@ -75,6 +76,13 @@ Old.TreeView {
     TreeModel {
         id: treeModel
         headers: ["title"]
+    }
+
+    Connections {
+        target: treeModel;
+        function onExpandTreeNode(index) {
+            treeView.expand(index);
+        }
     }
 
     ItemSelectionModel {
@@ -136,7 +144,7 @@ Old.TreeView {
                 Row {
                     id: rowLayout
                     anchors.fill: parent
-                    anchors.leftMargin: 2 + styleData.depth * 20
+                    anchors.leftMargin: leftMargin + styleData.depth * 20
                     anchors.rightMargin: control.indicator.width + control.spacing
                     spacing: 9
                     Image {
@@ -150,8 +158,7 @@ Old.TreeView {
                         text: control.text
                         font: control.font
                         opacity: enabled ? 1.0 : 0.3
-                        color: treeModel.childHasSelected(styleData.index, selectionModel.selectedIndexes) ?
-                                   UTheme.highlight : (styleData.selected ? UTheme.highlightedText : UTheme.text)
+                        color: getColor(styleData.hasChildren, styleData.selected, styleData.index, selectionModel.selectedIndexes)
                         anchors.verticalCenter: parent.verticalCenter
                         verticalAlignment: Text.AlignVCenter
                         elide: Text.ElideRight
@@ -169,7 +176,7 @@ Old.TreeView {
                 if (styleData.hasChildren) {
                     styleData.isExpanded ? collapse(styleData.index) : expand(styleData.index)
                 } else {
-                    setCurIndex(styleData.index)
+                    setCurrentIndex(styleData.index)
                 }
                 itemClicked(styleData.index)
             }
@@ -180,7 +187,16 @@ Old.TreeView {
             color: "transparent"
         }
     }
-    function setCurIndex(curIndex) {
+    function setCurrentIndex(curIndex) {
         selectionModel.setCurrentIndex(curIndex, 19)
+    }
+
+    function getColor(hasChildren, selected, index, selectedIndexes) {
+        if (hasChildren) {
+            return treeModel.childHasSelected(index, selectedIndexes) ?
+                        UTheme.highlight : UTheme.text
+        } else {
+            return selected ? UTheme.highlightedText : UTheme.text
+        }
     }
 }

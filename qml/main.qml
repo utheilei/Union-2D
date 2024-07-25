@@ -172,12 +172,17 @@ ApplicationWindow {
                 case 1:
                     if (navigationBarIndex !== index) {
                         console.info("switch page:" + navigationBarIndex)
-                        myLoader.sourceComponent = mainPage
-                        myLoader.item.setCurrentItem(0)
+                        myLoader.sourceComponent = designPage
                         navigationBarIndex = index
                     }
                     break
                 case 2:
+                    if (navigationBarIndex !== index) {
+                        console.info("switch page:" + navigationBarIndex)
+                        myLoader.sourceComponent = mainPage
+                        myLoader.item.setCurrentItem(0)
+                        navigationBarIndex = index
+                    }
                     break
                 case 3:
                     if (navigationBarIndex !== index) {
@@ -210,6 +215,11 @@ ApplicationWindow {
             HomePage {
                 id: scrollView
             }
+        }
+
+        Component {
+            id: designPage
+            DesignWidget {}
         }
 
         Component {

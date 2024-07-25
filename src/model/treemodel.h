@@ -90,6 +90,13 @@ public:
 signals:
     void headersChanged();
 
+    void expandTreeNode(const QModelIndex &index);
+
+public slots:
+    void treeExpandAll();
+
+    void handleChildItemExpand(TreeItem* parent);
+
 private:
     QList<TreeItem*> matchItems(TreeItem* item, const QString &text);
     TreeItem* m_rootItem = nullptr;

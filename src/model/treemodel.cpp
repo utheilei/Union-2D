@@ -260,6 +260,29 @@ bool TreeModel::childHasSelected(const QModelIndex &currentIndex, const QModelIn
     return false;
 }
 
+void TreeModel::treeExpandAll()
+{
+    handleChildItemExpand(m_rootItem);
+}
+
+void TreeModel::handleChildItemExpand(TreeItem *parent)
+{
+    if (nullptr == parent)
+        return;
+    int count = parent->childCount();
+    for(int i = 0; i < count; ++i)
+    {
+        auto childItem = parent->child(i);
+        if (nullptr == childItem)
+            continue;
+        if (childItem->childCount() > 0)
+        {
+            emit expandTreeNode(createIndex(i, 0, childItem));
+            handleChildItemExpand(childItem);
+        }
+    }
+}
+
 QList<TreeItem*> TreeModel::matchItems(TreeItem* item, const QString &text)
 {
     QList<TreeItem*> items;
