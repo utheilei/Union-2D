@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme>
  <General>
-   <ThemeName>blue</ThemeName>
-   <Index>2</Index>
+   <ThemeName>purple</ThemeName>
+   <Index>3</Index>
  </General>
   <Palette>
    <WindowText index="0" opacity="1.0">#000000</WindowText>
@@ -14,10 +14,10 @@
    <Text index="6" opacity="1.0">#000000</Text>
    <BrightText index="7" opacity="1.0">#414D68</BrightText>
    <ButtonText index="8" opacity="1.0">#414D68</ButtonText>
-   <Base index="9" opacity="1.0">#01c8ff</Base>
-   <Window index="10" opacity="1.0">#9aebff</Window>
+   <Base index="9" opacity="1.0">#b37feb</Base>
+   <Window index="10" opacity="1.0">#d3adf7</Window>
    <Shadow index="11" opacity="0.2">#5c5d5f</Shadow>
-   <Highlight index="12" opacity="1.0">#00a000</Highlight>
+   <Highlight index="12" opacity="1.0">#00A1E5</Highlight>
    <HighlightedText index="13" opacity="1.0">#FFFFFF</HighlightedText>
    <Link index="14" opacity="1.0">#0082FA</Link>
    <LinkVisited index="15" opacity="1.0">#AD4579</LinkVisited>

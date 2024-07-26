@@ -11,7 +11,7 @@
 
 struct DPaletteData : public QSharedData
 {
-    QMap<QString, QMap<int, QColor>> brushMap;
+    QMap<int, QMap<int, QColor>> brushMap;
 };
 
 class UApplicationThemePrivate
@@ -29,15 +29,16 @@ public:
 
     bool parseTheme();
 
-    bool parseGeneralTheme(QString &theme, const QDomElement &dom);
+    bool parseGeneralTheme(int &theme, const QDomElement &dom);
 
-    bool parsePalette(QString &theme, const QDomElement &dom);
+    bool parsePalette(int &theme, const QDomElement &dom);
 
     QSharedDataPointer<DPaletteData> data;
     UApplicationTheme* q_ptr = nullptr;
     QString themeName = "light";
     int applicationTheme = UApplicationTheme::LightTheme;
     int applicationLanguage = QLocale::Chinese;
+    QMap<int, QString> themeMap;
 };
 
 QString UApplicationThemePrivate::mkMutiDir(const QString &path)
@@ -66,6 +67,8 @@ void UApplicationThemePrivate::initPaletteData()
     QString fileName = QString("%1/%2.ini").
                        arg(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).arg(qApp->applicationName());
 
+    data = QSharedDataPointer<DPaletteData>(new DPaletteData());
+    parseTheme();
     if (!QFile::exists(fileName))
     {
         QSettings settings(fileName, QSettings::IniFormat);
@@ -76,12 +79,9 @@ void UApplicationThemePrivate::initPaletteData()
     else
     {
         applicationTheme = q->applicationTheme();
-        themeName = (UApplicationTheme::LightTheme == applicationTheme) ? "light" : "dark";
+        themeName = applicationTheme > 1 ? "light" : themeMap[applicationTheme];
         applicationLanguage = q->applicationLanguage();
     }
-
-    data = QSharedDataPointer<DPaletteData>(new DPaletteData());
-    parseTheme();
 }
 
 bool UApplicationThemePrivate::parseTheme()
@@ -117,7 +117,7 @@ bool UApplicationThemePrivate::parseTheme()
         }
 
         QDomNode child = root.firstChild();
-        QString theme = "";
+        int theme = 0;
         while (!child.isNull())
         {
             if (child.toElement().tagName() == "General")
@@ -135,19 +135,21 @@ bool UApplicationThemePrivate::parseTheme()
     return true;
 }
 
-bool UApplicationThemePrivate::parseGeneralTheme(QString &theme, const QDomElement &dom)
+bool UApplicationThemePrivate::parseGeneralTheme(int &theme, const QDomElement &dom)
 {
     auto children = dom.childNodes();
-    if (children.isEmpty())
+    if (children.size() < 2)
     {
         return false;
     }
     auto firstChild = children.at(0).toElement();
-    theme = firstChild.text();
+    auto secordChild = children.at(1).toElement();
+    theme = secordChild.text().toInt();
+    themeMap.insert(secordChild.text().toInt(), firstChild.text());
     return true;
 }
 
-bool UApplicationThemePrivate::parsePalette(QString &theme, const QDomElement &dom)
+bool UApplicationThemePrivate::parsePalette(int &theme, const QDomElement &dom)
 {
     QMap<int, QColor> colorMap;
     QDomNode child = dom.firstChild();
@@ -199,13 +201,14 @@ void UApplicationTheme::setApplicationLanguage(int language)
 
 void UApplicationTheme::setApplicationTheme(int theme)
 {
+    Q_D(UApplicationTheme);
     QString fileName = QString("%1/%2.ini").
                        arg(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).arg(qApp->applicationName());
 
     QSettings settings(fileName, QSettings::IniFormat);
     settings.setValue("Settings/Theme", theme);
     settings.sync();
-    setThemeName((UApplicationTheme::LightTheme == theme) ? "light" : "dark");
+    setThemeName(theme > 1 ? "light" : d->themeMap[theme]);
     emit applicationThemeChanged();
 }
 
@@ -230,5 +233,20 @@ int UApplicationTheme::applicationTheme()
 QColor UApplicationTheme::color(int ct)
 {
     Q_D(UApplicationTheme);
-    return d->data->brushMap[d->themeName][ct];
+    return d->data->brushMap[applicationTheme()][ct];
+}
+
+void UApplicationTheme::setHighlightColor(const QColor &color)
+{
+    Q_D(UApplicationTheme);
+    for (const auto &key : d->themeMap.keys())
+    {
+        d->data->brushMap[key][UApplicationTheme::Highlight] = color;
+    }
+}
+
+void UApplicationTheme::setColor(int theme, int ct, const QColor &color)
+{
+    Q_D(UApplicationTheme);
+    d->data->brushMap[theme][ct] = color;
 }

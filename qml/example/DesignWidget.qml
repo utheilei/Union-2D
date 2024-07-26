@@ -23,11 +23,17 @@ Item {
             }
         }
 
+        Rectangle {
+            Layout.fillHeight: true
+            width: 1
+            color: UTheme.frameBorder
+        }
+
         StackLayout {
             id: layout
             Layout.fillWidth: true
             Layout.fillHeight: true
-            currentIndex: 1
+            currentIndex: 2
             Rectangle {
                 color: 'red'
                 Layout.fillWidth: true
@@ -37,6 +43,12 @@ Item {
                 color: 'green'
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+            }
+            ThemeWidget {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                onThemeChanged: {UTheme.applicationTheme = index}
+                onHighlightChanged: {UTheme.setHighlightColor(color);UTheme.highlight = color}
             }
         }
     }

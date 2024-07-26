@@ -73,6 +73,10 @@ public:
 
     Q_INVOKABLE QColor color(int ct);
 
+    Q_INVOKABLE void setHighlightColor(const QColor &color);
+
+    Q_INVOKABLE void setColor(int theme, int ct, const QColor &color);
+
 signals:
     void applicationThemeChanged();
     void applicationLanguageChanged();
