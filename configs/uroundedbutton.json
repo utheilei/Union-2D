@@ -1,0 +1,88 @@
+{
+    "class": "URoundedButton",
+    "api": [{
+            "property": "text",
+            "note": "此属性包含按钮的文本描述",
+            "type": "string",
+            "default": "---"
+        },
+        {
+            "property": "icon.source",
+            "note": "此属性包含按钮图标",
+            "type": "url",
+            "default": "---"
+        },
+        {
+            "property": "backgroundCheckedColor",
+            "note": "此属性包含按钮checked态背景色",
+            "type": "color",
+            "default": "UTheme.base"
+        },
+        {
+            "property": "backgroundDefaultColor",
+            "note": "此属性包含按钮normal态背景色",
+            "type": "color",
+            "default": "UTheme.button"
+        },
+        {
+            "property": "backgroundHoverdColor",
+            "note": "此属性包含按钮Hoverd态背景色",
+            "type": "color",
+            "default": "darker(backgroundDefaultColor, 1.2)"
+        },
+        {
+            "property": "backgroundPressedColor",
+            "note": "此属性包含按钮Press态背景色",
+            "type": "color",
+            "default": "darker(backgroundDefaultColor, 1.4)"
+        },
+        {
+            "property": "buttonRadius",
+            "note": "此属性包含按钮圆角",
+            "type": "int",
+            "default": "8"
+        },
+        {
+            "property": "borderWidth",
+            "note": "此属性包含按钮边框",
+            "type": "int",
+            "default": "0"
+        },
+        {
+            "property": "borderColor",
+            "note": "此属性包含按钮normal态边框颜色",
+            "type": "color",
+            "default": "UTheme.text"
+        },
+        {
+            "property": "borderHoverdColor",
+            "note": "此属性包含按钮Hover态边框颜色",
+            "type": "color",
+            "default": "UTheme.informationBackground"
+        },
+        {
+            "property": "borderPressedColor",
+            "note": "此属性包含按钮Press态边框颜色",
+            "type": "color",
+            "default": "darker(borderHoverdColor, 1.4)"
+        },
+        {
+            "property": "textColor",
+            "note": "此属性包含按钮normal态文字颜色",
+            "type": "color",
+            "default": "UTheme.text"
+        },
+        {
+            "property": "textHoverdColor",
+            "note": "此属性包含按钮Hover态文字颜色",
+            "type": "color",
+            "default": "UTheme.text"
+        },
+        {
+            "property": "textPressedColor",
+            "note": "此属性包含按钮Press态文字颜色",
+            "type": "color",
+            "default": "UTheme.text"
+        }
+    ]
+}

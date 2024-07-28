@@ -1,36 +1,12 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>FramelessWindow/CustomMouseArea.qml</file>
-        <file>FramelessWindow/FramelessWindow.qml</file>
-        <file>FramelessWindow/HLTitleBar.qml</file>
         <file>Union-2D.ico</file>
-        <file>controls/HLRoundedRectangle.qml</file>
-        <file>controls/HLGridView.qml</file>
-        <file>controls/HLIconItem.qml</file>
-        <file>controls/HLButton.qml</file>
-        <file>controls/HLEdgeButton.qml</file>
-        <file>controls/HLMenu.qml</file>
-        <file>controls/HLMenuItem.qml</file>
-        <file>controls/HLRoundedButton.qml</file>
-        <file>controls/settings.qml</file>
         <file>image/button.svg</file>
         <file>image/dialog.svg</file>
         <file>image/inputedit.svg</file>
         <file>image/progress.svg</file>
         <file>image/tooltip.svg</file>
-        <file>controls/HLCircleButton.qml</file>
-        <file>controls/HLComboBox.qml</file>
-        <file>controls/HLLineEdit.qml</file>
-        <file>controls/HLListView.qml</file>
-        <file>controls/HLMaskImage.qml</file>
-        <file>controls/HLPassWordLineEdit.qml</file>
-        <file>controls/HLTableView.qml</file>
-        <file>controls/HLWaterProgress.qml</file>
-        <file>QmlMainWidget.qml</file>
-        <file>controls/HLDialog.qml</file>
-        <file>controls/HLCalendar.qml</file>
         <file>icon/dark/close.svg</file>
         <file>icon/dark/hide.svg</file>
         <file>icon/dark/left.svg</file>
@@ -57,12 +33,97 @@
         <file>icon/light/passwordshow.svg</file>
         <file>icon/dark/Blister.png</file>
         <file>icon/light/Blister.png</file>
-        <file>controls/HLFloatingMessage.qml</file>
-        <file>icon/error.svg</file>
-        <file>icon/yes.svg</file>
-        <file>controls/HLSearchLineEdit.qml</file>
+        <file>icon/light/error.svg</file>
+        <file>icon/dark/error.svg</file>
         <file>icon/dark/search.svg</file>
         <file>icon/light/search.svg</file>
-        <file>controls/HLTheme.qml</file>
+        <file>qml/controls/UButton.qml</file>
+        <file>qml/controls/UCalendar.qml</file>
+        <file>qml/controls/UCircleButton.qml</file>
+        <file>qml/controls/UComboBox.qml</file>
+        <file>qml/controls/UDialog.qml</file>
+        <file>qml/controls/UEdgeButton.qml</file>
+        <file>qml/controls/UFloatingMessage.qml</file>
+        <file>qml/controls/UGridView.qml</file>
+        <file>qml/controls/UIconItem.qml</file>
+        <file>qml/controls/ULineEdit.qml</file>
+        <file>qml/controls/UListView.qml</file>
+        <file>qml/controls/UMaskImage.qml</file>
+        <file>qml/controls/UMenu.qml</file>
+        <file>qml/controls/UMenuItem.qml</file>
+        <file>qml/controls/UPassWordLineEdit.qml</file>
+        <file>qml/controls/URoundedButton.qml</file>
+        <file>qml/controls/URoundedRectangle.qml</file>
+        <file>qml/controls/USearchLineEdit.qml</file>
+        <file>qml/controls/UTableView.qml</file>
+        <file>qml/controls/UTheme.qml</file>
+        <file>qml/controls/UWaterProgress.qml</file>
+        <file>qml/framelesswindow/UCustomMouseArea.qml</file>
+        <file>qml/framelesswindow/UFramelessWindow.qml</file>
+        <file>qml/framelesswindow/UTitleBar.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/QmlMainWidget.qml</file>
+        <file>qml/controls/UButtonGroup.qml</file>
+        <file>icon/dark/chinese.svg</file>
+        <file>icon/dark/dark.svg</file>
+        <file>icon/dark/english.svg</file>
+        <file>icon/dark/light.svg</file>
+        <file>icon/light/chinese.svg</file>
+        <file>icon/light/dark.svg</file>
+        <file>icon/light/english.svg</file>
+        <file>icon/light/light.svg</file>
+        <file>qml/controls/USwitch.qml</file>
+        <file>qml/controls/UCheckBox.qml</file>
+        <file>icon/dark/utk_collapse.svg</file>
+        <file>icon/dark/utk_expand.svg</file>
+        <file>icon/light/utk_collapse.svg</file>
+        <file>icon/light/utk_expand.svg</file>
+        <file>qml/controls/UTreeView.qml</file>
+        <file>qml/controls/UTreeEdit.qml</file>
+        <file>qml/controls/UToolTip.qml</file>
+        <file>qml/controls/UCircleProgressBar.qml</file>
+        <file>qml/controls/UProgressBar.qml</file>
+        <file>qml/controls/UBusyIndicator.qml</file>
+        <file>qml/controls/UAlert.qml</file>
+        <file>icon/dark/info.svg</file>
+        <file>icon/dark/success.svg</file>
+        <file>icon/dark/waining.svg</file>
+        <file>icon/light/info.svg</file>
+        <file>icon/light/success.svg</file>
+        <file>icon/light/waining.svg</file>
+        <file>icon/dark/loading.svg</file>
+        <file>icon/light/loading.svg</file>
+        <file>qml/controls/USettingGroup.qml</file>
+        <file>qml/controls/USettingItem.qml</file>
+        <file>qml/controls/URadiusRectangle.qml</file>
+        <file>qml/controls/UNavigationBar.qml</file>
+        <file>svg.cso</file>
+        <file>qml/controls/USVGIcon.qml</file>
+        <file>qml/controls/UColorPicker.qml</file>
+        <file>qml/controls/UAvatar.qml</file>
+        <file>image/gitee_logo.jpg</file>
+        <file>icon/dark/about.svg</file>
+        <file>icon/light/about.svg</file>
+        <file>qml/example/ControlsWidget.qml</file>
+        <file>qml/example/OverviewWidget.qml</file>
+        <file>qml/example/ControlsListView.qml</file>
+        <file>qml/example/ButtonWidget.qml</file>
+        <file>qml/controls/UCard.qml</file>
+        <file>qml/controls/ULinkButton.qml</file>
+        <file>icon/dark/codedome.svg</file>
+        <file>icon/light/codedome.svg</file>
+        <file>icon/dark/button.svg</file>
+        <file>icon/light/button.svg</file>
+        <file>qml/example/CodeDialog.qml</file>
+        <file>qml/example/HomePage.qml</file>
+        <file>icon/dark/homepage.png</file>
+        <file>icon/light/homepage.png</file>
+        <file>image/theme.png</file>
+        <file>qml/controls/UDelayButton.qml</file>
+        <file>qml/controls/UDropdown.qml</file>
+        <file>qml/controls/UTreeNavigationBar.qml</file>
+        <file>qml/controls/UBusyIndicator2.qml</file>
+        <file>qml/example/DesignWidget.qml</file>
+        <file>qml/example/ThemeWidget.qml</file>
     </qresource>
 </RCC>
