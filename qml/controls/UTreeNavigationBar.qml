@@ -169,7 +169,7 @@ Old.TreeView {
             background: Rectangle {
                 implicitWidth: 160
                 implicitHeight: 40
-                color: styleData.selected ? UTheme.highlight : (control.hovered ? UTheme.itemBackground : UTheme.base)
+                color: styleData.selected ? UTheme.highlight : (control.hovered ? UTheme.itemBackground : "transparent")
                 radius : 8
             }
             onClicked: {
