@@ -22,7 +22,7 @@ Old.TreeView {
     property bool iconVisible: true
     property alias treeViewModel: treeModel
     property size iconSize: Qt.size(16, 16)
-    signal itemClicked(var index)
+    signal itemClicked(var index, var row)
 
 
     New.ScrollBar {
@@ -177,7 +177,7 @@ Old.TreeView {
                     styleData.isExpanded ? collapse(styleData.index) : expand(styleData.index)
                 } else {
                     setCurrentIndex(styleData.index)
-                    itemClicked(styleData.index)
+                    itemClicked(styleData.index, styleData.row)
                 }
             }
         }

@@ -22,7 +22,18 @@ Item {
                 bar.setCurrentIndex(bar.treeViewModel.index(0, 0, bar.treeViewModel.index(1, 0)))
             }
             onItemClicked: {
-                console.info(index)
+                switch (row) {
+                case 1:
+                    break
+                case 3:
+                    layout.currentIndex = 1
+                    break
+                case 6:
+                    layout.currentIndex = 2
+                    break
+                default:
+                    break
+                }
             }
         }
 
@@ -36,14 +47,9 @@ Item {
             id: layout
             Layout.fillWidth: true
             Layout.fillHeight: true
-            currentIndex: 3
+            currentIndex: 1
             Rectangle {
                 color: 'red'
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-            }
-            Rectangle {
-                color: 'green'
                 Layout.fillWidth: true
                 Layout.fillHeight: true
             }
