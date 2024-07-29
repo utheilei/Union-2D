@@ -21,6 +21,9 @@ Item {
                 bar.treeViewModel.treeExpandAll()
                 bar.setCurrentIndex(bar.treeViewModel.index(0, 0, bar.treeViewModel.index(1, 0)))
             }
+            onItemClicked: {
+                console.info(index)
+            }
         }
 
         Rectangle {
@@ -33,7 +36,7 @@ Item {
             id: layout
             Layout.fillWidth: true
             Layout.fillHeight: true
-            currentIndex: 2
+            currentIndex: 3
             Rectangle {
                 color: 'red'
                 Layout.fillWidth: true
@@ -49,6 +52,10 @@ Item {
                 Layout.fillHeight: true
                 onThemeChanged: {UTheme.applicationTheme = index}
                 onHighlightChanged: {UTheme.setHighlightColor(color);UTheme.highlight = color}
+            }
+            LayoutWidget {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
             }
         }
     }

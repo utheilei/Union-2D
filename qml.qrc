@@ -125,5 +125,7 @@
         <file>qml/controls/UBusyIndicator2.qml</file>
         <file>qml/example/DesignWidget.qml</file>
         <file>qml/example/ThemeWidget.qml</file>
+        <file>qml/example/LayoutWidget.qml</file>
+        <file>image/layout.png</file>
     </qresource>
 </RCC>

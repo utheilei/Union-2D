@@ -177,8 +177,8 @@ Old.TreeView {
                     styleData.isExpanded ? collapse(styleData.index) : expand(styleData.index)
                 } else {
                     setCurrentIndex(styleData.index)
+                    itemClicked(styleData.index)
                 }
-                itemClicked(styleData.index)
             }
         }
 
