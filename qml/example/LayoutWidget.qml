@@ -6,7 +6,7 @@ import "../controls"
 ScrollView {
     id: scrollView
     clip: true
-    ColumnLayout {
+    Column {
         anchors.fill: parent
         anchors.margins: 20
         spacing: 30
@@ -26,7 +26,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("锚布局是Qt Quick中较为特殊的布局方式，通过设置Item的anchors属性去调整元素的水平、垂直位置，有left、righit、top、bottom、horizontalCenter、verticalCenter、fill、centerIn等属性来调整元素的位置。")
@@ -37,11 +37,11 @@ ScrollView {
             id: name
             source: "qrc:/image/layout.png"
             sourceSize: Qt.size(468, 250)
-            Layout.alignment: Qt.AlignHCenter
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("示例")
@@ -137,7 +137,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("Row是一种将其子项沿单行定位的类型。它可以作为一种方便的方法，在不使用锚的情况下水平定位一系列物品。")
@@ -159,7 +159,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("Column是一种沿着单个列定位其子项的类型。它可以作为一种方便的方式，在不使用锚的情况下垂直定位一系列物品。")
@@ -181,7 +181,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("网格是一种以网格形式定位其子项的类型。网格创建了一个足够大的单元格网格，可以容纳其所有子项，并将这些项从左到右、从上到下放置在单元格中。每个项目都位于其单元格的左上角，位置为(0,0)。网格默认为四列，并根据需要创建尽可能多的行以容纳其所有子项。可以通过设置行和列属性来限制行和列的数量。")
@@ -206,7 +206,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("Flow项将其子项定位默认为从左到右排列，超出宽度自动换行。")
@@ -231,7 +231,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("RowLayout用于将元素排列在一行中。‌这些布局方式允许元素根据窗口宽度的变化而调整大小，‌使得元素能够铺满整个窗口。")
@@ -284,7 +284,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("ColumnLayout用于将元素排列在一列中。‌这些布局方式允许元素根据窗口宽度的变化而调整大小，‌使得元素能够铺满整个窗口。")
@@ -334,7 +334,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("GridLayout属于网格布局。并将这些项从左到右、从上到下放置在单元格中。")
@@ -403,7 +403,7 @@ ScrollView {
         }
 
         Label {
-            Layout.preferredWidth: scrollView.width - 40
+            width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
             text: qsTr("通过设置currentIndex属性可以修改当前可见项。该索引对应于StackLayout的子项的顺序。与大多数其他布局不同，子项目的Layout.fillWidth和Layout.fillHeight属性默认为true。因此，默认情况下，只要子项的Layout.maximumWidth或Layout.maximmumHeight不妨碍，子项就会填充以匹配StackLayout的大小。")
@@ -423,6 +423,7 @@ ScrollView {
             id: stackLayout
             currentIndex: 0
             height: 300
+            width: scrollView.width - 40
             Rectangle {
                 color: UTheme.errorBackground
                 Text {

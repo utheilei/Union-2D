@@ -50,19 +50,12 @@ Item {
             currentIndex: 1
             Rectangle {
                 color: 'red'
-                Layout.fillWidth: true
-                Layout.fillHeight: true
             }
             ThemeWidget {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
                 onThemeChanged: {UTheme.applicationTheme = index}
                 onHighlightChanged: {UTheme.setHighlightColor(color);UTheme.highlight = color}
             }
-            LayoutWidget {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-            }
+            LayoutWidget {}
         }
     }
 }
