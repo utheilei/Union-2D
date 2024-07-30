@@ -12,6 +12,7 @@ ScrollView {
     CodeDialog {
         id: codeDialog
         visible: false
+        controlType: "buttonWidget"
     }
 
     ListModel {
