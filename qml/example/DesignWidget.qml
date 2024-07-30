@@ -31,6 +31,9 @@ Item {
                 case 6:
                     layout.currentIndex = 2
                     break
+                case 7:
+                    layout.currentIndex = 3
+                    break
                 default:
                     break
                 }
@@ -56,6 +59,7 @@ Item {
                 onHighlightChanged: {UTheme.setHighlightColor(color);UTheme.highlight = color}
             }
             LayoutWidget {}
+            DropShadowWidget {}
         }
     }
 }

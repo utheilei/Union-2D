@@ -129,5 +129,8 @@
         <file>qml/example/LayoutWidget.qml</file>
         <file>image/layout.png</file>
         <file>qml/controls/URadioButton.qml</file>
+        <file>image/aibackground.png</file>
+        <file>qml/example/DropShadowWidget.qml</file>
+        <file>image/dropshadow.png</file>
     </qresource>
 </RCC>
