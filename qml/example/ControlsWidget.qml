@@ -6,7 +6,7 @@ import utk.model 1.0
 
 Item {
     id: controlsWidget
-    property var listMap: {"0": accountWidget, "2": buttonWidget}
+    property var listMap: {"0": accountWidget, "2": buttonWidget, "4": linkButtonWidget}
 
     Rectangle {
         id: leftRectangle
@@ -378,6 +378,13 @@ Item {
 
         ButtonWidget {
             id: buttonWidget
+            anchors.fill: parent
+            anchors.margins: 30
+            visible: false
+        }
+
+        LinkButtonWidget {
+            id: linkButtonWidget
             anchors.fill: parent
             anchors.margins: 30
             visible: false
