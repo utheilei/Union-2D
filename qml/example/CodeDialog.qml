@@ -10,6 +10,7 @@ Popup {
 
     property string icon: "qrc:/Union-2D.ico"
     property string title: qsTr("效果演示")
+    property string controlType
 
     signal accepted
     signal rejected
@@ -138,7 +139,7 @@ Popup {
                 width: 470
                 textMargin: 16
                 color: UTheme.text
-                text: componentLoader.loadFile(qmlHelper.appPath() + "/codedemo/URoundedButton.qml")
+                text: componentLoader.loadFile(qmlHelper.appPath() + "/codedemo/" + ("buttonWidget" == modalDialog.controlType ? "URoundedButton.qml" : "ULinkButton.qml"))
                 wrapMode: TextEdit.WordWrap
                 selectByMouse: true
                 Component.onCompleted: {
