@@ -17,9 +17,12 @@ cmake 3.10 + Qt 5.15.2
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. qml/controls目录下包含基础控件，必须以U开头大驼峰命名；
+2. 图标规范：深色图标放置目录:icon/dark/；亮色图标放置目录：icon/light/；添加图标文件后，在程序中使用 "qrc:/icon/" + UTheme.themeName + "/xxx.svg" 获取当前主题对应的图标，“xxx” 为图标文件名称；
+3. 翻译文件放置在translations目录下且只上传ts文件；
+4. 代码中使用颜色首选qml/controls/UTheme.qml文件中的颜色变量，例如：UTheme.text，禁止直接用色值；
+5. qml/example目录下包含应用程序的代码；
+6. 开发过程中需要图标可以到阿里巴巴矢量图标库下载；
 
 #### 参与贡献
 
