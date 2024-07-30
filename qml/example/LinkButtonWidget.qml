@@ -18,7 +18,7 @@ ScrollView {
     ListModel {
         id: model
         Component.onCompleted: {
-            append({"title": qsTr("常规按钮"), itemComponent: buttonComponent, "text": "简介\n按钮有五种类型：普通按钮、警告按钮和危险按钮。"});
+            append({"title": qsTr("超链接按钮"), itemComponent: buttonComponent, "text": "简介\n超链接按钮有三种类型：普通超链接按钮、警告超链接按钮和危险超链接按钮。"});
         }
     }
     Component {
@@ -30,7 +30,7 @@ ScrollView {
                 anchors.topMargin: 10
                 anchors.left: parent.left
                 anchors.top: parent.top
-                text: qsTr("普通按钮")
+                text: qsTr("普通超链接按钮")
                 onClicked: Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/blob/develop/qml/controls/ULinkButton.qml")
             }
             ULinkButton {
@@ -38,7 +38,7 @@ ScrollView {
                 anchors.leftMargin: 10
                 anchors.left: generalButton.right
                 anchors.top: generalButton.top
-                text: qsTr("警告按钮")
+                text: qsTr("警告超链接按钮")
                 textColor: UTheme.warningBackground
                 onClicked: Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/blob/develop/qml/controls/ULinkButton.qml")
             }
@@ -47,7 +47,7 @@ ScrollView {
                 anchors.leftMargin: 10
                 anchors.left: wainingButton.right
                 anchors.top: wainingButton.top
-                text: qsTr("危险按钮")
+                text: qsTr("危险超链接按钮")
                 textColor: UTheme.errorBackground
                 onClicked: Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/blob/develop/qml/controls/ULinkButton.qml")
             }
@@ -71,7 +71,7 @@ ScrollView {
             font.pixelSize: 14
             color: UTheme.text
             wrapMode: Text.WordWrap
-            text: qsTr("常用的操作按钮。")
+            text: qsTr("常用的超链接按钮。")
         }
 
         Item {
