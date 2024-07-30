@@ -4,100 +4,115 @@
 <context>
     <name>ButtonWidget</name>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="20"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="21"/>
         <source>常规按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="21"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="22"/>
         <source>幽灵按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="22"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="23"/>
         <source>图标文字按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="23"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="24"/>
         <source>圆形按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="35"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="88"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="36"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="89"/>
         <source>主要按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="43"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="103"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="180"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="44"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="104"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="181"/>
         <source>次要按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="54"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="116"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="194"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="55"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="117"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="195"/>
         <source>成功按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="63"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="132"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="204"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="64"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="133"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="205"/>
         <source>警告按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="72"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="148"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="214"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="73"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="149"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="215"/>
         <source>危险按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="171"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="172"/>
         <source>图标按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="294"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="295"/>
         <source>Button 按钮</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="303"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="304"/>
         <source>常用的操作按钮。</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="311"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="314"/>
+        <source>源码</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ButtonWidget.qml" line="330"/>
         <source>代码演示</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="337"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="365"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="360"/>
+        <source>API</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ButtonWidget.qml" line="367"/>
+        <source>按钮的属性说明如下：</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ButtonWidget.qml" line="375"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="403"/>
         <source>属性</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="343"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="365"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="381"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="403"/>
         <source>说明</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="350"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="365"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="388"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="403"/>
         <source>类型</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/ButtonWidget.qml" line="357"/>
-        <location filename="../qml/example/ButtonWidget.qml" line="365"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="395"/>
+        <location filename="../qml/example/ButtonWidget.qml" line="403"/>
         <source>默认值</source>
         <translation type="unfinished"></translation>
     </message>
@@ -118,7 +133,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/example/CodeDialog.qml" line="169"/>
+        <location filename="../qml/example/CodeDialog.qml" line="170"/>
         <source>预览</source>
         <translation type="unfinished"></translation>
     </message>
@@ -167,7 +182,7 @@
     </message>
     <message>
         <location filename="../qml/example/ControlsWidget.qml" line="74"/>
-        <source>Space 间距</source>
+        <source>Flow 流式布局</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -461,6 +476,83 @@
     </message>
 </context>
 <context>
+    <name>LinkButtonWidget</name>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="21"/>
+        <source>常规按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="33"/>
+        <source>普通按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="41"/>
+        <source>警告按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="50"/>
+        <source>危险按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="65"/>
+        <source>Link 按钮</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="74"/>
+        <source>常用的操作按钮。</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="84"/>
+        <source>源码</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="100"/>
+        <source>代码演示</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="130"/>
+        <source>API</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="137"/>
+        <source>按钮的属性说明如下：</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="145"/>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="173"/>
+        <source>属性</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="151"/>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="173"/>
+        <source>说明</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="158"/>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="173"/>
+        <source>类型</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="165"/>
+        <location filename="../qml/example/LinkButtonWidget.qml" line="173"/>
+        <source>默认值</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OverviewWidget</name>
     <message>
         <location filename="../qml/example/OverviewWidget.qml" line="18"/>
@@ -506,8 +598,26 @@
 <context>
     <name>QmlMainWidget</name>
     <message>
-        <location filename="../qml/QmlMainWidget.qml" line="402"/>
+        <location filename="../qml/QmlMainWidget.qml" line="433"/>
         <source>ULinkButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ThemeWidget</name>
+    <message>
+        <location filename="../qml/example/ThemeWidget.qml" line="72"/>
+        <source>我的主题</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ThemeWidget.qml" line="83"/>
+        <source>主题:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/example/ThemeWidget.qml" line="124"/>
+        <source>品牌色:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -626,32 +736,32 @@
         <translation>Union-2D</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="96"/>
+        <location filename="../qml/main.qml" line="94"/>
         <source>输入关键字</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="162"/>
+        <location filename="../qml/main.qml" line="160"/>
         <source>首页</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="162"/>
+        <location filename="../qml/main.qml" line="160"/>
         <source>设计</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="162"/>
+        <location filename="../qml/main.qml" line="160"/>
         <source>研发</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="162"/>
+        <location filename="../qml/main.qml" line="160"/>
         <source>组件</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="162"/>
+        <location filename="../qml/main.qml" line="160"/>
         <source>资源</source>
         <translation type="unfinished"></translation>
     </message>
@@ -680,7 +790,7 @@
         <translation type="vanished">中文</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="58"/>
+        <location filename="../qml/main.qml" line="56"/>
         <source>about</source>
         <translation>关于</translation>
     </message>
@@ -689,7 +799,7 @@
         <translation type="vanished">退出</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="59"/>
+        <location filename="../qml/main.qml" line="57"/>
         <source>qml实现统一的通用控件库</source>
         <translation>QML实现统一的通用控件库</translation>
     </message>

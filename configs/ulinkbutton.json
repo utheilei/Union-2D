@@ -1,0 +1,16 @@
+{
+    "class": "ULinkButton",
+    "api": [{
+            "property": "text",
+            "note": "此属性包含按钮的文本描述",
+            "type": "string",
+            "default": "---"
+        },
+        {
+            "property": "textColor",
+            "note": "此属性包含按钮normal态文字颜色",
+            "type": "string",
+            "default": "UTheme.highlight"
+        }
+    ]
+}
