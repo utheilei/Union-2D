@@ -5,7 +5,7 @@ import "../controls"
 
 Item {
     property int currenTheme: UTheme.applicationTheme
-    property int currenColor: 0
+    property int currenColor: UTheme.highlightIndex
     signal themeChanged(var index)
     signal highlightChanged(var color)
     ListModel {
@@ -62,7 +62,7 @@ Item {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 10
+        anchors.margins: 20
         spacing: 30
         Label {
             id: titleLabel
@@ -141,7 +141,7 @@ Item {
                     }
                     MouseArea {
                         anchors.fill: parent
-                        onClicked: {currenColor = index;highlightChanged(itemColor)}
+                        onClicked: {currenColor = index;UTheme.highlightIndex = index;highlightChanged(itemColor)}
                     }
                 }
             }

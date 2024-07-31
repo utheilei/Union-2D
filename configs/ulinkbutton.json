@@ -9,7 +9,7 @@
         {
             "property": "textColor",
             "note": "此属性包含按钮normal态文字颜色",
-            "type": "string",
+            "type": "color",
             "default": "UTheme.highlight"
         }
     ]

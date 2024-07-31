@@ -34,10 +34,19 @@ ScrollView {
                 onClicked: Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/blob/develop/qml/controls/ULinkButton.qml")
             }
             ULinkButton {
+                id: suceessButton
+                anchors.topMargin: 10
+                anchors.left: generalButton.left
+                anchors.top: generalButton.bottom
+                text: qsTr("成功超链接按钮")
+                textColor: UTheme.successBackground
+                onClicked: Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/blob/develop/qml/controls/ULinkButton.qml")
+            }
+            ULinkButton {
                 id: wainingButton
                 anchors.leftMargin: 10
-                anchors.left: generalButton.right
-                anchors.top: generalButton.top
+                anchors.left: suceessButton.right
+                anchors.top: suceessButton.top
                 text: qsTr("警告超链接按钮")
                 textColor: UTheme.warningBackground
                 onClicked: Qt.openUrlExternally("https://gitee.com/uthelei/Union-2D/blob/develop/qml/controls/ULinkButton.qml")

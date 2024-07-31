@@ -69,15 +69,25 @@ void UApplicationThemePrivate::initPaletteData()
 
     data = QSharedDataPointer<DPaletteData>(new DPaletteData());
     parseTheme();
+    QSettings settings(fileName, QSettings::IniFormat);
     if (!QFile::exists(fileName))
     {
-        QSettings settings(fileName, QSettings::IniFormat);
         settings.setValue("Settings/Theme", UApplicationTheme::LightTheme);
         settings.setValue("Settings/Language", QLocale::Chinese);
+        settings.setValue("Settings/HighlightIndex", 0);
+        settings.setValue("Settings/HighlightColor", "#00A1E5");
         settings.sync();
     }
     else
     {
+        int highlightIndex = settings.value("Settings/HighlightIndex", 0).toInt();
+        QString highlightColor = settings.value("Settings/HighlightColor", "#00A1E5").toString();
+        if (highlightIndex > 0) {
+            for (const auto &key : themeMap.keys())
+            {
+                data->brushMap[key][UApplicationTheme::Highlight] = QColor(highlightColor);
+            }
+        }
         applicationTheme = q->applicationTheme();
         themeName = applicationTheme > 1 ? "light" : themeMap[applicationTheme];
         applicationLanguage = q->applicationLanguage();
@@ -230,6 +240,27 @@ int UApplicationTheme::applicationTheme()
     return settings.value("Settings/Theme", UApplicationTheme::LightTheme).toInt();
 }
 
+void UApplicationTheme::setHighlightIndex(int index)
+{
+    Q_D(UApplicationTheme);
+    QString fileName = QString("%1/%2.ini").
+                       arg(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).arg(qApp->applicationName());
+
+    QSettings settings(fileName, QSettings::IniFormat);
+    settings.setValue("Settings/HighlightIndex", index);
+    settings.sync();
+    emit highlightIndexChanged();
+}
+
+int UApplicationTheme::highlightIndex()
+{
+    QString fileName = QString("%1/%2.ini").
+                       arg(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).arg(qApp->applicationName());
+
+    QSettings settings(fileName, QSettings::IniFormat);
+    return settings.value("Settings/HighlightIndex", 0).toInt();
+}
+
 QColor UApplicationTheme::color(int ct)
 {
     Q_D(UApplicationTheme);
@@ -239,6 +270,12 @@ QColor UApplicationTheme::color(int ct)
 void UApplicationTheme::setHighlightColor(const QColor &color)
 {
     Q_D(UApplicationTheme);
+    QString fileName = QString("%1/%2.ini").
+                       arg(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).arg(qApp->applicationName());
+
+    QSettings settings(fileName, QSettings::IniFormat);
+    settings.setValue("Settings/HighlightColor", color.name());
+    settings.sync();
     for (const auto &key : d->themeMap.keys())
     {
         d->data->brushMap[key][UApplicationTheme::Highlight] = color;

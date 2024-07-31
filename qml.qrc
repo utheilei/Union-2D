@@ -132,5 +132,9 @@
         <file>image/aibackground.png</file>
         <file>qml/example/DropShadowWidget.qml</file>
         <file>image/dropshadow.png</file>
+        <file>qml/example/BlurWidget.qml</file>
+        <file>qml/example/GlowWidget.qml</file>
+        <file>icon/dark/linkbutton.svg</file>
+        <file>icon/light/linkbutton.svg</file>
     </qresource>
 </RCC>

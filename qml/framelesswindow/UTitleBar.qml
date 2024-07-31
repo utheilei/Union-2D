@@ -75,7 +75,7 @@ ToolBar {
             id: maxButton
             width: titleBar.height
             height: titleBar.height
-            icon.source: "qrc:/icon/" + UTheme.themeName + "/max.svg"
+            icon.source: isMax ? "qrc:/icon/" + UTheme.themeName + "/min.svg" : "qrc:/icon/" + UTheme.themeName + "/max.svg"
             icon.width: 20
             icon.height: 20
             onClicked: showWindow()
@@ -107,11 +107,9 @@ ToolBar {
         if (!isMax) {
             parentObj.contentMargins = 0
             parentObj.showFullScreen()
-            maxButton.icon.source = "qrc:/icon/" + UTheme.themeName + "/min.svg"
         } else {
             parentObj.contentMargins = 10
             parentObj.showNormal()
-            maxButton.icon.source = "qrc:/icon/" + UTheme.themeName + "/max.svg"
         }
         isMax = !isMax
     }

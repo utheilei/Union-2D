@@ -249,6 +249,7 @@ ScrollView {
                 Layout.minimumHeight: 150
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -260,6 +261,7 @@ ScrollView {
                 Layout.preferredHeight: 100
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -271,6 +273,7 @@ ScrollView {
                 Layout.preferredHeight: 100
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -300,6 +303,7 @@ ScrollView {
                 Layout.preferredHeight: 100
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -311,6 +315,7 @@ ScrollView {
                 Layout.preferredHeight: 130
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -321,6 +326,7 @@ ScrollView {
                 Layout.preferredHeight: 100
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -350,6 +356,7 @@ ScrollView {
                 Layout.preferredHeight: 100
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -360,6 +367,7 @@ ScrollView {
                 Layout.preferredHeight: 130
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -370,6 +378,7 @@ ScrollView {
                 Layout.preferredHeight: 100
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -380,6 +389,7 @@ ScrollView {
                 Layout.preferredHeight: 130
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -390,6 +400,7 @@ ScrollView {
                 Layout.preferredHeight: 130
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -428,6 +439,7 @@ ScrollView {
                 color: UTheme.errorBackground
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -436,6 +448,7 @@ ScrollView {
                 color: UTheme.successBackground
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -444,6 +457,7 @@ ScrollView {
                 color: UTheme.informationBackground
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -452,6 +466,7 @@ ScrollView {
                 color: UTheme.warningBackground
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }
@@ -460,6 +475,7 @@ ScrollView {
                 color: UTheme.highlight
                 Text {
                     anchors.centerIn: parent
+                    color: UTheme.text
                     text: parent.width + 'x' + parent.height
                 }
             }

@@ -55,6 +55,7 @@ public:
     Q_PROPERTY(QString themeName READ themeName WRITE setThemeName NOTIFY themeNameChanged)
     Q_PROPERTY(int applicationTheme READ applicationTheme WRITE setApplicationTheme NOTIFY applicationThemeChanged)
     Q_PROPERTY(int applicationLanguage READ applicationLanguage WRITE setApplicationLanguage NOTIFY applicationLanguageChanged)
+    Q_PROPERTY(int highlightIndex READ highlightIndex WRITE setHighlightIndex NOTIFY highlightIndexChanged)
 
     explicit UApplicationTheme(QObject* parent = nullptr);
     ~UApplicationTheme();
@@ -71,6 +72,10 @@ public:
 
     int applicationTheme();
 
+    void setHighlightIndex(int index);
+
+    int highlightIndex();
+
     Q_INVOKABLE QColor color(int ct);
 
     Q_INVOKABLE void setHighlightColor(const QColor &color);
@@ -81,6 +86,7 @@ signals:
     void applicationThemeChanged();
     void applicationLanguageChanged();
     void themeNameChanged();
+    void highlightIndexChanged();
 
 private:
     QScopedPointer<UApplicationThemePrivate> d_ptr;

@@ -52,7 +52,7 @@ ScrollView {
                 model.insertRoleName(1258, "itemName");
                 var buttonMap = {"iconName": "button", "itemName": "Button 按钮"}
                 var iconMap = {"iconName": "about", "itemName": "Icon 图标"}
-                var linkMap = {"iconName": "about", "itemName": "Link 按钮"}
+                var linkMap = {"iconName": "linkbutton", "itemName": "Link 按钮"}
                 modelData = [[buttonMap],[iconMap],[linkMap]]
             }
             onItemClicked: {

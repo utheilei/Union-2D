@@ -330,21 +330,21 @@ Item {
 
             ColorEditor {
                 id: redEditor
-                label: qsTr("红色")
+                label: qsTr("红")
                 validator: IntValidator { top: 255; bottom: 0 }
                 onAccepted: pickerRect.fromColor();
             }
 
             ColorEditor {
                 id: greenEditor
-                label: qsTr("绿色")
+                label: qsTr("绿")
                 validator: IntValidator { top: 255; bottom: 0 }
                 onAccepted: pickerRect.fromColor();
             }
 
             ColorEditor {
                 id: blueEditor
-                label: qsTr("蓝色")
+                label: qsTr("蓝")
                 validator: IntValidator { top: 255; bottom: 0 }
                 onAccepted: pickerRect.fromColor();
             }
