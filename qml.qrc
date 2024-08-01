@@ -143,5 +143,6 @@
         <file>icon/light/fixbug.svg</file>
         <file>icon/light/softwarelog.svg</file>
         <file>qml/example/SoftwareLogWidget.qml</file>
+        <file>qml/example/SoftwareLogItem.qml</file>
     </qresource>
 </RCC>

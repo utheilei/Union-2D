@@ -16,28 +16,29 @@ Item {
             Layout.fillHeight: true
             Component.onCompleted: {
                 bar.treeViewModel.insertItems(0, [["Union-2D", ""],["样式", ""],["设计原则", ""],["动效", ""]])
-                bar.treeViewModel.insertItems(0, [["介绍", ""]], bar.treeViewModel.index(0, 0))
+                bar.treeViewModel.insertItems(0, [["介绍", ""],["更新日志", ""]], bar.treeViewModel.index(0, 0))
                 bar.treeViewModel.insertItems(0, [["主题", ""],["颜色", ""],["字体", ""],["布局", ""],["阴影", ""],["光晕", ""],["模糊", ""]], bar.treeViewModel.index(1, 0))
                 bar.treeViewModel.treeExpandAll()
                 bar.setCurrentIndex(bar.treeViewModel.index(0, 0, bar.treeViewModel.index(1, 0)))
             }
             onItemClicked: {
                 switch (row) {
-                case 1:
+                case 2:
+                    layout.currentIndex = 6
                     break
-                case 3:
+                case 4:
                     layout.currentIndex = 1
                     break
-                case 6:
+                case 7:
                     layout.currentIndex = 2
                     break
-                case 7:
+                case 8:
                     layout.currentIndex = 3
                     break
-                case 8:
+                case 9:
                     layout.currentIndex = 4
                     break
-                case 9:
+                case 10:
                     layout.currentIndex = 5
                     break
                 default:
@@ -68,6 +69,7 @@ Item {
             DropShadowWidget {}
             GlowWidget {}
             BlurWidget {}
+            SoftwareLogWidget {}
         }
     }
 }

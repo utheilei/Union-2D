@@ -17,7 +17,7 @@ public:
 
     Q_INVOKABLE bool contains(QRectF rect, QPointF point);
 
-    Q_INVOKABLE QJsonArray listModel();
+    Q_INVOKABLE QJsonArray softwareLogs();
 
     Q_INVOKABLE QString dayOfWeek(int index, int format);
 

@@ -17,28 +17,21 @@ ScrollView {
             text: qsTr("更新日志")
         }
 
-        ColumnLayout {
-            Layout.fillHeight: true
-            Layout.preferredWidth: 100
+        Column {
+            width: scrollView.width - 20
             Repeater {
-                model: [["radius:", 32]]
-                Row {
-                    width: 400
-                    height: 40
-                    spacing: 10
-                    Text {
-                        width: 110
-                        text: modelData[0]
-                        color: UTheme.text
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                    ULineEdit {
-                        text: modelData[1]
-                        anchors.verticalCenter: parent.verticalCenter
-                        onReturnPressed: {
-                            fastBlur.radius = Number(text)
-                        }
-                    }
+                id: listRepeater
+                model: qmlHelper.softwareLogs()
+                SoftwareLogItem {
+                    lineVisible: index < (listRepeater.count - 1)
+                    width: parent.width
+                    titleIcon: "qrc:/icon/" + UTheme.themeName + "/softwarelog.svg"
+                    featureIcon: "qrc:/icon/" + UTheme.themeName + "/features.svg"
+                    fixBugIcon: "qrc:/icon/" + UTheme.themeName + "/fixbug.svg"
+                    itemVersion: modelData.version
+                    itemTime: modelData.time
+                    featureModel: modelData.Features
+                    fixBugModel: modelData.Fixes
                 }
             }
         }
