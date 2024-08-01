@@ -136,5 +136,12 @@
         <file>qml/example/GlowWidget.qml</file>
         <file>icon/dark/linkbutton.svg</file>
         <file>icon/light/linkbutton.svg</file>
+        <file>icon/dark/features.svg</file>
+        <file>icon/dark/fixbug.svg</file>
+        <file>icon/dark/softwarelog.svg</file>
+        <file>icon/light/features.svg</file>
+        <file>icon/light/fixbug.svg</file>
+        <file>icon/light/softwarelog.svg</file>
+        <file>qml/example/SoftwareLogWidget.qml</file>
     </qresource>
 </RCC>

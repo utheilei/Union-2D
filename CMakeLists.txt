@@ -42,6 +42,7 @@ execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINA
 execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/themes")
 execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/configs")
 execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/codedemo")
+execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/updatelog")
 
 FILE(GLOB HEADERS
     ${CMAKE_SOURCE_DIR}/src/*.h
@@ -74,3 +75,4 @@ target_link_libraries(Union-2D PUBLIC
 execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/themes ${CMAKE_CURRENT_BINARY_DIR}/themes)
 execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/configs ${CMAKE_CURRENT_BINARY_DIR}/configs)
 execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/codedemo ${CMAKE_CURRENT_BINARY_DIR}/codedemo)
+execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/updatelog ${CMAKE_CURRENT_BINARY_DIR}/updatelog)

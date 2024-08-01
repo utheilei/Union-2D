@@ -12,14 +12,6 @@ ScrollView {
         anchors.margins: 20
         spacing: 30
         Label {
-            id: titleLabel
-            font.pixelSize: 30
-            font.bold: true
-            color: UTheme.text
-            text: qsTr("阴影特效")
-        }
-
-        Label {
             font.pixelSize: 20
             font.bold: true
             color: UTheme.text
