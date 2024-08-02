@@ -212,9 +212,7 @@ ApplicationWindow {
 
         Component {
             id: homepagePage
-            HomePage {
-                id: scrollView
-            }
+            HomePage {}
         }
 
         Component {
@@ -224,16 +222,12 @@ ApplicationWindow {
 
         Component {
             id: mainPage
-            QmlMainWidget {
-                id: qmlMainWidget
-            }
+            QmlMainWidget {}
         }
 
         Component {
             id: controlsPage
-            ControlsWidget {
-                id: controlsWidget
-            }
+            ControlsWidget {}
         }
 
         layer.enabled: true

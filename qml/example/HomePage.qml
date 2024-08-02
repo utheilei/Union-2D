@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.0
 import "../controls"
 import utk.model 1.0
 import QtGraphicalEffects 1.0
+import QtQuick.Particles 2.15
 
 ScrollView {
     id: scrollView
@@ -71,22 +72,97 @@ ScrollView {
                 }
             }
 
-            Label {
-                id: titleLabel
+            Item {
+                id: root
+                width: parent.width
+                height: 80
                 z: 10
                 anchors.top: parent.top
                 anchors.topMargin: 40
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 30
-                font.bold: true
-                color: UTheme.text
-                text: "Union-2D 1.0"
+                Text {
+                    id: titleLabel
+                    anchors.centerIn: parent
+                    font.pixelSize: 30
+                    font.bold: true
+                    font.family: "Microsoft Yahei"
+                    color: UTheme.text
+                    text: "Union-2D 1.0.0"
+                }
+
+                ParticleSystem {
+                    id: myParticleSystem
+                    running: false
+                }
+
+                Emitter {
+                    id: myEmitter
+                    system: myParticleSystem
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: 800
+                    height: 80
+                    emitRate: 500
+                    lifeSpan: 1000
+                    size: 16
+                    sizeVariation: 8
+                    velocity: PointDirection {
+                        x: 150
+                        xVariation: 60
+                        yVariation: 20
+                    }
+                    acceleration: PointDirection {
+                        x: 12
+                        xVariation: 6
+                        yVariation: 5
+                    }
+                }
+
+                ImageParticle {
+                    system: myParticleSystem
+                    source: "qrc:///particleresources/fuzzydot.png"
+                    color: UTheme.text
+                    colorVariation: 0.1
+                }
+
+                ParallelAnimation {
+                    id: myAnimation
+                    NumberAnimation {
+                        target: myEmitter
+                        properties: "x"
+                        to: root.width / 2
+                        duration: 1000
+                    }
+                    PropertyAnimation {
+                        target: titleLabel
+                        properties: "opacity"
+                        to: 0.0
+                        duration: 1000
+                    }
+                    onStopped: myEmitter.enabled = false
+                }
+                Timer {
+                    interval: 3000
+                    repeat: true
+                    running: true
+                    triggeredOnStart: true
+                    onTriggered: {
+                        myEmitter.enabled = true
+                        titleLabel.opacity = 1.0
+                        if (myEmitter.x > 0)
+                        {
+                            myAnimation.stop()
+                            myEmitter.x = 0;
+                        }
+                        myParticleSystem.restart()
+                        myAnimation.restart()
+                    }
+                }
             }
 
             Label {
                 id: describeLabel
                 width: 600
-                anchors.top: titleLabel.bottom
+                anchors.top: root.bottom
                 anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
                 z: 10
@@ -193,7 +269,7 @@ ScrollView {
                 source: "qrc:/icon/" + UTheme.themeName + "/homepage.png"
                 sourceSize: Qt.size(610, 580)
                 transform: [Rotation {origin.x: backgroudImage.width/2; origin.y: backgroudImage.height/2; axis { x: 1; y: 0; z: 0 } angle: 18},
-                            Rotation{origin.x: backgroudImage.width/2; origin.y: backgroudImage.height/2; axis { x: 0; y: 1; z: 0 } angle: -18}]
+                    Rotation{origin.x: backgroudImage.width/2; origin.y: backgroudImage.height/2; axis { x: 0; y: 1; z: 0 } angle: -18}]
                 MouseArea {
                     anchors.fill: parent
                     hoverEnabled: true
