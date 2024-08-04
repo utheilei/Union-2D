@@ -15,10 +15,11 @@ int main(int argc, char* argv[])
     QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);   //强制开启openGL
 
     QGuiApplication app(argc, argv);
+
+    QmlHelper qmlHelper;
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/qml/main.qml"));
 
-    QmlHelper qmlHelper;
     qmlRegisterType<UApplicationTheme>("utk.UApplicationTheme", 1, 0, "UApplicationTheme");
     qmlRegisterType<TreeModel>("utk.model", 1, 0, "TreeModel");
     qmlRegisterType<TableModel>("utk.model", 1, 0, "TableModel");

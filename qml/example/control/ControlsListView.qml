@@ -1,8 +1,8 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.15
-import "../controls"
 import utk.model 1.0
+import "../../controls"
 
 Item {
     id: listItem

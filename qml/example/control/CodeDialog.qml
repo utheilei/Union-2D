@@ -2,8 +2,8 @@
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.0
 import QtGraphicalEffects 1.12
-import "../controls"
 import utk.component 1.0
+import "../../controls"
 
 Popup {
     id: modalDialog

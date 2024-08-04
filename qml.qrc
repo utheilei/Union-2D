@@ -104,19 +104,12 @@
         <file>image/gitee_logo.jpg</file>
         <file>icon/dark/about.svg</file>
         <file>icon/light/about.svg</file>
-        <file>qml/example/ControlsWidget.qml</file>
-        <file>qml/example/OverviewWidget.qml</file>
-        <file>qml/example/ControlsListView.qml</file>
-        <file>qml/example/ButtonWidget.qml</file>
-        <file>qml/example/LinkButtonWidget.qml</file>
         <file>qml/controls/UCard.qml</file>
         <file>qml/controls/ULinkButton.qml</file>
         <file>icon/dark/codedome.svg</file>
         <file>icon/light/codedome.svg</file>
         <file>icon/dark/button.svg</file>
         <file>icon/light/button.svg</file>
-        <file>qml/example/CodeDialog.qml</file>
-        <file>qml/example/HomePage.qml</file>
         <file>icon/dark/homepage.png</file>
         <file>icon/light/homepage.png</file>
         <file>image/theme.png</file>
@@ -124,16 +117,10 @@
         <file>qml/controls/UDropdown.qml</file>
         <file>qml/controls/UTreeNavigationBar.qml</file>
         <file>qml/controls/UBusyIndicator2.qml</file>
-        <file>qml/example/DesignWidget.qml</file>
-        <file>qml/example/ThemeWidget.qml</file>
-        <file>qml/example/LayoutWidget.qml</file>
         <file>image/layout.png</file>
         <file>qml/controls/URadioButton.qml</file>
         <file>image/aibackground.png</file>
-        <file>qml/example/DropShadowWidget.qml</file>
         <file>image/dropshadow.png</file>
-        <file>qml/example/BlurWidget.qml</file>
-        <file>qml/example/GlowWidget.qml</file>
         <file>icon/dark/linkbutton.svg</file>
         <file>icon/light/linkbutton.svg</file>
         <file>icon/dark/features.svg</file>
@@ -142,7 +129,22 @@
         <file>icon/light/features.svg</file>
         <file>icon/light/fixbug.svg</file>
         <file>icon/light/softwarelog.svg</file>
-        <file>qml/example/SoftwareLogWidget.qml</file>
-        <file>qml/example/SoftwareLogItem.qml</file>
+        <file>qml/example/control/ButtonWidget.qml</file>
+        <file>qml/example/control/CodeDialog.qml</file>
+        <file>qml/example/control/ControlsListView.qml</file>
+        <file>qml/example/control/ControlsWidget.qml</file>
+        <file>qml/example/control/LinkButtonWidget.qml</file>
+        <file>qml/example/control/OverviewWidget.qml</file>
+        <file>qml/example/design/BlurWidget.qml</file>
+        <file>qml/example/design/DesignWidget.qml</file>
+        <file>qml/example/design/DropShadowWidget.qml</file>
+        <file>qml/example/design/GlowWidget.qml</file>
+        <file>qml/example/design/LayoutWidget.qml</file>
+        <file>qml/example/design/SoftwareLogItem.qml</file>
+        <file>qml/example/design/SoftwareLogWidget.qml</file>
+        <file>qml/example/design/ThemeWidget.qml</file>
+        <file>qml/example/homepage/HomePage.qml</file>
+        <file>qml/example/design/CricleComponent.qml</file>
+        <file>qml/example/design/IntroduceWidget.qml</file>
     </qresource>
 </RCC>

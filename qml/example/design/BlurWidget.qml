@@ -2,7 +2,7 @@ import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
-import "../controls"
+import "../../controls"
 
 ScrollView {
     id: scrollView
@@ -11,19 +11,18 @@ ScrollView {
         anchors.fill: parent
         anchors.margins: 20
         spacing: 30
-
         Label {
             font.pixelSize: 20
             font.bold: true
             color: UTheme.text
-            text: qsTr("光晕特效(Glow)")
+            text: qsTr("快速模糊(FastBlur)")
         }
 
         Label {
             width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
-            text: qsTr("光晕”效果会模糊源的alpha通道，并用颜色对其进行着色，然后将其放置在源后面，从而在对象周围产生光晕或光晕。模糊边缘的质量可以使用样本和半径来控制，辉光的强度可以使用扩散来改变。")
+            text: qsTr("FastBlur提供的模糊质量比GaussianBlur低，但渲染速度更快。FastBlur效果通过使用源内容缩小和双线性滤波的算法模糊源内容来软化源内容。在源内容快速变化且不需要最高模糊质量的情况下使用此效果。")
             wrapMode: Text.WordWrap
         }
 
@@ -38,26 +37,23 @@ ScrollView {
         RowLayout {
             spacing: 9
             Image {
-                id: originalGlowbackground
-                source: "qrc:/image/dropshadow.png"
-                sourceSize: Qt.size(260, 289)
+                id: originalFastbackground
+                source: "qrc:/image/aibackground.png"
+                sourceSize: Qt.size(260, 192)
             }
             Item {
-                width: 290
-                height: 290
+                width: 260
+                height: 192
                 Image {
-                    id: glowbackground
-                    source: "qrc:/image/dropshadow.png"
-                    sourceSize: Qt.size(260, 289)
+                    id: fastbackground
+                    source: "qrc:/image/aibackground.png"
+                    sourceSize: Qt.size(260, 192)
                 }
-
-                Glow {
-                    id: glow
-                    anchors.fill: glowbackground
-                    radius: 8.0
-                    samples: 17
-                    color: "#ff0000"
-                    source: glowbackground
+                FastBlur {
+                    id: fastBlur
+                    anchors.fill: fastbackground
+                    source: fastbackground
+                    radius: 32
                 }
             }
 
@@ -65,7 +61,7 @@ ScrollView {
                 Layout.fillHeight: true
                 Layout.preferredWidth: 100
                 Repeater {
-                    model: [["color:", "#ff0000"],["radius:", 8],["samples:", 17],["spread:", 0]]
+                    model: [["radius:", 32]]
                     Row {
                         width: 400
                         height: 40
@@ -79,7 +75,9 @@ ScrollView {
                         ULineEdit {
                             text: modelData[1]
                             anchors.verticalCenter: parent.verticalCenter
-                            onReturnPressed: {setGlow(glow, index, text)}
+                            onReturnPressed: {
+                                fastBlur.radius = Number(text)
+                            }
                         }
                     }
                 }
@@ -90,14 +88,14 @@ ScrollView {
             font.pixelSize: 20
             font.bold: true
             color: UTheme.text
-            text: qsTr("矩形光晕特效(RectangularGlow)")
+            text: qsTr("高斯模糊(GaussianBlur)")
         }
 
         Label {
             width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
-            text: qsTr("辉光的形状仅限于具有自定义角半径的矩形。")
+            text: qsTr("GaussianBlur效果通过使用高斯函数计算效果的算法模糊图像来软化图像。该效果产生的质量高于FastBlur，但渲染速度较慢。")
             wrapMode: Text.WordWrap
         }
 
@@ -111,25 +109,25 @@ ScrollView {
 
         RowLayout {
             spacing: 9
+            Image {
+                id: originalGaussianbackground
+                source: "qrc:/image/aibackground.png"
+                sourceSize: Qt.size(260, 192)
+            }
             Item {
-                width: 290
-                height: 290
-                RectangularGlow {
-                    id: effect
-                    anchors.fill: rect
-                    glowRadius: 10
-                    spread: 0.2
-                    color: "#ff0000"
-                    cornerRadius: rect.radius + glowRadius
+                width: 260
+                height: 192
+                Image {
+                    id: gaussianbackground
+                    source: "qrc:/image/aibackground.png"
+                    sourceSize: Qt.size(260, 192)
                 }
-
-                Rectangle {
-                    id: rect
-                    color: "black"
-                    anchors.centerIn: parent
-                    width: Math.round(parent.width / 1.5)
-                    height: Math.round(parent.height / 2)
-                    radius: 25
+                GaussianBlur {
+                    id: gaussianBlur
+                    anchors.fill: gaussianbackground
+                    source: gaussianbackground
+                    radius: 8
+                    samples: 16
                 }
             }
 
@@ -137,7 +135,7 @@ ScrollView {
                 Layout.fillHeight: true
                 Layout.preferredWidth: 100
                 Repeater {
-                    model: [["color:", "#ff0000"],["cornerRadius:", 8],["glowRadius:", 17],["spread:", 0]]
+                    model: [["radius:", 8],["samples:", 8],["deviation:", 17]]
                     Row {
                         width: 400
                         height: 40
@@ -151,44 +149,23 @@ ScrollView {
                         ULineEdit {
                             text: modelData[1]
                             anchors.verticalCenter: parent.verticalCenter
-                            onReturnPressed: {setRectangularGlow(effect, index, text)}
+                            onReturnPressed: {setGaussianBlur(gaussianBlur, index, text)}
                         }
                     }
                 }
             }
         }
     }
-
-    function setGlow(object, index, text) {
+    function setGaussianBlur(object, index, text) {
         switch(index) {
         case 0:
-            object.color = text
-            break
-        case 1:
             object.radius = Number(text)
             break
-        case 2:
+        case 1:
             object.samples = Number(text)
             break
         default:
-            object.spread = Number(text)
-            break
-        }
-    }
-
-    function setRectangularGlow(object, index, text) {
-        switch(index) {
-        case 0:
-            object.color = text
-            break
-        case 1:
-            object.cornerRadius = Number(text)
-            break
-        case 2:
-            object.glowRadius = Number(text)
-            break
-        default:
-            object.spread = Number(text)
+            object.deviation = Number(text)
             break
         }
     }

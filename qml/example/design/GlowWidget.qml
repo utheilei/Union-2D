@@ -2,7 +2,7 @@ import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.12
-import "../controls"
+import "../../controls"
 
 ScrollView {
     id: scrollView
@@ -11,18 +11,19 @@ ScrollView {
         anchors.fill: parent
         anchors.margins: 20
         spacing: 30
+
         Label {
             font.pixelSize: 20
             font.bold: true
             color: UTheme.text
-            text: qsTr("阴影(DropShadow)")
+            text: qsTr("光晕特效(Glow)")
         }
 
         Label {
             width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
-            text: qsTr("对输入的图像alpha通道模糊，对结果着色，并将其放置在源对象后面以创建柔和的阴影。可以使用颜色属性更改阴影的颜色。阴影的位置可以通过水平偏移和垂直偏移属性进行更改。软阴影是通过使用高斯模糊实时模糊图像而创建的。实时执行模糊是一项代价高昂的操作。")
+            text: qsTr("光晕”效果会模糊源的alpha通道，并用颜色对其进行着色，然后将其放置在源后面，从而在对象周围产生光晕或光晕。模糊边缘的质量可以使用样本和半径来控制，辉光的强度可以使用扩散来改变。")
             wrapMode: Text.WordWrap
         }
 
@@ -37,7 +38,7 @@ ScrollView {
         RowLayout {
             spacing: 9
             Image {
-                id: originalAibackground
+                id: originalGlowbackground
                 source: "qrc:/image/dropshadow.png"
                 sourceSize: Qt.size(260, 289)
             }
@@ -45,20 +46,18 @@ ScrollView {
                 width: 290
                 height: 290
                 Image {
-                    id: aibackground
+                    id: glowbackground
                     source: "qrc:/image/dropshadow.png"
                     sourceSize: Qt.size(260, 289)
                 }
 
-                DropShadow {
-                    id: dropShadow
-                    anchors.fill: aibackground
-                    horizontalOffset: 0
-                    verticalOffset: 20
+                Glow {
+                    id: glow
+                    anchors.fill: glowbackground
                     radius: 8.0
                     samples: 17
-                    color: "#000000"
-                    source: aibackground
+                    color: "#ff0000"
+                    source: glowbackground
                 }
             }
 
@@ -66,7 +65,7 @@ ScrollView {
                 Layout.fillHeight: true
                 Layout.preferredWidth: 100
                 Repeater {
-                    model: [["color:", "#000000"],["radius:", 8],["samples:", 17],["horizontalOffset:", 0],["verticalOffset:", 20],["spread:", 0]]
+                    model: [["color:", "#ff0000"],["radius:", 8],["samples:", 17],["spread:", 0]]
                     Row {
                         width: 400
                         height: 40
@@ -80,7 +79,7 @@ ScrollView {
                         ULineEdit {
                             text: modelData[1]
                             anchors.verticalCenter: parent.verticalCenter
-                            onReturnPressed: {setDropShadow(dropShadow, index, text)}
+                            onReturnPressed: {setGlow(glow, index, text)}
                         }
                     }
                 }
@@ -91,14 +90,14 @@ ScrollView {
             font.pixelSize: 20
             font.bold: true
             color: UTheme.text
-            text: qsTr("内阴影(InnerShadow)")
+            text: qsTr("矩形光晕特效(RectangularGlow)")
         }
 
         Label {
             width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
-            text: qsTr("默认情况下该效果会生成高质量的阴影图像，因此阴影的渲染速度会降低，特别是在阴影边缘被严重软化的情况下。对于需要更快渲染速度且不需要最高视觉质量的用例，可以将属性fast设置为true。需要开启OpenGL。")
+            text: qsTr("辉光的形状仅限于具有自定义角半径的矩形。")
             wrapMode: Text.WordWrap
         }
 
@@ -112,30 +111,25 @@ ScrollView {
 
         RowLayout {
             spacing: 9
-            Image {
-                id: originalInnerbackground
-                source: "qrc:/image/dropshadow.png"
-                sourceSize: Qt.size(260, 289)
-            }
             Item {
                 width: 290
                 height: 290
-                Image {
-                    id: innerbackground
-                    source: "qrc:/image/dropshadow.png"
-                    sourceSize: Qt.size(260, 289)
+                RectangularGlow {
+                    id: effect
+                    anchors.fill: rect
+                    glowRadius: 10
+                    spread: 0.2
+                    color: "#ff0000"
+                    cornerRadius: rect.radius + glowRadius
                 }
 
-                InnerShadow {
-                    id: innerShadow
-                    anchors.fill: innerbackground
-                    fast: true
-                    horizontalOffset: -3
-                    verticalOffset: 3
-                    radius: 8.0
-                    samples: 17
-                    color: "#ff0000"
-                    source: innerbackground
+                Rectangle {
+                    id: rect
+                    color: "black"
+                    anchors.centerIn: parent
+                    width: Math.round(parent.width / 1.5)
+                    height: Math.round(parent.height / 2)
+                    radius: 25
                 }
             }
 
@@ -143,7 +137,7 @@ ScrollView {
                 Layout.fillHeight: true
                 Layout.preferredWidth: 100
                 Repeater {
-                    model: [["color:", "#ff0000"],["radius:", 8],["samples:", 17],["horizontalOffset:", -3],["verticalOffset:", 3],["spread:", 0]]
+                    model: [["color:", "#ff0000"],["cornerRadius:", 8],["glowRadius:", 17],["spread:", 0]]
                     Row {
                         width: 400
                         height: 40
@@ -157,14 +151,15 @@ ScrollView {
                         ULineEdit {
                             text: modelData[1]
                             anchors.verticalCenter: parent.verticalCenter
-                            onReturnPressed: {setDropShadow(innerShadow, index, text)}
+                            onReturnPressed: {setRectangularGlow(effect, index, text)}
                         }
                     }
                 }
             }
         }
     }
-    function setDropShadow(object, index, text) {
+
+    function setGlow(object, index, text) {
         switch(index) {
         case 0:
             object.color = text
@@ -175,11 +170,22 @@ ScrollView {
         case 2:
             object.samples = Number(text)
             break
-        case 3:
-            object.horizontalOffset = Number(text)
+        default:
+            object.spread = Number(text)
             break
-        case 4:
-            object.verticalOffset = Number(text)
+        }
+    }
+
+    function setRectangularGlow(object, index, text) {
+        switch(index) {
+        case 0:
+            object.color = text
+            break
+        case 1:
+            object.cornerRadius = Number(text)
+            break
+        case 2:
+            object.glowRadius = Number(text)
             break
         default:
             object.spread = Number(text)

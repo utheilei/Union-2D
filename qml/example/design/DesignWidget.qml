@@ -1,9 +1,9 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.15
-import "../controls"
 import utk.model 1.0
 import QtGraphicalEffects 1.0
+import "../../controls"
 
 Item {
     id: designWidget
@@ -19,10 +19,13 @@ Item {
                 bar.treeViewModel.insertItems(0, [["介绍", ""],["更新日志", ""]], bar.treeViewModel.index(0, 0))
                 bar.treeViewModel.insertItems(0, [["主题", ""],["颜色", ""],["字体", ""],["布局", ""],["阴影", ""],["光晕", ""],["模糊", ""]], bar.treeViewModel.index(1, 0))
                 bar.treeViewModel.treeExpandAll()
-                bar.setCurrentIndex(bar.treeViewModel.index(0, 0, bar.treeViewModel.index(1, 0)))
+                bar.setCurrentIndex(bar.treeViewModel.index(0, 0, bar.treeViewModel.index(0, 0)))
             }
             onItemClicked: {
                 switch (row) {
+                case 1:
+                    layout.currentIndex = 0
+                    break
                 case 2:
                     layout.currentIndex = 6
                     break
@@ -57,10 +60,8 @@ Item {
             id: layout
             Layout.fillWidth: true
             Layout.fillHeight: true
-            currentIndex: 1
-            Rectangle {
-                color: 'red'
-            }
+            currentIndex: 0
+            IntroduceWidget {}
             ThemeWidget {
                 onThemeChanged: {UTheme.applicationTheme = index}
                 onHighlightChanged: {UTheme.setHighlightColor(color);UTheme.highlight = color}

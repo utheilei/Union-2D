@@ -6,7 +6,9 @@ import QtQuick.Layouts 1.3
 import utk.window 1.0
 import "./framelesswindow"
 import "./controls"
-import "./example"
+import "./example/control"
+import "./example/design"
+import "./example/homepage"
 
 ApplicationWindow {
     property int itemCount: Math.floor((window.width - 10)/190)
