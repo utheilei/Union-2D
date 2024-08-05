@@ -8,6 +8,8 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QFile>
+#include <QGuiApplication>
+#include <QClipboard>
 
 QmlHelper::QmlHelper(QObject* parent) : QObject(parent)
 {
@@ -251,4 +253,11 @@ QList<QList<QVariantMap>> QmlHelper::loadClassProperty(const QString &className)
         result.append(rowList);
     }
     return result;
+}
+
+void QmlHelper::clipboardCopy(const QString &text)
+{
+    QClipboard *clipboard = QGuiApplication::clipboard();
+    qDebug() << "clipboardCopy:" << text;
+    clipboard->setText(text);
 }

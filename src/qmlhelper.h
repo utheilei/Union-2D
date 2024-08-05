@@ -31,6 +31,8 @@ public:
 
     Q_INVOKABLE QList<QList<QVariantMap>> loadClassProperty(const QString &className);
 
+    Q_INVOKABLE void clipboardCopy(const QString &text);
+
 signals:
     void languageChanged();
 

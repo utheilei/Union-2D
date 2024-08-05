@@ -1,0 +1,106 @@
+{
+    "class": "UTheme",
+    "api": [{
+            "property": "UTheme.text",
+            "note": "此属性表示文本颜色",
+            "type": "color",
+            "default": "Text"
+        },
+        {
+            "property": "UTheme.button",
+            "note": "此属性表示普通按钮背景颜色",
+            "type": "color",
+            "default": "Button"
+        },
+		{
+            "property": "UTheme.base",
+            "note": "主要用作文本输入小部件的背景色，可适应主题切换",
+            "type": "color",
+            "default": "Base"
+        },
+		{
+            "property": "UTheme.window",
+            "note": "此属性表示窗口背景颜色，可适应主题切换",
+            "type": "color",
+            "default": "Window"
+        },
+		{
+            "property": "UTheme.highlight",
+            "note": "此属性表示品牌颜色",
+            "type": "color",
+            "default": "Highlight"
+        },
+		{
+            "property": "UTheme.highlightedText",
+            "note": "此属性表示高亮或者选中时文本颜色",
+            "type": "color",
+            "default": "HighlightedText"
+        },
+		{
+            "property": "UTheme.alternateBase",
+            "note": "此属性表示表格隔行换色",
+            "type": "color",
+            "default": "AlternateBase"
+        },
+		{
+            "property": "UTheme.toolTipBase",
+            "note": "此属性表示ToolTip提示窗口背景色",
+            "type": "color",
+            "default": "ToolTipBase"
+        },
+		{
+            "property": "UTheme.placeholderText",
+            "note": "此属性表示占位符文字颜色",
+            "type": "color",
+            "default": "PlaceholderText"
+        },
+		{
+            "property": "UTheme.itemBackground",
+            "note": "此属性表示表格或者列表单元格背景色",
+            "type": "color",
+            "default": "ItemBackground"
+        },
+		{
+            "property": "UTheme.successBackground",
+            "note": "此属性表示成功色",
+            "type": "color",
+            "default": "SuccessBackground"
+        },
+		{
+            "property": "UTheme.warningBackground",
+            "note": "此属性表示告警色",
+            "type": "color",
+            "default": "WarningBackground"
+        },
+		{
+            "property": "UTheme.errorBackground",
+            "note": "此属性表示失败或者错误色",
+            "type": "color",
+            "default": "ErrorBackground"
+        },
+		{
+            "property": "UTheme.offlineBackground",
+            "note": "此属性表示离线状态色",
+            "type": "color",
+            "default": "OfflineBackground"
+        },
+		{
+            "property": "UTheme.informationBackground",
+            "note": "此属性表示信息提示色",
+            "type": "color",
+            "default": "InformationBackground"
+        },
+		{
+            "property": "UTheme.splitLineBackground",
+            "note": "此属性表示分割线色",
+            "type": "color",
+            "default": "SplitLineBackground"
+        },
+		{
+            "property": "UTheme.frameBorder",
+            "note": "此属性表示边框颜色",
+            "type": "color",
+            "default": "FrameBorder"
+        }
+    ]
+}

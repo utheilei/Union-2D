@@ -7,6 +7,7 @@ import "../../controls"
 
 Item {
     id: designWidget
+    property var widgetMap: {"1":"0", "2":"1", "4":"2", "5":"3", "6":"4", "7":"5", "8":"6", "9":"7", "10":"8"}
     RowLayout {
         anchors.fill: parent
         anchors.margins: 10
@@ -22,31 +23,12 @@ Item {
                 bar.setCurrentIndex(bar.treeViewModel.index(0, 0, bar.treeViewModel.index(0, 0)))
             }
             onItemClicked: {
-                switch (row) {
-                case 1:
-                    layout.currentIndex = 0
-                    break
-                case 2:
-                    layout.currentIndex = 6
-                    break
-                case 4:
-                    layout.currentIndex = 1
-                    break
-                case 7:
-                    layout.currentIndex = 2
-                    break
-                case 8:
-                    layout.currentIndex = 3
-                    break
-                case 9:
-                    layout.currentIndex = 4
-                    break
-                case 10:
-                    layout.currentIndex = 5
-                    break
-                default:
-                    break
+                var index = widgetMap[row]
+                if (typeof index === "undefined") {
+                    console.info(index + " undefined")
+                    return
                 }
+                layout.currentIndex = Number(index)
             }
         }
 
@@ -62,15 +44,17 @@ Item {
             Layout.fillHeight: true
             currentIndex: 0
             IntroduceWidget {}
+            SoftwareLogWidget {}
             ThemeWidget {
                 onThemeChanged: {UTheme.applicationTheme = index}
                 onHighlightChanged: {UTheme.setHighlightColor(color);UTheme.highlight = color}
             }
+            ColorWidget {}
+            Item {}
             LayoutWidget {}
             DropShadowWidget {}
             GlowWidget {}
             BlurWidget {}
-            SoftwareLogWidget {}
         }
     }
 }

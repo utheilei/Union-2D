@@ -146,5 +146,6 @@
         <file>qml/example/homepage/HomePage.qml</file>
         <file>qml/example/design/CricleComponent.qml</file>
         <file>qml/example/design/IntroduceWidget.qml</file>
+        <file>qml/example/design/ColorWidget.qml</file>
     </qresource>
 </RCC>
