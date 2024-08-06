@@ -353,7 +353,7 @@ ScrollView {
             width: scrollView.width - 40
             font.pixelSize: 14
             color: UTheme.text
-            text: qsTr("       对外开源，Union-2D希望将范围扩大至其他人员，大家一起交流和开发，以便持续打磨完善组件库和相关产品。期待你的参与！")
+            text: qsTr("对外开源，Union-2D希望将范围扩大至其他人员，大家一起交流和开发，以便持续打磨完善组件库和相关产品。期待你的参与！")
             wrapMode: Text.WordWrap
         }
         ULinkButton {

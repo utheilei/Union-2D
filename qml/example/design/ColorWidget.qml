@@ -87,17 +87,17 @@ ScrollView {
         id: textcolorModel
         ListElement {
             itemName: "普通文本"
-            itemColor: UTheme.Text
+            itemColor: "#000000"
             textColor: "#FFFFFF"
         }
         ListElement {
             itemName: "高亮文本"
-            itemColor: UTheme.HighlightedText
+            itemColor: "#FFFFFF"
             textColor: "#000000"
         }
         ListElement {
             itemName: "占位符文本"
-            itemColor: UTheme.PlaceholderText
+            itemColor: "#555555"
             textColor: "#FFFFFF"
         }
     }

@@ -50,7 +50,7 @@ Item {
                 onHighlightChanged: {UTheme.setHighlightColor(color);UTheme.highlight = color}
             }
             ColorWidget {}
-            Item {}
+            FontWidget {}
             LayoutWidget {}
             DropShadowWidget {}
             GlowWidget {}
