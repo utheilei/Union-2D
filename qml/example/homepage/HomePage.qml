@@ -5,10 +5,40 @@ import utk.model 1.0
 import QtGraphicalEffects 1.0
 import QtQuick.Particles 2.15
 import "../../controls"
+import "../"
 
 ScrollView {
     id: scrollView
     clip: true
+
+    Popup {
+        id: drawer
+        x: scrollView.width - width
+        y: (scrollView.height - height) / 2
+        width: 0.4 * parent.width
+        height: parent.height - 80
+        visible: false
+        contentItem: ChatWidget {}
+        background: Rectangle {
+            anchors.fill: parent
+            color: UTheme.window
+            radius: 10
+            border.width: 0
+            layer.enabled: true
+            layer.effect: DropShadow {
+                transparentBorder: true
+                radius: 8.0
+                samples: 17
+                color: "#80000000"
+            }
+        }
+        enter: Transition {
+            NumberAnimation { property: "x"; from: scrollView.width; to: scrollView.width - drawer.width }
+        }
+        exit: Transition {
+            NumberAnimation { property: "x"; from: scrollView.width - drawer.width; to: scrollView.width }
+        }
+    }
 
     ListModel {
         id: model
@@ -320,6 +350,17 @@ ScrollView {
                 }
             }
         }
+    }
+    URoundedButton {
+        x: scrollView.width - width
+        y: (scrollView.height - height) - 60
+        width: 60
+        height: 60
+        buttonRadius: 30
+        icon.width: 40
+        icon.height: 40
+        icon.source: "qrc:/icon/" + UTheme.themeName + "/robot.svg"
+        onClicked: drawer.open()
     }
     function onItemClicked(index) {
         switch(index) {

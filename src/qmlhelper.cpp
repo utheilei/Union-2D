@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QGuiApplication>
 #include <QClipboard>
+#include <QRegExp>
 
 QmlHelper::QmlHelper(QObject* parent) : QObject(parent)
 {
@@ -260,4 +261,12 @@ void QmlHelper::clipboardCopy(const QString &text)
     QClipboard *clipboard = QGuiApplication::clipboard();
     qDebug() << "clipboardCopy:" << text;
     clipboard->setText(text);
+}
+
+QString QmlHelper::removeSpecialCharacters(const QString &str)
+{
+    QString result = str;
+    QRegExp rx("[^a-zA-Z0-9\u4e00-\u9fa5]");
+    result.replace(rx, "");
+    return result;
 }

@@ -33,6 +33,8 @@ public:
 
     Q_INVOKABLE void clipboardCopy(const QString &text);
 
+    Q_INVOKABLE QString removeSpecialCharacters(const QString &str);
+
 signals:
     void languageChanged();
 
