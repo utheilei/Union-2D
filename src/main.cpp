@@ -4,8 +4,9 @@
 #include "model/tablemodel.h"
 #include "componentloader.h"
 #include "textdocument.h"
+#include "waterpool.h"
 
-#include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QTranslator>
@@ -13,13 +14,13 @@
 
 int main(int argc, char* argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);   //强制开启openGL
+    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);   //强制开启openGL
 
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     QProcess process;
-    process.start(QGuiApplication::applicationDirPath() + "/httpserver.exe");
+    process.start(QApplication::applicationDirPath() + "/httpserver.exe");
 
     QmlHelper qmlHelper;
     QQmlApplicationEngine engine;
@@ -31,6 +32,7 @@ int main(int argc, char* argv[])
     qmlRegisterType<FuzzyFilterProxyModel>("utk.model", 1, 0, "FuzzyFilterProxyModel");
     qmlRegisterType<ComponentLoader>("utk.component", 1, 0, "ComponentLoader");
     qmlRegisterType<QuickTextDocument>("utk.window", 1, 0, "QuickTextDocument");
+    qmlRegisterType<WaterPool>("utk.window", 1, 0, "WaterPool");
     qmlRegisterSingletonType(QStringLiteral("qrc:/qml/controls/UTheme.qml"), "utk.window", 1, 0, "UTheme");
 
     engine.rootContext()->setContextProperty("qmlHelper", &qmlHelper);

@@ -8,13 +8,23 @@ import "../controls"
 import "qrc:/qml/js/XMLHttpRequest.js" as HttpClient
 
 Item {
+    URoundedRectangle {
+        anchors.fill: parent
+        Image {
+            anchors.fill: parent
+            source: "qrc:/image/backgroud.jpeg"
+        }
+    }
+
     Label {
         id: titleLabel
         anchors.top: parent.top
+        anchors.topMargin: 10
         anchors.left: parent.left
+        anchors.leftMargin: 10
         font.pixelSize: 20
         font.bold: true
-        color: UTheme.text
+        color: "#000000"
         text: qsTr("机器人-小U")
     }
 
@@ -157,7 +167,7 @@ Item {
                     anchors.verticalCenter: parent.verticalCenter
                     background: Rectangle {
                         radius: 8
-                        color: roles ? UTheme.base : UTheme.highlight
+                        color: roles ? UTheme.button : UTheme.highlight
                     }
                 }
             }
@@ -222,6 +232,28 @@ Item {
         }
     }
 
+    WaterPool {
+        id: pool
+        anchors.fill: parent
+        Image {
+            id: name
+            source: "qrc:/image/fish-svg" + 1 + ".svg"
+            sourceSize: Qt.size(64, 64)
+            objectName: "fish"
+            property int currentImageIndex: 0
+            Timer {
+                repeat: true
+                triggeredOnStart: true
+                running: pool.visible
+                interval: 200
+                onTriggered: {
+                    name.currentImageIndex = (name.currentImageIndex + 1) % 5 + 1;
+                    name.source = "qrc:/image/fish-svg" + name.currentImageIndex + ".svg"
+                }
+            }
+        }
+    }
+
     function buttonClicked(index) {
         switch(index) {
         case 0:
@@ -244,6 +276,6 @@ Item {
     }
 
     function errorCallback(response) {
-        console.error(response)
+        listModel.append({"roles": true, "messages": response["statusText"]})
     }
 }

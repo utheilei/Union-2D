@@ -269,5 +269,11 @@
         <file>icon/light/robot.svg</file>
         <file>icon/dark/robot.svg</file>
         <file>qml/js/XMLHttpRequest.js</file>
+        <file>image/fish-svg1.svg</file>
+        <file>image/fish-svg2.svg</file>
+        <file>image/fish-svg3.svg</file>
+        <file>image/fish-svg4.svg</file>
+        <file>image/fish-svg5.svg</file>
+        <file>image/backgroud.jpeg</file>
     </qresource>
 </RCC>

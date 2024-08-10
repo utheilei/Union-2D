@@ -3,7 +3,6 @@ import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.0
 import utk.model 1.0
 import QtGraphicalEffects 1.0
-import QtQuick.Particles 2.15
 import "../../controls"
 import "../"
 
@@ -118,74 +117,6 @@ ScrollView {
                     font.family: "Microsoft Yahei"
                     color: UTheme.text
                     text: "Union-2D 1.0.0"
-                }
-
-                ParticleSystem {
-                    id: myParticleSystem
-                    running: false
-                }
-
-                Emitter {
-                    id: myEmitter
-                    system: myParticleSystem
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 800
-                    height: 80
-                    emitRate: 500
-                    lifeSpan: 1000
-                    size: 16
-                    sizeVariation: 8
-                    velocity: PointDirection {
-                        x: 150
-                        xVariation: 60
-                        yVariation: 20
-                    }
-                    acceleration: PointDirection {
-                        x: 12
-                        xVariation: 6
-                        yVariation: 5
-                    }
-                }
-
-                ImageParticle {
-                    system: myParticleSystem
-                    source: "qrc:///particleresources/fuzzydot.png"
-                    color: UTheme.text
-                    colorVariation: 0.1
-                }
-
-                ParallelAnimation {
-                    id: myAnimation
-                    NumberAnimation {
-                        target: myEmitter
-                        properties: "x"
-                        to: root.width / 2
-                        duration: 1000
-                    }
-                    PropertyAnimation {
-                        target: titleLabel
-                        properties: "opacity"
-                        to: 0.0
-                        duration: 1000
-                    }
-                    onStopped: myEmitter.enabled = false
-                }
-                Timer {
-                    interval: 3000
-                    repeat: true
-                    running: true
-                    triggeredOnStart: true
-                    onTriggered: {
-                        myEmitter.enabled = true
-                        titleLabel.opacity = 1.0
-                        if (myEmitter.x > 0)
-                        {
-                            myAnimation.stop()
-                            myEmitter.x = 0;
-                        }
-                        myParticleSystem.restart()
-                        myAnimation.restart()
-                    }
                 }
             }
 

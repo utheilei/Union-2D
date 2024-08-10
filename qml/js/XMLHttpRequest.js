@@ -61,9 +61,10 @@ function postRequestAsync(url, data, successfulCallback, failedCallback) {
                 }
                 successfulCallback(response)
             } else {
+                var statusText = xhr.statusText
                 let error = {
                     status : xhr.status,
-                    statusText : xhr.statusText
+                    statusText : (statusText.length === 0) ? "network no response" : statusText
                 }
                 failedCallback(error)
             }
