@@ -40,3 +40,15 @@ cmake 3.10 + Qt 5.15.2
 4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
 5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+### 联系作者
+
+作者：YaphetsHL
+
+欢迎联系我，乐于提供技术咨询服务，可洽谈技术支持、商业合作。
+
+QQ: 2454264168
+
+邮箱: 2454264168@qq.com
+
+WX: luck3692012
